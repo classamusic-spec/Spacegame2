@@ -597,3 +597,356 @@ body {
     opacity: 0.2;
   }
 }
+
+/* ============================================================
+   Polish pass — dynamic motion, glow, and depth
+   ============================================================ */
+
+/* Screens glide in for a lively feel. */
+.screen {
+  animation: screen-in 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Animated gradient title. */
+.title {
+  background: linear-gradient(100deg, #ffffff 0%, #9be7ff 30%, #ffd24a 55%, #ff9ecb 80%, #ffffff 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: title-pan 6s linear infinite;
+  filter: drop-shadow(0 0 18px rgba(90, 209, 255, 0.45));
+}
+.title span {
+  color: transparent;
+}
+@keyframes title-pan {
+  to {
+    background-position: 220% center;
+  }
+}
+
+/* Big buttons: gradient depth + a sweeping shine. */
+.big-btn {
+  position: relative;
+  overflow: hidden;
+}
+.big-btn.primary {
+  background: linear-gradient(180deg, #ffe98c 0%, #ffd24a 60%, #f7b733 100%);
+}
+.big-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-18deg);
+  animation: btn-shine 3.6s ease-in-out infinite;
+}
+.big-btn.ghost::after {
+  opacity: 0.4;
+}
+@keyframes btn-shine {
+  0%,
+  60% {
+    left: -60%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+.big-btn:hover {
+  filter: brightness(1.06);
+}
+
+/* Cards lift and glow on press. */
+.grade-card,
+.rocket-card,
+.dock-btn {
+  transition: transform 0.14s ease, border-color 0.14s ease, box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+.grade-card:hover,
+.rocket-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+.dock-btn:hover:not(.locked) {
+  background: rgba(120, 200, 255, 0.22);
+  box-shadow: 0 0 16px rgba(90, 209, 255, 0.35);
+}
+
+/* HUD right cluster + action (view-toggle) button. */
+.hud-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hud-action {
+  width: 56px;
+  height: 56px;
+  font-size: 26px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(120, 200, 255, 0.18);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 14px rgba(90, 209, 255, 0.3);
+  transition: transform 0.12s ease, background 0.2s ease;
+}
+.hud-action:active {
+  transform: scale(0.92);
+}
+.hud-stars {
+  transition: transform 0.15s ease;
+}
+.hud-stars.bump {
+  animation: star-bump 0.5s ease;
+}
+@keyframes star-bump {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.25);
+    box-shadow: 0 0 22px rgba(255, 210, 74, 0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Answer buttons get a soft sheen + pressable depth. */
+.answer-btn {
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.25);
+}
+.answer-btn:active {
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================================
+   First-person cockpit overlays (CSS-only)
+   ============================================================ */
+.cockpit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Center targeting reticle (shared). */
+.ck-reticle {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+}
+.ck-reticle-ring {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border: 2px solid rgba(140, 225, 255, 0.55);
+  border-radius: 50%;
+  box-shadow: 0 0 14px rgba(120, 210, 255, 0.4), inset 0 0 10px rgba(120, 210, 255, 0.25);
+  animation: ret-pulse 2.4s ease-in-out infinite;
+}
+.ck-reticle-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8ce1ff;
+  box-shadow: 0 0 8px #8ce1ff;
+  transform: translate(-50%, -50%);
+}
+@keyframes ret-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* ---- Rocket flight deck ---- */
+.ck-canopy {
+  position: absolute;
+  inset: 5% 8% 28% 8%;
+  border-radius: 46% 46% 18% 18% / 38% 38% 16% 16%;
+  box-shadow:
+    0 0 0 100vmax #0c1220,
+    inset 0 0 70px 14px rgba(110, 190, 255, 0.16),
+    inset 0 0 0 5px rgba(150, 195, 240, 0.4),
+    inset 0 0 0 9px rgba(40, 60, 95, 0.9);
+}
+.ck-canopy::after {
+  content: '';
+  position: absolute;
+  top: 6%;
+  left: 12%;
+  width: 46%;
+  height: 16%;
+  background: linear-gradient(120deg, rgba(180, 225, 255, 0.22), transparent);
+  border-radius: 50%;
+  transform: rotate(-12deg);
+}
+.ck-strut {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, rgba(40, 60, 95, 0), rgba(70, 95, 135, 0.55), rgba(40, 60, 95, 0));
+}
+.ck-dash {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 27%;
+  background: linear-gradient(180deg, #1c2738 0%, #0c1220 100%);
+  border-top: 3px solid rgba(120, 185, 245, 0.5);
+  box-shadow: inset 0 10px 34px rgba(0, 0, 0, 0.6), 0 -6px 34px rgba(80, 160, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  clip-path: polygon(0 18%, 100% 18%, 100% 100%, 0 100%);
+}
+.ck-dash-cluster {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.ck-dial {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #a9ecff, #1c6fb0 70%, #0a3a63);
+  box-shadow: 0 0 12px rgba(90, 209, 255, 0.6), inset 0 0 6px rgba(0, 0, 0, 0.4);
+}
+.ck-led {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  animation: led-blink 1.5s infinite;
+}
+.ck-led.d1 { background: #46d369; box-shadow: 0 0 10px #46d369; animation-delay: 0s; }
+.ck-led.d2 { background: #ffd24a; box-shadow: 0 0 10px #ffd24a; animation-delay: 0.3s; }
+.ck-led.d3 { background: #ff5a76; box-shadow: 0 0 10px #ff5a76; animation-delay: 0.6s; }
+.ck-led.d4 { background: #5ad1ff; box-shadow: 0 0 10px #5ad1ff; animation-delay: 0.9s; }
+@keyframes led-blink {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+.ck-throttle {
+  width: 120px;
+  height: 44px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #243349, #0e1626);
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.7), 0 0 14px rgba(90, 160, 255, 0.2);
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+}
+.ck-throttle-knob {
+  width: 40px;
+  height: 30px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffd24a, #f7892f);
+  box-shadow: 0 0 14px rgba(255, 180, 80, 0.7);
+  animation: throttle-slide 4s ease-in-out infinite;
+}
+@keyframes throttle-slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(64px); }
+}
+
+/* ---- UFO glass dome ---- */
+.ck-dome {
+  position: absolute;
+  inset: 6% 6% 26% 6%;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 100vmax #06131a,
+    inset 0 0 90px 22px rgba(70, 255, 200, 0.12),
+    inset 0 0 0 6px rgba(120, 255, 220, 0.4),
+    inset 0 0 0 12px rgba(20, 80, 70, 0.9);
+}
+.ck-dome::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 24%, rgba(170, 255, 235, 0.16), transparent 55%);
+}
+.ck-glass-streak {
+  position: absolute;
+  top: 12%;
+  left: 20%;
+  width: 42%;
+  height: 9%;
+  background: linear-gradient(120deg, rgba(220, 255, 245, 0.3), transparent);
+  border-radius: 50%;
+  transform: rotate(-16deg);
+}
+.ck-rim {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 25%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.ck-console {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 25%;
+  background: linear-gradient(180deg, #0f2a2a 0%, #061416 100%);
+  border-top: 3px solid rgba(90, 255, 210, 0.5);
+  box-shadow: inset 0 10px 34px rgba(0, 0, 0, 0.6), 0 -6px 30px rgba(60, 255, 200, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(0 22%, 50% 0, 100% 22%, 100% 100%, 0 100%);
+}
+.ck-console-cluster {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.ck-orb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  animation: led-blink 1.8s infinite;
+}
+.ck-orb.d1 { background: #6cff9e; box-shadow: 0 0 12px #6cff9e; animation-delay: 0s; }
+.ck-orb.d2 { background: #5ad1ff; box-shadow: 0 0 12px #5ad1ff; animation-delay: 0.25s; }
+.ck-orb.d3 { background: #ffd24a; box-shadow: 0 0 12px #ffd24a; animation-delay: 0.5s; }
+.ck-orb.d4 { background: #c08cff; box-shadow: 0 0 12px #c08cff; animation-delay: 0.75s; }

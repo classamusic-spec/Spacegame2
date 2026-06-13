@@ -14,6 +14,9 @@ import { SUBJECT_LABELS, SUBJECT_ICONS, type Subject } from '../curriculum/types
 import { FLIGHT } from '../config/constants';
 import { damp, easeInOutCubic } from '../utils/math';
 import { Sfx } from '../utils/audio';
+import { Cockpit } from '../ui/components/Cockpit';
+
+type ViewMode = 'third' | 'first';
 
 type Mode = 'fly' | 'traveling' | 'arrived';
 
@@ -38,6 +41,10 @@ export class SolarSystemState implements GameState {
   private dock!: HTMLElement;
   private offTap: (() => void) | null = null;
   private tmp = new THREE.Vector3();
+
+  private view: ViewMode = 'third';
+  private cockpit!: Cockpit;
+  private camForward = new THREE.Vector3(0, 0, -1);
 
   enter(game: Game): void {
     this.game = game;
@@ -72,6 +79,11 @@ export class SolarSystemState implements GameState {
     game.ui.hud.setBack(() => game.states.change('start'));
     game.input.joystick.show();
     this.buildDock();
+
+    // First-person cockpit (matched to the chosen ship) + a view toggle.
+    this.cockpit = new Cockpit(game.ui.root, game.profile.rocketId);
+    this.view = 'third';
+    game.ui.hud.setAction('👁️', () => this.toggleView());
 
     // Tap a planet in 3D to travel to it.
     this.offTap = game.input.onTap((t) => this.onTap(t.ndcX, t.ndcY));
@@ -153,10 +165,22 @@ export class SolarSystemState implements GameState {
     return ['jupiter', 'saturn', 'uranus', 'neptune'].includes(planetId) ? 'asteroid' : 'ufo';
   }
 
+  // Swap between chase cam and first-person cockpit.
+  private toggleView(): void {
+    this.view = this.view === 'third' ? 'first' : 'third';
+    const first = this.view === 'first';
+    this.rocket.group.visible = !first; // hide our own hull from the inside
+    this.game.ui.hud.setAction(first ? '🛰️' : '👁️', () => this.toggleView());
+    if (first && this.mode !== 'arrived') this.cockpit.show();
+    else this.cockpit.hide();
+    Sfx.tap();
+  }
+
   private showArrivalMenu(planet: PlanetDef): void {
     this.mode = 'arrived';
     this.game.input.joystick.hide();
     this.dock.classList.add('hidden');
+    this.cockpit.hide();
     // While in the planet menu, the top-left back button returns to space.
     this.game.ui.hud.setBack(() => this.leaveMenu());
 
@@ -215,6 +239,7 @@ export class SolarSystemState implements GameState {
     this.game.ui.hud.setLabel('Pick a planet to explore!');
     // Restore the top-left back button to "leave the map" (to the title).
     this.game.ui.hud.setBack(() => this.game.states.change('start'));
+    if (this.view === 'first') this.cockpit.show();
     // Nudge the rocket back out so the player is free-flying again.
     this.velocity.set(0, 0, 0.001);
   }
@@ -224,8 +249,10 @@ export class SolarSystemState implements GameState {
     this.game.scene.scene.remove(this.root);
     this.root.clear();
     this.dock.remove();
+    this.cockpit.destroy();
     this.game.ui.hidePanel();
     this.game.ui.hud.setBack(null);
+    this.game.ui.hud.setAction(null);
   }
 
   update(dt: number): void {
@@ -273,6 +300,10 @@ export class SolarSystemState implements GameState {
 
   private updateCamera(dt: number): void {
     const cam = this.game.scene.camera;
+    if (this.view === 'first') {
+      this.updateCockpitCamera(dt);
+      return;
+    }
     const desired = this.tmp.copy(this.rocket.group.position);
     desired.y += FLIGHT.cameraHeight;
     desired.z += FLIGHT.cameraDistance;
@@ -280,5 +311,29 @@ export class SolarSystemState implements GameState {
     cam.position.y = damp(cam.position.y, desired.y, FLIGHT.cameraLambda, dt);
     cam.position.z = damp(cam.position.z, desired.z, FLIGHT.cameraLambda, dt);
     cam.lookAt(this.rocket.group.position);
+  }
+
+  // First-person: sit in the ship looking out along the nose direction.
+  private updateCockpitCamera(dt: number): void {
+    const cam = this.game.scene.camera;
+    // The ship is modelled facing -Z, so its nose direction is -Z in local space.
+    const fwd = this.tmp.set(0, 0, -1).applyQuaternion(this.rocket.group.quaternion);
+    const lambda = 9;
+    this.camForward.x = damp(this.camForward.x, fwd.x, lambda, dt);
+    this.camForward.y = damp(this.camForward.y, fwd.y, lambda, dt);
+    this.camForward.z = damp(this.camForward.z, fwd.z, lambda, dt);
+    this.camForward.normalize();
+
+    const eye = this.rocket.group.position;
+    cam.position.set(
+      eye.x + this.camForward.x * 0.3,
+      eye.y + 0.5 + this.camForward.y * 0.3,
+      eye.z + this.camForward.z * 0.3
+    );
+    cam.lookAt(
+      eye.x + this.camForward.x * 20,
+      eye.y + 0.5 + this.camForward.y * 20,
+      eye.z + this.camForward.z * 20
+    );
   }
 }

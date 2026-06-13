@@ -6,9 +6,13 @@ import { el } from '../../utils/dom';
 export class HUD {
   readonly root: HTMLElement;
   private starValue: HTMLElement;
+  private starsEl: HTMLElement;
   private label: HTMLElement;
   private backBtn: HTMLButtonElement;
+  private actionBtn: HTMLButtonElement;
   private onBack: (() => void) | null = null;
+  private onAction: (() => void) | null = null;
+  private lastStars = 0;
 
   constructor() {
     this.starValue = el('span', { class: 'hud-star-value', text: '0' });
@@ -20,12 +24,18 @@ export class HUD {
     );
     this.backBtn.addEventListener('click', () => this.onBack?.());
 
-    const stars = el('div', { class: 'hud-stars' }, [
+    this.actionBtn = el('button', { class: 'hud-action', attrs: { 'aria-label': 'Toggle view' } });
+    this.actionBtn.style.display = 'none';
+    this.actionBtn.addEventListener('click', () => this.onAction?.());
+
+    this.starValue = el('span', { class: 'hud-star-value', text: '0' });
+    this.starsEl = el('div', { class: 'hud-stars' }, [
       el('span', { class: 'hud-star-icon', text: '⭐' }),
       this.starValue,
     ]);
 
-    this.root = el('div', { class: 'hud hidden' }, [this.backBtn, this.label, stars]);
+    const right = el('div', { class: 'hud-right' }, [this.actionBtn, this.starsEl]);
+    this.root = el('div', { class: 'hud hidden' }, [this.backBtn, this.label, right]);
   }
 
   show(): void {
@@ -37,6 +47,13 @@ export class HUD {
 
   setStars(n: number): void {
     this.starValue.textContent = String(n);
+    if (n > this.lastStars) {
+      // Pop the star counter whenever it grows, for a lively reward feel.
+      this.starsEl.classList.remove('bump');
+      void this.starsEl.offsetWidth; // restart animation
+      this.starsEl.classList.add('bump');
+    }
+    this.lastStars = n;
   }
 
   setLabel(text: string): void {
@@ -46,5 +63,17 @@ export class HUD {
   setBack(handler: (() => void) | null): void {
     this.onBack = handler;
     this.backBtn.style.display = handler ? 'flex' : 'none';
+  }
+
+  /** Show/configure the optional action button (e.g. view toggle). */
+  setAction(label: string | null, handler?: () => void): void {
+    if (label === null) {
+      this.onAction = null;
+      this.actionBtn.style.display = 'none';
+      return;
+    }
+    this.actionBtn.textContent = label;
+    this.onAction = handler ?? null;
+    this.actionBtn.style.display = 'flex';
   }
 }

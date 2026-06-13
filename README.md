@@ -22,6 +22,8 @@ licensing concerns.
 | ![Quiz](docs/screenshots/quiz.png) | ![UFO mini-game](docs/screenshots/ufo-game.png) |
 | **Saturn & its rings** | **Asteroid Blast (outer planets)** |
 | ![Saturn](docs/screenshots/saturn.png) | ![Asteroid mini-game](docs/screenshots/asteroid-game.png) |
+| **First-person rocket cockpit** | **First-person UFO dome** |
+| ![Rocket cockpit](docs/screenshots/cockpit-rocket.png) | ![UFO cockpit](docs/screenshots/cockpit-ufo.png) |
 | **Earn stars & badges** | |
 | ![Reward screen](docs/screenshots/reward.png) | |
 
@@ -39,8 +41,11 @@ npm run preview  # serve the production build
 1. **Start Adventure** → pick your **grade** (sets question difficulty) → choose one
    of **3 rockets**.
 2. In the **solar system**, free-fly with the on-screen joystick (or WASD/arrows),
-   or tap a planet / its dock button to **auto-travel** there.
-3. At a planet, pick a **subject** to start a quiz, or play the **UFO mini-game**.
+   or tap a planet / its dock button to **auto-travel** there. Tap the **👁️ button**
+   to switch into a **first-person cockpit** view — a rocket flight deck or a UFO
+   glass dome, matched to your chosen ship.
+3. At a planet, pick a **subject** to start a quiz, or play the **mini-game**
+   (UFO shooter at the inner planets, Asteroid Blast at the outer ones).
 4. Earn **⭐ stars** for correct answers — they unlock new planets and earn **badges**.
    Progress saves automatically to your browser.
 
