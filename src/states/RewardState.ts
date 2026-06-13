@@ -4,6 +4,7 @@ import { el } from '../utils/dom';
 import { bigButton } from '../ui/components/Button';
 import { getBadge } from '../progression/badges';
 import { Sfx } from '../utils/audio';
+import { narrator } from '../utils/narrator';
 
 // Celebration screen shown after a quiz or mini-game: stars earned, any newly
 // unlocked badges, and a big Continue button. Generous and positive.
@@ -57,6 +58,7 @@ export class RewardState implements GameState {
 
     game.ui.setPanel(el('div', { class: 'screen center-screen reward-screen' }, children));
     this.confetti();
+    narrator.speak(`${title} You earned ${stars} ${stars === 1 ? 'star' : 'stars'}!`);
   }
 
   private confetti(): void {

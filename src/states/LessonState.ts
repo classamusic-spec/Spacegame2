@@ -6,6 +6,7 @@ import { QuestionCard } from '../ui/components/QuestionCard';
 import { ProgressDots } from '../ui/components/ProgressBar';
 import { SUBJECT_ICONS, SUBJECT_LABELS, type Lesson } from '../curriculum/types';
 import { PROGRESSION } from '../config/constants';
+import { narrator } from '../utils/narrator';
 
 // Runs a full lesson: first the "teach" cards (an explanation the player steps
 // through), then practice questions. Correct answers earn stars; finishing
@@ -57,7 +58,18 @@ export class LessonState implements GameState {
       );
     }
     if (card.image) children.push(el('div', { class: 'teach-image', text: card.image }));
-    children.push(el('p', { class: 'teach-text', text: card.text }));
+    const speaker = el('button', {
+      class: 'speaker-btn',
+      text: '🔊',
+      attrs: { 'aria-label': 'Read aloud' },
+    });
+    speaker.addEventListener('click', () => this.narrateTeach(isFirst));
+    children.push(
+      el('div', { class: 'teach-text-row' }, [
+        el('p', { class: 'teach-text', text: card.text }),
+        speaker,
+      ])
+    );
     if (card.example) children.push(el('div', { class: 'teach-example', text: card.example }));
 
     const next = bigButton(
@@ -75,6 +87,16 @@ export class LessonState implements GameState {
         next,
       ])
     );
+
+    this.narrateTeach(this.teachIndex === 0);
+  }
+
+  /** Read the current teach card aloud (title + objective on the first card). */
+  private narrateTeach(isFirst: boolean): void {
+    const card = this.lesson.teach[this.teachIndex];
+    const parts = isFirst ? [this.lesson.title, this.lesson.objective, card.text] : [card.text];
+    if (card.example) parts.push(card.example);
+    narrator.speak(parts.join('. '));
   }
 
   private advanceTeach(): void {
@@ -121,6 +143,7 @@ export class LessonState implements GameState {
   }
 
   exit(): void {
+    narrator.stop();
     this.game.ui.hidePanel();
     this.game.ui.hud.setBack(null);
   }

@@ -1,6 +1,17 @@
 import { el } from '../../utils/dom';
 import { Sfx, unlockAudio } from '../../utils/audio';
+import { narrator } from '../../utils/narrator';
 import type { Answer, Question } from '../../curriculum/types';
+
+/** Read a question + its text/number options aloud (for pre-readers). */
+export function narrateQuestion(q: Question): void {
+  let text = q.prompt;
+  if (q.answerStyle !== 'picture') {
+    const opts = q.answers.map((a) => a.label ?? '').filter(Boolean);
+    if (opts.length) text += `. Is it ${opts.join(', ')}?`;
+  }
+  narrator.speak(text);
+}
 
 // Renders a single question with big tappable answers. The `answerStyle`
 // controls layout: text/number use labeled buttons; picture uses a grid of big
@@ -14,7 +25,16 @@ export class QuestionCard {
     private question: Question,
     private onAnswered: (correct: boolean) => void
   ) {
-    const prompt = el('div', { class: 'q-prompt', text: question.prompt });
+    const speaker = el('button', {
+      class: 'speaker-btn',
+      text: '🔊',
+      attrs: { 'aria-label': 'Hear the question' },
+    });
+    speaker.addEventListener('click', () => narrateQuestion(question));
+    const prompt = el('div', { class: 'q-prompt-row' }, [
+      el('div', { class: 'q-prompt', text: question.prompt }),
+      speaker,
+    ]);
 
     const promptMedia: HTMLElement[] = [];
     if (question.promptImage) {
@@ -33,6 +53,9 @@ export class QuestionCard {
       prompt,
       answersWrap,
     ]);
+
+    // Read the question aloud automatically when it appears.
+    narrateQuestion(question);
   }
 
   private renderAnswer(ans: Answer): HTMLElement {

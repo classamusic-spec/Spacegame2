@@ -18,8 +18,14 @@ export class SaveManager {
       if (!data || data.version !== PROFILE_VERSION) {
         return createDefaultProfile();
       }
-      // Merge over defaults so missing fields are backfilled.
-      return { ...createDefaultProfile(), ...data } as PlayerProfile;
+      // Merge over defaults so missing fields are backfilled (incl. nested
+      // settings, so older saves gain new options like narration).
+      const def = createDefaultProfile();
+      return {
+        ...def,
+        ...data,
+        settings: { ...def.settings, ...(data.settings ?? {}) },
+      } as PlayerProfile;
     } catch {
       return createDefaultProfile();
     }

@@ -20,7 +20,9 @@ play shooting mini-games, earning stars, unlocking planets, and collecting badge
 | Neptune | **Arts, Music & Health** | Colors, Mixing, Beat & tempo, Healthy foods, Hygiene |
 
 Every lesson **teaches first, then quizzes** — content is grade-leveled
-(toddler → 3rd) and pre-readers get picture/emoji answers.
+(toddler → 3rd). **Pre-readers can play solo:** every lesson, question, and
+instruction is **read aloud** (on-device speech, no internet needed), with
+picture/emoji answers and a tap-to-hear 🔊 button on each card.
 
 Built with **Three.js + Vite + TypeScript**. Tablet/touch-first, with full mouse
 & keyboard support. Visuals are almost entirely **procedural** (shaders, particles,
@@ -69,8 +71,9 @@ npm run preview  # serve the production build
 4. Earn **⭐ stars** for correct answers — they unlock new planets and earn **badges**.
    Progress saves automatically to your browser.
 
-Pre-readers are covered with **picture/emoji answers**; spoken narration is a
-planned later phase.
+Pre-readers are fully covered: **everything is read aloud** automatically, each
+card has a 🔊 replay button, and a **Read Aloud** toggle (on the title screen and
+in the HUD) turns narration on/off. Answers also come in **picture/emoji** form.
 
 ## Project layout
 
@@ -123,5 +126,7 @@ which planet is set in `src/config/planets.ts`.
   Science, Social Studies (History & Geography), and Arts/Music/Health. Each
   planet is now a coherent **subject world** (53 lessons / 159 practice items).
 - **First-person cockpit (done):** rocket flight deck & UFO dome views.
-- **Phase 4 (next):** spoken narration & richer audio for pre-readers.
-- **Phase 5:** content-authoring tools & parent dashboard.
+- **Phase 4 (done):** spoken narration — lessons, questions, and instructions
+  are read aloud on-device (Web Speech API, no assets), with per-card 🔊 replay
+  and a Read Aloud toggle, so pre-readers can play independently.
+- **Phase 5 (next):** content-authoring tools & parent dashboard.

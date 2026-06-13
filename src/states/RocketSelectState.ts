@@ -3,6 +3,7 @@ import type { GameState } from './GameState';
 import type { Game } from '../core/Game';
 import { el } from '../utils/dom';
 import { bigButton } from '../ui/components/Button';
+import { narrator } from '../utils/narrator';
 import { ROCKETS, type RocketId } from '../config/rockets';
 import { Rocket } from '../scene/entities/Rocket';
 
@@ -43,6 +44,8 @@ export class RocketSelectState implements GameState {
     game.ui.setPanel(
       el('div', { class: 'screen rocket-screen' }, [heading, this.cardsWrap, choose])
     );
+
+    narrator.speak('Choose your rocket, then press blast off!');
   }
 
   private renderCards(): void {

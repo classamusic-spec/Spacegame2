@@ -2,6 +2,7 @@ import type { GameState } from './GameState';
 import type { Game } from '../core/Game';
 import { el } from '../utils/dom';
 import { bigButton } from '../ui/components/Button';
+import { narrator } from '../utils/narrator';
 import { GRADE_BANDS, GRADE_BAND_LABELS, type GradeBand } from '../curriculum/types';
 
 const GRADE_ICONS: Record<GradeBand, string> = {
@@ -50,6 +51,8 @@ export class GradeSelectState implements GameState {
     game.ui.setPanel(
       el('div', { class: 'screen center-screen' }, [heading, sub, grid, back])
     );
+
+    narrator.speak('How old are you? Pick your grade so the questions are just right.');
   }
 
   exit(): void {

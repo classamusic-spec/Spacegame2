@@ -10,8 +10,10 @@ export class HUD {
   private label: HTMLElement;
   private backBtn: HTMLButtonElement;
   private actionBtn: HTMLButtonElement;
+  private narrationBtn: HTMLButtonElement;
   private onBack: (() => void) | null = null;
   private onAction: (() => void) | null = null;
+  private onNarration: (() => void) | null = null;
   private lastStars = 0;
 
   constructor() {
@@ -28,13 +30,20 @@ export class HUD {
     this.actionBtn.style.display = 'none';
     this.actionBtn.addEventListener('click', () => this.onAction?.());
 
+    this.narrationBtn = el('button', {
+      class: 'hud-action hud-narration',
+      attrs: { 'aria-label': 'Read aloud on/off' },
+    });
+    this.narrationBtn.style.display = 'none';
+    this.narrationBtn.addEventListener('click', () => this.onNarration?.());
+
     this.starValue = el('span', { class: 'hud-star-value', text: '0' });
     this.starsEl = el('div', { class: 'hud-stars' }, [
       el('span', { class: 'hud-star-icon', text: '⭐' }),
       this.starValue,
     ]);
 
-    const right = el('div', { class: 'hud-right' }, [this.actionBtn, this.starsEl]);
+    const right = el('div', { class: 'hud-right' }, [this.narrationBtn, this.actionBtn, this.starsEl]);
     this.root = el('div', { class: 'hud hidden' }, [this.backBtn, this.label, right]);
   }
 
@@ -63,6 +72,14 @@ export class HUD {
   setBack(handler: (() => void) | null): void {
     this.onBack = handler;
     this.backBtn.style.display = handler ? 'flex' : 'none';
+  }
+
+  /** Show the persistent narration (read-aloud) toggle and reflect its state. */
+  setNarration(enabled: boolean, handler: () => void): void {
+    this.onNarration = handler;
+    this.narrationBtn.textContent = enabled ? '🔊' : '🔇';
+    this.narrationBtn.classList.toggle('off', !enabled);
+    this.narrationBtn.style.display = 'flex';
   }
 
   /** Show/configure the optional action button (e.g. view toggle). */

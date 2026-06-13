@@ -2,6 +2,7 @@ import type { GameState } from './GameState';
 import type { Game } from '../core/Game';
 import { el } from '../utils/dom';
 import { bigButton } from '../ui/components/Button';
+import { narrator } from '../utils/narrator';
 
 // Title screen. Returning players (already onboarded) get a "Keep Exploring"
 // button straight to the map; new players go through grade + rocket select.
@@ -38,12 +39,30 @@ export class StartScreenState implements GameState {
       );
     }
 
+    // Read-aloud toggle (also lives in the HUD once in the game).
+    const narrationBtn = bigButton(
+      this.narrationLabel(),
+      () => {
+        game.toggleNarration();
+        const span = narrationBtn.querySelector('.btn-label');
+        if (span) span.textContent = this.narrationLabel();
+      },
+      { icon: '🔊', variant: 'ghost' }
+    );
+    buttons.append(narrationBtn);
+
     game.ui.setPanel(el('div', { class: 'screen center-screen start-screen' }, [
       rocket,
       title,
       subtitle,
       buttons,
     ]));
+
+    narrator.speak('Space Explorer Academy. Fly the solar system and become a space-smart explorer!');
+  }
+
+  private narrationLabel(): string {
+    return this.game.profile.settings.narration ? 'Read Aloud: On' : 'Read Aloud: Off';
   }
 
   exit(): void {

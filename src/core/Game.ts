@@ -9,6 +9,7 @@ import { RewardSystem } from '../progression/RewardSystem';
 import { CurriculumLoader } from '../curriculum/CurriculumLoader';
 import { QuestionPicker } from '../curriculum/QuestionPicker';
 import { UIRoot } from '../ui/UIRoot';
+import { narrator } from '../utils/narrator';
 
 import { StartScreenState } from '../states/StartScreenState';
 import { GradeSelectState } from '../states/GradeSelectState';
@@ -48,7 +49,21 @@ export class Game {
     this.curriculum.load();
     this.rewards.syncUnlocks();
 
+    // Apply the saved narration (read-aloud) preference and wire the HUD toggle.
+    narrator.setEnabled(this.profile.settings.narration);
+    this.ui.hud.setNarration(this.profile.settings.narration, () => this.toggleNarration());
+
     this.registerStates();
+  }
+
+  /** Flip read-aloud narration, persist it, and refresh the toggle icon. */
+  toggleNarration(): void {
+    const on = !this.profile.settings.narration;
+    this.profile.settings.narration = on;
+    narrator.setEnabled(on);
+    this.ui.hud.setNarration(on, () => this.toggleNarration());
+    this.persistProfile();
+    if (on) narrator.speak('Read aloud is on.');
   }
 
   private registerStates(): void {

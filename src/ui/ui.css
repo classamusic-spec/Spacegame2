@@ -1080,3 +1080,47 @@ body {
   color: var(--accent2);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
+
+/* ============================================================
+   Narration — speaker buttons + read-aloud toggle
+   ============================================================ */
+.speaker-btn {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(90, 209, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 14px rgba(90, 209, 255, 0.3);
+  transition: transform 0.12s ease, background 0.2s ease;
+  pointer-events: auto;
+}
+.speaker-btn:hover {
+  background: rgba(90, 209, 255, 0.35);
+}
+.speaker-btn:active {
+  transform: scale(0.9);
+}
+.q-prompt-row,
+.teach-text-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+}
+.q-prompt-row .q-prompt,
+.teach-text-row .teach-text {
+  flex: 0 1 auto;
+}
+.hud-narration.off {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  opacity: 0.8;
+}

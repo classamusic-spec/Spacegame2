@@ -14,6 +14,7 @@ import { SUBJECT_ICONS } from '../curriculum/types';
 import { FLIGHT } from '../config/constants';
 import { damp, easeInOutCubic } from '../utils/math';
 import { Sfx } from '../utils/audio';
+import { narrator } from '../utils/narrator';
 import { Cockpit } from '../ui/components/Cockpit';
 
 type ViewMode = 'third' | 'first';
@@ -224,6 +225,7 @@ export class SolarSystemState implements GameState {
     );
 
     this.game.ui.setPanel(el('div', { class: 'screen lesson-menu-screen' }, body));
+    narrator.speak(`${planet.world}. ${planet.blurb} Pick a lesson.`);
   }
 
   private startLesson(lessonId: string, planet: string): void {
