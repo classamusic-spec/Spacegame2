@@ -10,14 +10,14 @@ play shooting mini-games, earning stars, unlocking planets, and collecting badge
 
 | Planet | Subject world | Sample lessons |
 |---|---|---|
-| Mercury | **Math** | Counting, Adding/Subtracting, Time, Multiplication, Fractions |
-| Venus | **Phonics** | Beginning sounds, Letter sounds, Rhyming, Blending, Vowel teams |
-| Earth | **Reading** | Sight words, Story details, Sequencing, Main idea |
-| Mars | **Science** | Living things, Five senses, Seasons, Matter, Water cycle, Solar system |
-| Jupiter | **Social Studies** | Then & now, Community helpers, Holidays, Maps, Continents, USA |
-| Saturn | **Spelling** | Short words, Sight words, Plurals, Silent letters |
-| Uranus | **Grammar & Writing** | Nouns, Verbs, Adjectives, Capitals & punctuation |
-| Neptune | **Arts, Music & Health** | Colors, Mixing, Beat & tempo, Healthy foods, Hygiene |
+| Mercury | **Math** | Counting, Sorting, Add/Subtract, Place value, Time, Money, Multiplication, Division, Fractions |
+| Venus | **Phonics** | Alphabet, Beginning/letter sounds, Rhyming, Short vowels, Blending, Digraphs, Silent E, Bossy R |
+| Earth | **Reading** | Sight words, Directions, Characters & setting, Sequencing, Predictions, Main idea, Context clues, Fact vs. opinion |
+| Mars | **Science** | Body & senses, Living things, Animal needs, Plants, Seasons, Matter, Forces & magnets, Water cycle, Life cycles, Habitats, Solar system |
+| Jupiter | **Social Studies** | Then & now, Families, Community helpers, Holidays, American symbols, Inventors, Maps & directions, Landforms, Continents, USA & capitals |
+| Saturn | **Spelling** | Short words, Sight words, Blends, Plurals, Double letters, Silent letters, Compound words, Contractions |
+| Uranus | **Grammar & Writing** | Nouns, Verbs, Pronouns, Adjectives, Past tense, Conjunctions, Capitals, Commas |
+| Neptune | **Arts, Music & Health** | Colors & mixing, Shapes & lines, Famous artists, High/low, Rhythm, Notes, Foods, Feelings, Safety, Hygiene |
 
 Every lesson **teaches first, then quizzes** — content is grade-leveled
 (toddler → 3rd). **Pre-readers can play solo:** every lesson, question, and
@@ -124,7 +124,7 @@ which planet is set in `src/config/planets.ts`.
 - **Curriculum overhaul (done):** real **lessons** (teach then practice) across
   the whole elementary curriculum — Math, Reading, Phonics, Spelling, Grammar,
   Science, Social Studies (History & Geography), and Arts/Music/Health. Each
-  planet is now a coherent **subject world** (53 lessons / 159 practice items).
+  planet is now a coherent **subject world** (98 lessons / 294 practice items).
 - **First-person cockpit (done):** rocket flight deck & UFO dome views.
 - **Phase 4 (done):** spoken narration — lessons, questions, and instructions
   are read aloud on-device (Web Speech API, no assets), with per-card 🔊 replay

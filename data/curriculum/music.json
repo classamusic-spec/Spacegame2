@@ -49,6 +49,213 @@
         { "id": "q3", "prompt": "A guitar belongs to which family?", "answerStyle": "text",
           "answers": [ {"id":"a","label":"Strings","correct":true}, {"id":"b","label":"Percussion","correct":false} ] }
       ]
+    },
+    {
+      "id": "music-k-highlow",
+      "gradeBand": "k",
+      "title": "High and Low",
+      "objective": "I can hear high and low sounds.",
+      "teach": [
+        {
+          "text": "Sounds can be high like a bird or low like a drum.",
+          "image": "🐦"
+        },
+        {
+          "text": "A tiny bell is high; a big tuba is low.",
+          "image": "🔔"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which makes a HIGH sound?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐦",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🐘",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which makes a LOW sound?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🥁",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🔔",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A tiny whistle sounds...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "High",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Low",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "music-g1-rhythm",
+      "gradeBand": "g1",
+      "title": "Rhythm and Singing",
+      "objective": "I can keep a rhythm and sing along.",
+      "teach": [
+        {
+          "text": "Rhythm is a pattern of long and short sounds.",
+          "image": "🎶"
+        },
+        {
+          "text": "Clapping to a song helps you feel the rhythm.",
+          "image": "👏"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "A pattern of long and short sounds is...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Rhythm",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A color",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Singing words to music is called...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "A song",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A map",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Clapping along helps you feel the...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Beat",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Smell",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "music-g2-notes",
+      "gradeBand": "g2",
+      "title": "Notes and Rests",
+      "objective": "I know notes are sounds and rests are silences.",
+      "teach": [
+        {
+          "text": "Music is written with notes for sounds.",
+          "image": "🎵"
+        },
+        {
+          "text": "A rest is a quiet pause with no sound.",
+          "image": "🤫"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "A rest in music means...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Be silent",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Sing loudest",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Notes tell a musician what to...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Play",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Eat",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A symbol for a sound in music is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Note",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Knot",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

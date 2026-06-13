@@ -97,6 +97,420 @@
         { "id": "q3", "prompt": "Which planet do we live on?", "answerStyle": "text",
           "answers": [ {"id":"a","label":"Earth","correct":true}, {"id":"b","label":"Mars","correct":false}, {"id":"c","label":"Jupiter","correct":false} ] }
       ]
+    },
+    {
+      "id": "science-prek-body",
+      "gradeBand": "prek",
+      "title": "My Body",
+      "objective": "I can name parts of my body.",
+      "teach": [
+        {
+          "text": "Our body has many parts that help us.",
+          "image": "🧍"
+        },
+        {
+          "text": "We see with eyes, walk with legs, and grab with hands.",
+          "image": "👀"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which do we walk with?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🦵",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "👀",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which do we clap with?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "👏",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "👃",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "We smell with our...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Nose",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Feet",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science-k-animalneeds",
+      "gradeBand": "k",
+      "title": "What Animals Need",
+      "objective": "I know animals need food, water, and air.",
+      "teach": [
+        {
+          "text": "All animals need food, water, air, and a home.",
+          "image": "🐾"
+        },
+        {
+          "text": "Just like us, animals get hungry and thirsty.",
+          "image": "🐕"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What do all animals need to drink?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Water",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Soda",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A place an animal lives is its...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Home",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Hat",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which do animals need?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "💧",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "📺",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science-g1-plantparts",
+      "gradeBand": "g1",
+      "title": "Parts of a Plant",
+      "objective": "I can name the parts of a plant.",
+      "teach": [
+        {
+          "text": "Plants have roots, a stem, leaves, and flowers.",
+          "image": "🌷"
+        },
+        {
+          "text": "Roots drink water; leaves catch sunlight.",
+          "image": "🌿"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What part of a plant takes in water?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Roots",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Flower",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "What part catches sunlight to make food?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Leaves",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Roots",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "What holds the plant up?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Stem",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Petal",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science-g2-magnets",
+      "gradeBand": "g2",
+      "title": "Push, Pull, and Magnets",
+      "objective": "I understand pushes, pulls, and magnets.",
+      "teach": [
+        {
+          "text": "A force is a push or a pull that moves things.",
+          "image": "🧲"
+        },
+        {
+          "text": "Magnets pull some metals, like iron, toward them.",
+          "image": "🔩"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "A magnet can pull things made of...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Iron metal",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Paper",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Kicking a ball is an example of a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Push",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Smell",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A push or pull is called a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Force",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Color",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science-g3-lifecycle",
+      "gradeBand": "g3",
+      "title": "Life Cycles",
+      "objective": "I know living things grow and change.",
+      "teach": [
+        {
+          "text": "A life cycle is the stages a living thing grows through.",
+          "image": "🐛"
+        },
+        {
+          "text": "A butterfly goes egg → caterpillar → chrysalis → butterfly.",
+          "image": "🦋"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What does a caterpillar become?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "A butterfly",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A bird",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A frog starts life as a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Tadpole",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Puppy",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "The stages a living thing grows through is its...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Life cycle",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Lunch",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science-g3-habitats",
+      "gradeBand": "g3",
+      "title": "Habitats",
+      "objective": "I know animals live where they get what they need.",
+      "teach": [
+        {
+          "text": "A habitat is the home where an animal finds food, water, and shelter.",
+          "image": "🏞️"
+        },
+        {
+          "text": "A fish lives in water; a camel lives in the desert.",
+          "image": "🐪"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Where does a fish live?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "In water",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "In a tree",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A polar bear lives in a cold, snowy...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Habitat",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Oven",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which animal lives in the desert?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Camel",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Penguin",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

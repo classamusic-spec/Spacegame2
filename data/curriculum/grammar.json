@@ -65,6 +65,278 @@
         { "id": "q3", "prompt": "Which sentence is written correctly?", "answerStyle": "text",
           "answers": [ {"id":"a","label":"The dog ran.","correct":true}, {"id":"b","label":"the dog ran","correct":false} ] }
       ]
+    },
+    {
+      "id": "grammar-g1-pronouns",
+      "gradeBand": "g1",
+      "title": "Pronouns",
+      "objective": "I can use he, she, and it.",
+      "teach": [
+        {
+          "text": "A pronoun takes the place of a noun.",
+          "image": "🔁"
+        },
+        {
+          "text": "For 'Sam', we can say 'he'. For 'Mia', we can say 'she'."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which pronoun fits a boy named Tom?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "he",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "she",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which pronoun fits a ball?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "it",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "she",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A word that replaces a noun is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "pronoun",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "verb",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar-g2-pasttense",
+      "gradeBand": "g2",
+      "title": "Past Tense Verbs",
+      "objective": "I can show an action already happened.",
+      "teach": [
+        {
+          "text": "Adding -ed often means the action already happened.",
+          "image": "⏪"
+        },
+        {
+          "text": "'jump' becomes 'jumped'; 'play' becomes 'played'."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Yesterday I ___ to the park.",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "walked",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "walk tomorrow",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "The past tense of 'play' is...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "played",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "plays",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which shows it already happened?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "cooked",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "cook",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar-g3-conjunctions",
+      "gradeBand": "g3",
+      "title": "Joining Words",
+      "objective": "I can join ideas with and, but, or.",
+      "teach": [
+        {
+          "text": "Conjunctions like and, but, and or connect words or ideas.",
+          "image": "🔗"
+        },
+        {
+          "text": "'I like cats and dogs.' 'I am tired but happy.'"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "I wanted to play, ___ it rained.",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "but",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "cat",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Pick the joining word: milk ___ cookies.",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "and",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "run",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which is a conjunction?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "or",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "jump",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar-g3-commas",
+      "gradeBand": "g3",
+      "title": "Commas in a List",
+      "objective": "I can use commas to separate a list.",
+      "teach": [
+        {
+          "text": "Use commas to separate three or more things in a list.",
+          "image": "✏️"
+        },
+        {
+          "text": "'I packed apples, grapes, and bread.'"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is written correctly?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "red, blue, and green",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "red blue and green",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Commas help separate items in a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "list",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "picture",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "How many commas in 'cats, dogs, and birds'?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "2",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "label": "Two",
+              "correct": true
+            }
+          ]
+        }
+      ]
     }
   ]
 }

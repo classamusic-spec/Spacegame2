@@ -65,6 +65,213 @@
         { "id": "q3", "prompt": "Who invented the light bulb design we use?", "answerStyle": "text",
           "answers": [ {"id":"a","label":"Thomas Edison","correct":true}, {"id":"b","label":"A king","correct":false} ] }
       ]
+    },
+    {
+      "id": "history-k-family",
+      "gradeBand": "k",
+      "title": "Families Long Ago",
+      "objective": "I know families lived differently long ago.",
+      "teach": [
+        {
+          "text": "Long ago, families had no phones, TVs, or cars.",
+          "image": "👨‍👩‍👧"
+        },
+        {
+          "text": "They told stories, read books, and played outside.",
+          "image": "📖"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Long ago, families had no...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Phones",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Food",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "How did people share news long ago?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Letters",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Text messages",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Family stories passed down are part of...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "History",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Math",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "history-g2-symbols",
+      "gradeBand": "g2",
+      "title": "American Symbols",
+      "objective": "I know symbols that stand for the USA.",
+      "teach": [
+        {
+          "text": "Symbols stand for our country.",
+          "image": "🇺🇸"
+        },
+        {
+          "text": "The flag, the bald eagle, and the Statue of Liberty are symbols of the USA.",
+          "image": "🦅"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which bird is a symbol of the USA?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Bald eagle",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Penguin",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "How many stars are on the US flag?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "50",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "10",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "The Statue of Liberty stands for...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Freedom",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Homework",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "history-g3-inventors",
+      "gradeBand": "g3",
+      "title": "Inventors and Explorers",
+      "objective": "I know people who explored and invented.",
+      "teach": [
+        {
+          "text": "Explorers traveled to new places; inventors made new things.",
+          "image": "🧭"
+        },
+        {
+          "text": "The Wright brothers built the first airplane.",
+          "image": "✈️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Who built the first flying airplane?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "The Wright brothers",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A chef",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A person who travels to discover new places is an...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Explorer",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Actor",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Someone who creates a new machine is an...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Inventor",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Artist",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

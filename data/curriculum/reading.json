@@ -97,6 +97,359 @@
         { "id": "q3", "prompt": "Small facts that support the main idea are called...", "answerStyle": "text",
           "answers": [ {"id":"a","label":"Details","correct":true}, {"id":"b","label":"Titles","correct":false}, {"id":"c","label":"Covers","correct":false} ] }
       ]
+    },
+    {
+      "id": "reading-k-directions",
+      "gradeBand": "k",
+      "title": "Following Directions",
+      "objective": "I can follow simple directions I read or hear.",
+      "teach": [
+        {
+          "text": "Reading helps us follow steps in order.",
+          "image": "👣"
+        },
+        {
+          "text": "First do step 1, then step 2.",
+          "image": "1️⃣"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "It says: 'Touch your nose.' What do you touch?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Your nose",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Your toes",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "It says: 'Clap two times.' How many claps?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "2",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "5",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "What word means do it FIRST?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "First",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Last",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "Never",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-g1-setting",
+      "gradeBand": "g1",
+      "title": "Characters and Setting",
+      "objective": "I can find who is in a story and where it happens.",
+      "teach": [
+        {
+          "text": "Characters are WHO is in the story. The setting is WHERE it happens.",
+          "image": "🏰"
+        },
+        {
+          "text": "Read: 'Lily played at the beach.' Lily is the character; the beach is the setting.",
+          "image": "🏖️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Read: 'Max slept in his bed.' Where is Max?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "In bed",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "At school",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Read: 'The fox ran in the forest.' Who is the character?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "The fox",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A car",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "The place a story happens is the...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Setting",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Title",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "Cover",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-g2-predict",
+      "gradeBand": "g2",
+      "title": "Making Predictions",
+      "objective": "I can guess what happens next using clues.",
+      "teach": [
+        {
+          "text": "A prediction is a smart guess about what comes next.",
+          "image": "🔮"
+        },
+        {
+          "text": "If dark clouds roll in, you can predict it will rain.",
+          "image": "🌧️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Clouds are dark and the wind blows. What will probably happen?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "It will rain",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "It will snow ice cream",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A kid is yawning in bed. What comes next?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "They fall asleep",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "They run a race",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A prediction is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Smart guess",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A title",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-g3-context",
+      "gradeBand": "g3",
+      "title": "Context Clues",
+      "objective": "I can use a sentence to figure out a new word.",
+      "teach": [
+        {
+          "text": "Context clues are other words that help you understand a new word.",
+          "image": "🔎"
+        },
+        {
+          "text": "In 'The gigantic whale was huge,' nearby words tell you gigantic means very big."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "'The arid desert had no water.' Arid means...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Very dry",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Very wet",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "'She was elated and jumped for joy.' Elated means...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Very happy",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Very tired",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Context clues are words that...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Help explain a new word",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Spell your name",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-g3-factopinion",
+      "gradeBand": "g3",
+      "title": "Fact or Opinion",
+      "objective": "I can tell a fact from an opinion.",
+      "teach": [
+        {
+          "text": "A fact is true and can be checked. An opinion is what someone feels.",
+          "image": "⚖️"
+        },
+        {
+          "text": "'The sky is blue' is a fact. 'Blue is the best color' is an opinion."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is a FACT?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Earth has one moon",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Pizza is the yummiest food",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which is an OPINION?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Recess is the most fun",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A week has 7 days",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Something you can prove true is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Fact",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Opinion",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

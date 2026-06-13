@@ -81,6 +81,383 @@
         { "id": "q3", "prompt": "Which has the 'oa' team like in 'boat'?", "answerStyle": "text",
           "answers": [ {"id":"a","label":"coat","correct":true}, {"id":"b","label":"cot","correct":false}, {"id":"c","label":"cut","correct":false} ] }
       ]
+    },
+    {
+      "id": "phonics-prek-alphabet",
+      "gradeBand": "prek",
+      "title": "The Alphabet",
+      "objective": "I know the alphabet has 26 letters.",
+      "teach": [
+        {
+          "text": "The alphabet is all our letters from A to Z.",
+          "image": "🔤"
+        },
+        {
+          "text": "It starts with A and ends with Z.",
+          "image": "🅰️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which letter starts the alphabet?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "A",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "M",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "Z",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which letter ENDS the alphabet?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Z",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "B",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "How many letters are in the alphabet?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "26",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "10",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "5",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phonics-k-shortvowels",
+      "gradeBand": "k",
+      "title": "Short Vowel Words",
+      "objective": "I can read short-vowel words like cat and pig.",
+      "teach": [
+        {
+          "text": "The vowels are a, e, i, o, u. They make short sounds in little words.",
+          "image": "🅰️"
+        },
+        {
+          "text": "'cat' has a short a, 'pig' has a short i.",
+          "image": "🐱",
+          "example": "c-a-t, p-i-g"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which word has a short a sound?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "cat",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "cake",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which word has a short i sound?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "pig",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "pie",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which is a vowel?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "e",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "t",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "m",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phonics-g1-digraphs",
+      "gradeBand": "g1",
+      "title": "Digraphs: sh, ch, th",
+      "objective": "I know two letters can make one sound.",
+      "teach": [
+        {
+          "text": "A digraph is two letters that make one sound, like sh, ch, and th.",
+          "image": "🔗"
+        },
+        {
+          "text": "'ship' starts with sh; 'chip' starts with ch.",
+          "image": "🚢"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What two letters start ship?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "sh",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "ch",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "th",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "What sound starts cheese?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "ch",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "sh",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which word starts with th?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "thumb",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "ship",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "chin",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phonics-g2-silente",
+      "gradeBand": "g2",
+      "title": "Silent E (Magic E)",
+      "objective": "I know silent e makes a vowel say its name.",
+      "teach": [
+        {
+          "text": "A silent e at the end makes the vowel say its long name.",
+          "image": "🪄"
+        },
+        {
+          "text": "'cap' becomes 'cape'; 'kit' becomes 'kite'.",
+          "image": "🪁",
+          "example": "kit → kite"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Add silent e to 'tub'. The word becomes...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "tube",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "tubby",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which word has a long vowel from silent e?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "cake",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "cat",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "'hop' with a silent e becomes...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "hope",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "hopp",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phonics-g2-bossyr",
+      "gradeBand": "g2",
+      "title": "Bossy R (ar, or)",
+      "objective": "I can read words with r-controlled vowels.",
+      "teach": [
+        {
+          "text": "When r follows a vowel, it changes the sound — we call it bossy r.",
+          "image": "👮"
+        },
+        {
+          "text": "'car' has ar; 'corn' has or.",
+          "image": "🚗"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which word has the ar sound?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "star",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "sit",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which word has the or sound?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "fork",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "fan",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "The 'ar' in 'car' sounds like in...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "far",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "fun",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

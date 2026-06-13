@@ -65,6 +65,211 @@
         { "id": "q3", "prompt": "Which state is the largest by land?", "answerStyle": "text",
           "answers": [ {"id":"a","label":"Alaska","correct":true}, {"id":"b","label":"Rhode Island","correct":false} ] }
       ]
+    },
+    {
+      "id": "geo-k-directions",
+      "gradeBand": "k",
+      "title": "Map Directions",
+      "objective": "I know north, south, east, and west.",
+      "teach": [
+        {
+          "text": "Maps have four main directions: north, south, east, west.",
+          "image": "🧭"
+        },
+        {
+          "text": "North is up, south is down, east is right, west is left."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "On a map, north is usually...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Up",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Down",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which direction is opposite of east?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "West",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "North",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A tool that shows direction is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Compass",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Clock",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geo-g1-landforms",
+      "gradeBand": "g1",
+      "title": "Land and Water Shapes",
+      "objective": "I can name mountains, rivers, and lakes.",
+      "teach": [
+        {
+          "text": "Land comes in shapes like mountains and hills.",
+          "image": "⛰️"
+        },
+        {
+          "text": "Water comes in shapes like rivers and lakes.",
+          "image": "🏞️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is a mountain?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "⛰️",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🌊",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A long line of moving water is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "River",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Hill",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Water with land all around it is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Lake",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Mountain",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geo-g3-statescaps",
+      "gradeBand": "g3",
+      "title": "States and Capitals",
+      "objective": "I know some states and their capitals.",
+      "teach": [
+        {
+          "text": "Every state has a capital city where its leaders work.",
+          "image": "🏛️"
+        },
+        {
+          "text": "The capital of Texas is Austin; California’s is Sacramento."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What is the capital of the whole USA?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Washington, D.C.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Texas",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A state's main government city is its...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Capital",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Beach",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which is a state?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Florida",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Paris",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

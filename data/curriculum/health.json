@@ -49,6 +49,213 @@
         { "id": "q3", "prompt": "Which is good exercise?", "answerStyle": "picture",
           "answers": [ {"id":"a","image":"🏃","correct":true}, {"id":"b","image":"🛋️","correct":false} ] }
       ]
+    },
+    {
+      "id": "health-prek-feelings",
+      "gradeBand": "prek",
+      "title": "Feelings",
+      "objective": "I can name how I feel.",
+      "teach": [
+        {
+          "text": "We all have feelings like happy, sad, and mad.",
+          "image": "🙂"
+        },
+        {
+          "text": "It is okay to feel different feelings.",
+          "image": "🤗"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which face is happy?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "😀",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "😢",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which face is sad?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "😢",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "😀",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "When you feel mad, a good idea is to...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Take a deep breath",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Hit someone",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health-k-safety",
+      "gradeBand": "k",
+      "title": "Staying Safe",
+      "objective": "I know simple safety rules.",
+      "teach": [
+        {
+          "text": "Safety rules keep us from getting hurt.",
+          "image": "🦺"
+        },
+        {
+          "text": "Look both ways before crossing, and buckle your seatbelt.",
+          "image": "🚦"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Before crossing the street you should...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Look both ways",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Close your eyes",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "In a car you should wear a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Seatbelt",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Hat",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A red traffic light means...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Stop",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Go fast",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health-g2-foodgroups",
+      "gradeBand": "g2",
+      "title": "Food Groups",
+      "objective": "I know foods belong to groups.",
+      "teach": [
+        {
+          "text": "Foods come in groups: fruits, vegetables, grains, protein, and dairy.",
+          "image": "🍽️"
+        },
+        {
+          "text": "Eating from each group keeps us healthy.",
+          "image": "🥗"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is a fruit?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🍎",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🥖",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which is a vegetable?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🥕",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🧀",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Milk and cheese are in the ___ group.",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Dairy",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Grain",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

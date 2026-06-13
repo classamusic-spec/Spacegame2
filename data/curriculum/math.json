@@ -177,6 +177,489 @@
         { "id": "q3", "prompt": "A shape cut into 4 equal parts shows...", "answerStyle": "text",
           "answers": [ {"id":"a","label":"Fourths","correct":true}, {"id":"b","label":"Halves","correct":false}, {"id":"c","label":"Thirds","correct":false} ] }
       ]
+    },
+    {
+      "id": "math-tod-bigsmall",
+      "gradeBand": "toddler",
+      "title": "Big and Small",
+      "objective": "I can tell big from small.",
+      "teach": [
+        {
+          "text": "Some things are big and some are small.",
+          "image": "🐘"
+        },
+        {
+          "text": "An elephant is big. A mouse is small.",
+          "image": "🐭"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is BIG?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐘",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🐜",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which is small?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐭",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🐳",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which is the big star?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "⭐",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "✨",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math-prek-sorting",
+      "gradeBand": "prek",
+      "title": "Sorting and Matching",
+      "objective": "I can match things that are the same.",
+      "teach": [
+        {
+          "text": "We can group things that are alike by color or shape.",
+          "image": "🟦"
+        },
+        {
+          "text": "Find the one that matches!",
+          "image": "🔍"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which matches 🍎?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🍎",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🚗",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "image": "🐶",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which is the same as 🔵?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🔵",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🔴",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which two are both fruit? Pick the fruit.",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🍌",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "⚽",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math-k-subtract10",
+      "gradeBand": "k",
+      "title": "Taking Away",
+      "objective": "I can take away to find how many are left.",
+      "teach": [
+        {
+          "text": "Taking away means some go away, and we count what is left.",
+          "image": "➖"
+        },
+        {
+          "text": "5 birds, 2 fly off, 3 are left.",
+          "image": "🐦",
+          "example": "5 - 2 = 3"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What is 4 - 1?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "3",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "4",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "2",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "What is 6 - 2?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "4",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "5",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "3",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "3 take away 3 is...",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "0",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "3",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "1",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math-g1-placevalue",
+      "gradeBand": "g1",
+      "title": "Tens and Ones",
+      "objective": "I understand tens and ones in a number.",
+      "teach": [
+        {
+          "text": "Two-digit numbers have a tens place and a ones place.",
+          "image": "🔟"
+        },
+        {
+          "text": "In 24, the 2 means 2 tens (20) and the 4 means 4 ones.",
+          "image": "🧮",
+          "example": "24 = 20 + 4"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "How many tens are in 30?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "3",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "30",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "0",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "What is 2 tens and 5 ones?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "25",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "52",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "7",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "In 47, the ones digit is...",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "7",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "4",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "40",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math-g2-money",
+      "gradeBand": "g2",
+      "title": "Counting Coins",
+      "objective": "I can count coins to make amounts.",
+      "teach": [
+        {
+          "text": "A penny is 1 cent, a nickel is 5 cents, a dime is 10 cents.",
+          "image": "🪙"
+        },
+        {
+          "text": "Add coins to find the total.",
+          "image": "💰",
+          "example": "2 dimes = 20 cents"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "How many cents is a dime?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "10",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "5",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "1",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "How many cents are 2 nickels?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "10",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "5",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "2",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A dime plus a penny is how many cents?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "11",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "10",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "2",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math-g3-division",
+      "gradeBand": "g3",
+      "title": "Division",
+      "objective": "I can share into equal groups.",
+      "teach": [
+        {
+          "text": "Division splits a number into equal groups.",
+          "image": "➗"
+        },
+        {
+          "text": "12 shared among 3 friends is 4 each.",
+          "image": "🍪",
+          "example": "12 ÷ 3 = 4"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What is 10 ÷ 2?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "5",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "2",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "8",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "What is 9 ÷ 3?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "3",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "6",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "2",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Share 8 cookies on 4 plates. How many per plate?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "2",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "4",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "8",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

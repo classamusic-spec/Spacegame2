@@ -49,6 +49,213 @@
         { "id": "q3", "prompt": "Warm colors remind us of...", "answerStyle": "text",
           "answers": [ {"id":"a","label":"Fire and sun","correct":true}, {"id":"b","label":"Ice and water","correct":false} ] }
       ]
+    },
+    {
+      "id": "arts-prek-shapes",
+      "gradeBand": "prek",
+      "title": "Shapes in Art",
+      "objective": "I can find shapes in pictures.",
+      "teach": [
+        {
+          "text": "Artists use shapes like circles, squares, and triangles.",
+          "image": "🔷"
+        },
+        {
+          "text": "A house can be a square with a triangle roof.",
+          "image": "🏠"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is a triangle?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🔺",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "⭕",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which is a circle?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "⭕",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🟥",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A roof is often shaped like a...",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🔺",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "⬛",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arts-k-lines",
+      "gradeBand": "k",
+      "title": "Lines and Patterns",
+      "objective": "I can see lines and patterns.",
+      "teach": [
+        {
+          "text": "Lines can be straight, curvy, or zigzag.",
+          "image": "〰️"
+        },
+        {
+          "text": "A pattern repeats, like red, blue, red, blue.",
+          "image": "🔴"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What comes next: red, blue, red, ___?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "blue",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "green",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A line that goes up and down sharply is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Zigzag",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Circle",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Something that repeats is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Pattern",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Puddle",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arts-g2-famousart",
+      "gradeBand": "g2",
+      "title": "Famous Artists",
+      "objective": "I know art can be made in many styles.",
+      "teach": [
+        {
+          "text": "Artists paint, sculpt, and draw in their own styles.",
+          "image": "🖼️"
+        },
+        {
+          "text": "Vincent van Gogh painted swirly starry skies.",
+          "image": "🌌"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which artist painted \"The Starry Night\"?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Van Gogh",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A chef",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A statue carved from stone is called a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Sculpture",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Song",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A place to see famous art is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Museum",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Garage",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

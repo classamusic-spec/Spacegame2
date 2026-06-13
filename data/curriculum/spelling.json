@@ -65,6 +65,279 @@
         { "id": "q3", "prompt": "Which is spelled correctly?", "answerStyle": "text",
           "answers": [ {"id":"a","label":"thumb","correct":true}, {"id":"b","label":"thum","correct":false} ] }
       ]
+    },
+    {
+      "id": "spelling-g1-blends",
+      "gradeBand": "g1",
+      "title": "Spelling Blends",
+      "objective": "I can spell words that start with two blended sounds.",
+      "teach": [
+        {
+          "text": "A blend is two letters you hear together, like st or fl.",
+          "image": "🧩"
+        },
+        {
+          "text": "'stop' starts with st; 'flag' starts with fl."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is spelled correctly?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "stop",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "sop",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which is spelled correctly?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "flag",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "fag",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which is spelled correctly?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "frog",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "fog",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spelling-g2-double",
+      "gradeBand": "g2",
+      "title": "Double Consonants",
+      "objective": "I can spell words with double letters.",
+      "teach": [
+        {
+          "text": "Some words have two of the same letter in the middle or end.",
+          "image": "✌️"
+        },
+        {
+          "text": "'ball', 'egg', and 'kitten' have double letters."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is spelled correctly?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "ball",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "bal",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which is spelled correctly?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "egg",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "eg",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which is spelled correctly?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "kitten",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "kiten",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spelling-g3-compound",
+      "gradeBand": "g3",
+      "title": "Compound Words",
+      "objective": "I can spell two small words joined into one.",
+      "teach": [
+        {
+          "text": "A compound word is two words joined together.",
+          "image": "🔗"
+        },
+        {
+          "text": "'sun' + 'flower' = 'sunflower'.",
+          "image": "🌻"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "'rain' + 'bow' spells...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "rainbow",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "ranbow",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "'foot' + 'ball' spells...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "football",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "futball",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "'star' + 'fish' spells...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "starfish",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "starfsh",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spelling-g3-contractions",
+      "gradeBand": "g3",
+      "title": "Contractions",
+      "objective": "I can spell contractions with an apostrophe.",
+      "teach": [
+        {
+          "text": "A contraction joins two words and uses an apostrophe for missing letters.",
+          "image": "✂️"
+        },
+        {
+          "text": "'do not' becomes 'don't'."
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "'can not' shortens to...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "can't",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "cant",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "'I am' shortens to...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "I'm",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Im",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "'it is' shortens to...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "it's",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "its",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }
