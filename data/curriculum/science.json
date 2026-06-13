@@ -511,6 +511,75 @@
           ]
         }
       ]
+    },
+    {
+      "id": "science-tod-hotcold",
+      "gradeBand": "toddler",
+      "title": "Hot and Cold",
+      "objective": "I can tell hot from cold.",
+      "teach": [
+        {
+          "text": "Some things are hot and some are cold.",
+          "image": "🌡️"
+        },
+        {
+          "text": "The sun is hot. Ice is cold!",
+          "image": "☀️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which one is HOT?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "☀️",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🧊",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which one is COLD?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "❄️",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🔥",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which one is warm and bright?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🔥",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🧊",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

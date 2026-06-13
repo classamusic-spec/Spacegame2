@@ -256,6 +256,149 @@
           ]
         }
       ]
+    },
+    {
+      "id": "arts-tod-colors",
+      "gradeBand": "toddler",
+      "title": "Find the Color",
+      "objective": "I can name colors.",
+      "teach": [
+        {
+          "text": "Colors are all around us!",
+          "image": "🌈"
+        },
+        {
+          "text": "Red, blue, and yellow are colors.",
+          "image": "🔴"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which one is RED?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🔴",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🔵",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which one is BLUE?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🔵",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🟡",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which one is GREEN?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🟢",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🟣",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arts-g3-secondary",
+      "gradeBand": "g3",
+      "title": "Secondary Colors",
+      "objective": "I know secondary colors come from mixing.",
+      "teach": [
+        {
+          "text": "Secondary colors are made by mixing two primary colors.",
+          "image": "🎨"
+        },
+        {
+          "text": "Green, orange, and purple are secondary colors.",
+          "image": "🟢"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is a secondary color?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Green",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Red",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "Blue",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Mixing red and blue makes...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Purple",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Orange",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Secondary colors are made by...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Mixing two primaries",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Using one color",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

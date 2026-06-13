@@ -272,6 +272,144 @@
           ]
         }
       ]
+    },
+    {
+      "id": "history-tod-oldnew",
+      "gradeBand": "toddler",
+      "title": "Old and New",
+      "objective": "I can tell old things from new things.",
+      "teach": [
+        {
+          "text": "Long ago, people used different things than we do now.",
+          "image": "🕰️"
+        },
+        {
+          "text": "Long ago there were candles; now we have light bulbs.",
+          "image": "🕯️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is from long ago?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🕯️",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "💡",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which is new today?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "📱",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "📜",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which did people ride long ago?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐴",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🚀",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "history-prek-longago",
+      "gradeBand": "prek",
+      "title": "Life Long Ago",
+      "objective": "I know life was different long ago.",
+      "teach": [
+        {
+          "text": "Long ago there were no phones or televisions.",
+          "image": "📺"
+        },
+        {
+          "text": "People wrote letters and played outside.",
+          "image": "✉️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Long ago, people had no...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Phones",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Hands",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "How did people send messages long ago?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Letters",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Texts",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which is from long ago?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐴",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🚗",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

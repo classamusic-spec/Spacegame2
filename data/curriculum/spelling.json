@@ -338,6 +338,159 @@
           ]
         }
       ]
+    },
+    {
+      "id": "spelling-tod-letters",
+      "gradeBand": "toddler",
+      "title": "My Letters",
+      "objective": "I can find letters.",
+      "teach": [
+        {
+          "text": "Letters make up all the words we write.",
+          "image": "🔠"
+        },
+        {
+          "text": "Can you find the letter? Look at the shapes!",
+          "image": "🅰️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which one is the letter A?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "A",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "7",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "#",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which one is the letter B?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "B",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "3",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which one is a letter?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "S",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "5",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spelling-prek-wordlength",
+      "gradeBand": "prek",
+      "title": "Letters in Words",
+      "objective": "I can count letters in a word.",
+      "teach": [
+        {
+          "text": "Words are made of letters in a row.",
+          "image": "✏️"
+        },
+        {
+          "text": "The word CAT has three letters: C, A, T.",
+          "image": "🐱"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "How many letters in CAT?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "3",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "2",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "4",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "How many letters in GO?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "2",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "3",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which letter starts SUN?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "S",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "U",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "N",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

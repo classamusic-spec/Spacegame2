@@ -126,7 +126,8 @@ which planet is set in `src/config/planets.ts`.
 - **Curriculum overhaul (done):** real **lessons** (teach then practice) across
   the whole elementary curriculum — Math, Reading, Phonics, Spelling, Grammar,
   Science, Social Studies (History & Geography), and Arts/Music/Health. Each
-  planet is now a coherent **subject world** (98 lessons / 294 practice items).
+  planet is now a coherent **subject world** (117 lessons / 351 practice items,
+  with at least one lesson per subject at every grade band toddler → 3rd).
 - **First-person cockpit (done):** rocket flight deck & UFO dome views.
 - **Phase 4 (done):** spoken narration — lessons, questions, and instructions
   are read aloud on-device (Web Speech API, no assets), with per-card 🔊 replay

@@ -270,6 +270,144 @@
           ]
         }
       ]
+    },
+    {
+      "id": "geo-tod-home",
+      "gradeBand": "toddler",
+      "title": "Where I Live",
+      "objective": "I know a home is a place to live.",
+      "teach": [
+        {
+          "text": "A home is where we live and sleep.",
+          "image": "🏠"
+        },
+        {
+          "text": "People live in houses and apartments.",
+          "image": "🏢"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which one is a house?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🏠",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🚌",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Where do we sleep at night?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🏠",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🏫",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which is a place with lots of water?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🌊",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "⛰️",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geo-prek-places",
+      "gradeBand": "prek",
+      "title": "Places We Go",
+      "objective": "I can name places in my town.",
+      "teach": [
+        {
+          "text": "We go to many places, like school and the park.",
+          "image": "🏫"
+        },
+        {
+          "text": "A store is where we buy food and things.",
+          "image": "🏬"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Where do you go to learn?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🏫",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🏥",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Where do you play on swings?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🏞️",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🏪",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Where do we buy food?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Store",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "School",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

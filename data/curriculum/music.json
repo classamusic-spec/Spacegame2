@@ -256,6 +256,218 @@
           ]
         }
       ]
+    },
+    {
+      "id": "music-tod-makemusic",
+      "gradeBand": "toddler",
+      "title": "Making Music",
+      "objective": "I can find things that make music.",
+      "teach": [
+        {
+          "text": "Some things make music when we play them.",
+          "image": "🎵"
+        },
+        {
+          "text": "A drum and a bell make music!",
+          "image": "🥁"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which makes music?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🥁",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🪑",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which makes music?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🎸",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🍎",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which do you ring?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🔔",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🧦",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "music-prek-fastslow",
+      "gradeBand": "prek",
+      "title": "Fast and Slow",
+      "objective": "I can tell fast music from slow music.",
+      "teach": [
+        {
+          "text": "Music can go fast or slow.",
+          "image": "🎶"
+        },
+        {
+          "text": "A bunny hops fast; a turtle walks slow.",
+          "image": "🐢"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "A turtle's song would be...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Slow",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Fast",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A racing car song would be...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Fast",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Slow",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which animal moves fast?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐇",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🐌",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "music-g3-staff",
+      "gradeBand": "g3",
+      "title": "The Musical Staff",
+      "objective": "I know music is written on a staff.",
+      "teach": [
+        {
+          "text": "Music is written on five lines called a staff.",
+          "image": "🎼"
+        },
+        {
+          "text": "Notes sit on the lines and spaces to show pitch.",
+          "image": "🎵"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "How many lines are on a music staff?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "5",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "3",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "10",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Notes on a staff show the...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Pitch",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Color",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "The five lines for writing music are the...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Staff",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Stage",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -256,6 +256,213 @@
           ]
         }
       ]
+    },
+    {
+      "id": "health-tod-clean",
+      "gradeBand": "toddler",
+      "title": "Keeping Clean",
+      "objective": "I know how to stay clean.",
+      "teach": [
+        {
+          "text": "Washing keeps us clean and healthy.",
+          "image": "🧼"
+        },
+        {
+          "text": "We use soap and water to wash our hands.",
+          "image": "🚿"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What do we wash with?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🧼",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🧱",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which keeps teeth clean?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🪥",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🍭",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which is a healthy snack?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🍎",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🍬",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health-prek-teeth",
+      "gradeBand": "prek",
+      "title": "Brush Your Teeth",
+      "objective": "I know to brush my teeth.",
+      "teach": [
+        {
+          "text": "Brushing keeps our teeth strong and healthy.",
+          "image": "🪥"
+        },
+        {
+          "text": "We brush in the morning and before bed.",
+          "image": "🌙"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What do we use to brush teeth?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Toothbrush",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Fork",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "How many times a day should we brush?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "2",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "0",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which is good for your teeth?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🥕",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🍭",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health-g3-habits",
+      "gradeBand": "g3",
+      "title": "Healthy Habits",
+      "objective": "I know habits that keep me healthy.",
+      "teach": [
+        {
+          "text": "Healthy habits include eating well, exercising, and sleeping enough.",
+          "image": "💪"
+        },
+        {
+          "text": "Germs spread by touch, so washing hands stops them.",
+          "image": "🧫"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "About how many hours of sleep do kids need?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "10",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "2",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Washing hands helps stop...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Germs",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Rainbows",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which is a healthy habit?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Exercising daily",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Skipping sleep",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

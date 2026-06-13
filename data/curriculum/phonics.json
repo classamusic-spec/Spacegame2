@@ -458,6 +458,149 @@
           ]
         }
       ]
+    },
+    {
+      "id": "phonics-tod-animalsounds",
+      "gradeBand": "toddler",
+      "title": "Animal Sounds",
+      "objective": "I can hear sounds animals make.",
+      "teach": [
+        {
+          "text": "Animals make sounds. A cow says moo!",
+          "image": "🐮"
+        },
+        {
+          "text": "A dog says woof and a cat says meow.",
+          "image": "🐶"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which animal says \"moo\"?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐮",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🐔",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which animal says \"woof\"?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐶",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🐟",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which animal says \"meow\"?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐱",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🐸",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phonics-g3-affixes",
+      "gradeBand": "g3",
+      "title": "Prefixes and Suffixes",
+      "objective": "I know small word parts change meaning.",
+      "teach": [
+        {
+          "text": "A prefix goes at the start. \"un-\" means not, so \"unhappy\" means not happy.",
+          "image": "🔤"
+        },
+        {
+          "text": "A suffix goes at the end. \"-er\" can mean a person who does it, like \"teacher\".",
+          "image": "✏️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What does \"un-\" mean in \"unlock\"?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Not / opposite",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Very",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A person who paints is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "painter",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "paintly",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which prefix means \"again\"?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "re-",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "pre-",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "un-",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -337,6 +337,144 @@
           ]
         }
       ]
+    },
+    {
+      "id": "grammar-tod-naming",
+      "gradeBand": "toddler",
+      "title": "Naming Things",
+      "objective": "I can name things I see.",
+      "teach": [
+        {
+          "text": "Naming words tell what something is.",
+          "image": "🏷️"
+        },
+        {
+          "text": "Dog, ball, and cup are all names of things.",
+          "image": "🐶"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which one is a ball?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "⚽",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🐶",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which one is a cup?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "☕",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🚗",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which one is a cat?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐱",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🍎",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar-prek-onemany",
+      "gradeBand": "prek",
+      "title": "One and Many",
+      "objective": "I can tell one from many.",
+      "teach": [
+        {
+          "text": "One means a single thing. Many means lots of them.",
+          "image": "☝️"
+        },
+        {
+          "text": "One apple, or many apples!",
+          "image": "🍎"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which shows MANY?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🍎🍎🍎",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🍎",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which shows ONE?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "⭐",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "⭐⭐⭐",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "More than one is called...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "many",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "one",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }
