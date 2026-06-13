@@ -410,6 +410,97 @@
           ]
         }
       ]
+    },
+    {
+      "id": "history-g3-flag",
+      "gradeBand": "g3",
+      "title": "The Flag and Pledge",
+      "objective": "I know about the US flag.",
+      "teach": [
+        {
+          "text": "The US flag has 50 stars for the 50 states and 13 stripes for the first colonies.",
+          "image": "🇺🇸"
+        },
+        {
+          "text": "People say the Pledge of Allegiance to show they care about their country.",
+          "image": "🤚"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "How many stars are on the US flag?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "50",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "13",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "100",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "How many stripes does the flag have?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "13",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "50",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "The stars stand for the...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "States",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Oceans",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "The Pledge of Allegiance shows we...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Care about our country",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Are hungry",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -399,6 +399,97 @@
           ]
         }
       ]
+    },
+    {
+      "id": "arts-g1-drawpeople",
+      "gradeBand": "g1",
+      "title": "Drawing People",
+      "objective": "I can draw a simple person.",
+      "teach": [
+        {
+          "text": "We can draw a person with simple shapes: a circle head and lines for arms and legs.",
+          "image": "🧍"
+        },
+        {
+          "text": "Faces have two eyes, a nose, and a mouth.",
+          "image": "🙂"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "How many eyes does a face usually have?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "2",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "1",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "4",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A simple head can be drawn as a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Circle",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Square spiral",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which is part of a face?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Nose",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Wheel",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "We use ___ for arms and legs in a stick figure.",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Lines",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Dots only",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

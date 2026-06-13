@@ -87,6 +87,10 @@ export class ProgressState implements GameState {
         this.game.toggleSfx();
         this.render();
       }),
+      this.toggle('🎵 Music', p.settings.music, () => {
+        this.game.toggleMusic();
+        this.render();
+      }),
     ]);
 
     const actions = el('div', { class: 'button-col' }, [

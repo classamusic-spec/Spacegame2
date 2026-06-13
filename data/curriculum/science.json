@@ -580,6 +580,264 @@
           ]
         }
       ]
+    },
+    {
+      "id": "science-k-weather",
+      "gradeBand": "k",
+      "title": "Weather",
+      "objective": "I can name kinds of weather.",
+      "teach": [
+        {
+          "text": "Weather is what the sky and air are doing outside.",
+          "image": "🌤️"
+        },
+        {
+          "text": "It can be sunny, rainy, snowy, or windy.",
+          "image": "🌧️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which shows rainy weather?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🌧️",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "☀️",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which shows snowy weather?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "❄️",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🌈",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "On a sunny day the sky is...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Bright",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Dark and stormy",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "What do you wear in the rain?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "A raincoat",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Sunglasses only",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science-g2-plantsgrow",
+      "gradeBand": "g2",
+      "title": "How Plants Grow",
+      "objective": "I know what plants need to grow.",
+      "teach": [
+        {
+          "text": "Plants need sunlight, water, air, and soil to grow.",
+          "image": "🌱"
+        },
+        {
+          "text": "A seed sprouts, grows roots, then leaves and flowers.",
+          "image": "🌻"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What do plants need from the sky to make food?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Sunlight",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Pizza",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "What do we give plants to drink?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Water",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Soda",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A baby plant grows from a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Seed",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Rock",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Plant roots grow into the...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Soil",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Clouds",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science-g3-foodchain",
+      "gradeBand": "g3",
+      "title": "Food Chains",
+      "objective": "I know how living things get energy.",
+      "teach": [
+        {
+          "text": "A food chain shows who eats what to get energy.",
+          "image": "🌿"
+        },
+        {
+          "text": "Sun → grass → rabbit → fox.",
+          "image": "🦊"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Where does a food chain get its energy to start?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "The Sun",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "The Moon",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A rabbit eats grass, so the rabbit is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Plant eater",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Rock eater",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "In \"grass → rabbit → fox\", what eats the rabbit?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "The fox",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "The grass",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Plants make their own food using...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Sunlight",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Sand",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

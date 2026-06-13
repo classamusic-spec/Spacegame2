@@ -38,7 +38,7 @@ export function createDefaultProfile(): PlayerProfile {
     badges: [],
     planetProgress: {},
     lessonsCompleted: [],
-    settings: { sfx: true, music: false, narration: true },
+    settings: { sfx: true, music: true, narration: true },
     onboarded: false,
   };
 }

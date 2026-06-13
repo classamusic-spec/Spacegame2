@@ -450,6 +450,178 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-tod-match",
+      "gradeBand": "toddler",
+      "title": "Find the Match",
+      "objective": "I can match pictures that are the same.",
+      "teach": [
+        {
+          "text": "Matching means finding two that look the same.",
+          "image": "🔍"
+        },
+        {
+          "text": "Find the picture that matches!",
+          "image": "👀"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which matches 🐶?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐶",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🐱",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which matches ⭐?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "⭐",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "❤️",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which matches 🍌?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🍌",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🍎",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Which matches 🚗?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🚗",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "✈️",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-g3-fiction",
+      "gradeBand": "g3",
+      "title": "Fiction and Nonfiction",
+      "objective": "I can tell made-up stories from true facts.",
+      "teach": [
+        {
+          "text": "Fiction is a made-up story. Nonfiction gives true facts.",
+          "image": "📚"
+        },
+        {
+          "text": "A talking dragon is fiction. A book about real sharks is nonfiction.",
+          "image": "🐉"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "A story about a talking robot is...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Fiction",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Nonfiction",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A book of true facts about planets is...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Nonfiction",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Fiction",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Nonfiction is mostly...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "True",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Made up",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "A fairy tale is...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Fiction",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Nonfiction",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

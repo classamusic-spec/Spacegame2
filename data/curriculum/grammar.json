@@ -475,6 +475,178 @@
           ]
         }
       ]
+    },
+    {
+      "id": "grammar-g1-telling",
+      "gradeBand": "g1",
+      "title": "Telling Sentences",
+      "objective": "I know a sentence tells a complete idea.",
+      "teach": [
+        {
+          "text": "A telling sentence shares a complete idea and ends with a period.",
+          "image": "🖊️"
+        },
+        {
+          "text": "\"The dog runs.\" is a complete sentence.",
+          "image": "🐕"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is a complete sentence?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Birds can fly.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "the the the",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A telling sentence ends with a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Period .",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Smiley",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which group of words tells an idea?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "I like cake.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "cake cake red",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "A sentence begins with a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Capital letter",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Number",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar-g3-synonyms",
+      "gradeBand": "g3",
+      "title": "Synonyms and Antonyms",
+      "objective": "I know words that mean the same or opposite.",
+      "teach": [
+        {
+          "text": "Synonyms mean the SAME thing, like big and large.",
+          "image": "🟰"
+        },
+        {
+          "text": "Antonyms are OPPOSITES, like hot and cold.",
+          "image": "↔️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is a synonym for \"happy\"?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "glad",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "sad",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which is the opposite of \"up\"?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "down",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "high",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A synonym for \"fast\" is...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "quick",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "slow",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "An antonym for \"big\" is...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "small",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "huge",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

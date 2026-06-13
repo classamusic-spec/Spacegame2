@@ -660,6 +660,472 @@
           ]
         }
       ]
+    },
+    {
+      "id": "math-tod-howmany",
+      "gradeBand": "toddler",
+      "title": "How Many?",
+      "objective": "I can count up to 3 things.",
+      "teach": [
+        {
+          "text": "Point and count each thing: one, two, three!",
+          "image": "👆"
+        },
+        {
+          "text": "The last number you say is how many.",
+          "image": "3️⃣"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "How many?",
+          "promptImage": "🍪🍪",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "2",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "1",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "3",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "How many?",
+          "promptImage": "🐤🐤🐤",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "3",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "2",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "How many?",
+          "promptImage": "🎈",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "1",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "2",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "How many?",
+          "promptImage": "🚗🚗",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "2",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "3",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math-k-patterns",
+      "gradeBand": "k",
+      "title": "Patterns",
+      "objective": "I can find what comes next in a pattern.",
+      "teach": [
+        {
+          "text": "A pattern repeats the same way over and over.",
+          "image": "🔁"
+        },
+        {
+          "text": "Circle, square, circle, square… square comes next!",
+          "image": "🔵"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "What comes next: 🔴🔵🔴🔵🔴 ___?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "🔵",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "🔴",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "What comes next: ⭐🌙⭐🌙 ___?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "⭐",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "🌙",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Finish it: A B A B ___",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "A",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "C",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "What comes next: 1, 2, 1, 2, ___?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "1",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "3",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math-g1-compare",
+      "gradeBand": "g1",
+      "title": "Comparing Numbers",
+      "objective": "I can tell which number is greater or less.",
+      "teach": [
+        {
+          "text": "Greater than means more. Less than means fewer.",
+          "image": "⚖️"
+        },
+        {
+          "text": "8 is greater than 5. 3 is less than 6.",
+          "image": "🔢",
+          "example": "8 > 5"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which number is greater?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "9",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "4",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "7",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which number is less?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "2",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "8",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "5",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Is 6 greater or less than 10?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Less",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Greater",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Which is the biggest?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "12",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "9",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "11",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math-g2-skip",
+      "gradeBand": "g2",
+      "title": "Skip Counting",
+      "objective": "I can count by 2s, 5s, and 10s.",
+      "teach": [
+        {
+          "text": "Skip counting hops over numbers in equal steps.",
+          "image": "🐰"
+        },
+        {
+          "text": "By 5s: 5, 10, 15, 20…",
+          "image": "🖐️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Count by 2s: 2, 4, 6, ___?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "8",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "7",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "9",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Count by 5s: 5, 10, 15, ___?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "20",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "16",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Count by 10s: 10, 20, 30, ___?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "40",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "35",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Count by 2s: 10, 12, 14, ___?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "16",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "15",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math-g3-measure",
+      "gradeBand": "g3",
+      "title": "Measuring Length",
+      "objective": "I can measure and compare lengths.",
+      "teach": [
+        {
+          "text": "We measure length with units like inches and centimeters.",
+          "image": "📏"
+        },
+        {
+          "text": "12 inches make 1 foot.",
+          "image": "🦶",
+          "example": "12 in = 1 ft"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "How many inches are in 1 foot?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "12",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "10",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "3",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which is longer?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "A bus",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A pencil",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which tool measures length?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "A ruler",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A clock",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "A pencil is about 7 ___ long. Pick the number that fits inches.",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "7",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "70",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

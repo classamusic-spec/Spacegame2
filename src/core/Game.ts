@@ -10,7 +10,8 @@ import { CurriculumLoader } from '../curriculum/CurriculumLoader';
 import { QuestionPicker } from '../curriculum/QuestionPicker';
 import { UIRoot } from '../ui/UIRoot';
 import { narrator } from '../utils/narrator';
-import { Sfx, setSfxEnabled } from '../utils/audio';
+import { Sfx, setSfxEnabled, unlockAudio } from '../utils/audio';
+import { music } from '../utils/music';
 
 import { StartScreenState } from '../states/StartScreenState';
 import { GradeSelectState } from '../states/GradeSelectState';
@@ -54,9 +55,26 @@ export class Game {
     // Apply the saved narration (read-aloud) preference and wire the HUD toggle.
     narrator.setEnabled(this.profile.settings.narration);
     setSfxEnabled(this.profile.settings.sfx);
+    music.setEnabled(this.profile.settings.music);
     this.ui.hud.setNarration(this.profile.settings.narration, () => this.toggleNarration());
 
+    // Browsers block audio until a gesture; start music on the first tap.
+    const onFirstGesture = () => {
+      unlockAudio();
+      if (this.profile.settings.music) music.start();
+      window.removeEventListener('pointerdown', onFirstGesture);
+    };
+    window.addEventListener('pointerdown', onFirstGesture);
+
     this.registerStates();
+  }
+
+  /** Flip gentle background music and persist. */
+  toggleMusic(): void {
+    const on = !this.profile.settings.music;
+    this.profile.settings.music = on;
+    music.setEnabled(on);
+    this.persistProfile();
   }
 
   /** Flip read-aloud narration, persist it, and refresh the toggle icon. */
@@ -85,6 +103,7 @@ export class Game {
     this.rewards.syncUnlocks();
     narrator.setEnabled(this.profile.settings.narration);
     setSfxEnabled(this.profile.settings.sfx);
+    music.setEnabled(this.profile.settings.music);
     this.ui.hud.setNarration(this.profile.settings.narration, () => this.toggleNarration());
   }
 

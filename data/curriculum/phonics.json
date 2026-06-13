@@ -601,6 +601,92 @@
           ]
         }
       ]
+    },
+    {
+      "id": "phonics-prek-startsounds",
+      "gradeBand": "prek",
+      "title": "Starting Sounds",
+      "objective": "I can hear the first sound in more words.",
+      "teach": [
+        {
+          "text": "Listen closely to how a word begins.",
+          "image": "👂"
+        },
+        {
+          "text": "\"Moon\" starts with /m/. \"Dog\" starts with /d/.",
+          "image": "🌙"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which starts with /m/?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🌙",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🐶",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which starts with /d/?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐶",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🍎",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which starts with /f/?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐟",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "☀️",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Which starts with /k/?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🔑",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🐝",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

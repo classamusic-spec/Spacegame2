@@ -15,6 +15,11 @@ function audioCtx(): AudioContext | null {
   return ctx;
 }
 
+/** The shared AudioContext (used by SFX and background music). */
+export function getAudioContext(): AudioContext | null {
+  return audioCtx();
+}
+
 /** Browsers require a user gesture before audio can play; call on first tap. */
 export function unlockAudio(): void {
   const c = audioCtx();

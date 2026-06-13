@@ -126,7 +126,7 @@ which planet is set in `src/config/planets.ts`.
 - **Curriculum overhaul (done):** real **lessons** (teach then practice) across
   the whole elementary curriculum — Math, Reading, Phonics, Spelling, Grammar,
   Science, Social Studies (History & Geography), and Arts/Music/Health. Each
-  planet is now a coherent **subject world** (117 lessons / 351 practice items,
+  planet is now a coherent **subject world** (132 lessons / 411 practice items,
   with at least one lesson per subject at every grade band toddler → 3rd).
 - **First-person cockpit (done):** rocket flight deck & UFO dome views.
 - **Phase 4 (done):** spoken narration — lessons, questions, and instructions
@@ -134,5 +134,8 @@ which planet is set in `src/config/planets.ts`.
   and a Read Aloud toggle, so pre-readers can play independently.
 - **Phase 5 (in progress):** **Progress & parent dashboard** — overall stats
   (stars, lessons, worlds unlocked, badges), per-subject progress bars for the
-  child's grade, a badge trophy shelf, and settings (Read Aloud, Sound, Change
-  Grade, Reset Progress). Next: content-authoring tools.
+  child's grade, a badge trophy shelf, and settings (Read Aloud, Sound, **Music**,
+  Change Grade, Reset Progress). Next: content-authoring tools.
+- **Gentle space music (done):** a calm, procedural ambient soundtrack — a
+  breathing chord pad under sparse pentatonic "twinkles", synthesized live with
+  the Web Audio API (no assets), with an on/off toggle.
