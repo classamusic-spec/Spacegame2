@@ -1,0 +1,47 @@
+{
+  "planet": "mars",
+  "subject": "math",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mars-math-prek-001", "subject": "math", "gradeBand": "prek", "planet": "mars",
+      "prompt": "Mars has 2 moons. Count them!", "promptImage": "🌑🌑", "answerStyle": "number", "difficulty": 1,
+      "answers": [ {"id":"a","label":"2","correct":true}, {"id":"b","label":"1","correct":false}, {"id":"c","label":"3","correct":false} ]
+    },
+    {
+      "id": "mars-math-k-001", "subject": "math", "gradeBand": "k", "planet": "mars",
+      "prompt": "2 rovers plus 2 more rovers. How many?", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"4","correct":true}, {"id":"b","label":"3","correct":false}, {"id":"c","label":"5","correct":false} ]
+    },
+    {
+      "id": "mars-math-k-002", "subject": "math", "gradeBand": "k", "planet": "mars",
+      "prompt": "What is 1 + 4?", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"5","correct":true}, {"id":"b","label":"4","correct":false}, {"id":"c","label":"6","correct":false} ]
+    },
+    {
+      "id": "mars-math-k-003", "subject": "math", "gradeBand": "k", "planet": "mars",
+      "prompt": "Count down: 3, 2, 1, ___!", "answerStyle": "text", "difficulty": 1,
+      "answers": [ {"id":"a","label":"Blast off!","correct":true}, {"id":"b","label":"4","correct":false}, {"id":"c","label":"10","correct":false} ]
+    },
+    {
+      "id": "mars-math-g1-001", "subject": "math", "gradeBand": "g1", "planet": "mars",
+      "prompt": "A rover drives 7 meters, then 5 more. How far total?", "answerStyle": "number", "difficulty": 3,
+      "answers": [ {"id":"a","label":"12","correct":true}, {"id":"b","label":"11","correct":false}, {"id":"c","label":"13","correct":false} ]
+    },
+    {
+      "id": "mars-math-g1-002", "subject": "math", "gradeBand": "g1", "planet": "mars",
+      "prompt": "What is 9 - 4?", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"5","correct":true}, {"id":"b","label":"4","correct":false}, {"id":"c","label":"6","correct":false} ]
+    },
+    {
+      "id": "mars-math-g2-001", "subject": "math", "gradeBand": "g2", "planet": "mars",
+      "prompt": "A space crew has 3 teams of 5. How many people?", "answerStyle": "number", "difficulty": 4,
+      "answers": [ {"id":"a","label":"15","correct":true}, {"id":"b","label":"8","correct":false}, {"id":"c","label":"10","correct":false} ]
+    },
+    {
+      "id": "mars-math-g3-001", "subject": "math", "gradeBand": "g3", "planet": "mars",
+      "prompt": "What is 7 x 4?", "answerStyle": "number", "difficulty": 4,
+      "answers": [ {"id":"a","label":"28","correct":true}, {"id":"b","label":"24","correct":false}, {"id":"c","label":"32","correct":false} ]
+    }
+  ]
+}

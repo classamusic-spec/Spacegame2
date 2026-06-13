@@ -1,0 +1,62 @@
+{
+  "planet": "mars",
+  "subject": "science",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mars-sci-tod-001", "subject": "science", "gradeBand": "toddler", "planet": "mars",
+      "prompt": "What color is Mars?", "answerStyle": "picture", "difficulty": 1,
+      "answers": [ {"id":"a","image":"🔴","correct":true}, {"id":"b","image":"🔵","correct":false} ]
+    },
+    {
+      "id": "mars-sci-prek-001", "subject": "science", "gradeBand": "prek", "planet": "mars",
+      "prompt": "Mars is called the ___ Planet.", "answerStyle": "text", "difficulty": 1,
+      "answers": [ {"id":"a","label":"Red","correct":true}, {"id":"b","label":"Blue","correct":false}, {"id":"c","label":"Green","correct":false} ]
+    },
+    {
+      "id": "mars-sci-k-001", "subject": "science", "gradeBand": "k", "planet": "mars",
+      "prompt": "What do we send to explore Mars?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"Robots (rovers)","correct":true}, {"id":"b","label":"Fish","correct":false}, {"id":"c","label":"Cows","correct":false} ]
+    },
+    {
+      "id": "mars-sci-k-002", "subject": "science", "gradeBand": "k", "planet": "mars",
+      "prompt": "Is Mars bigger or smaller than Earth?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"Smaller","correct":true}, {"id":"b","label":"Bigger","correct":false} ]
+    },
+    {
+      "id": "mars-sci-k-003", "subject": "science", "gradeBand": "k", "planet": "mars",
+      "prompt": "How many moons does Mars have?", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"2","correct":true}, {"id":"b","label":"1","correct":false}, {"id":"c","label":"5","correct":false} ]
+    },
+    {
+      "id": "mars-sci-g1-001", "subject": "science", "gradeBand": "g1", "planet": "mars",
+      "prompt": "What makes Mars look red?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"Rusty iron dust","correct":true}, {"id":"b","label":"Red paint","correct":false}, {"id":"c","label":"Strawberries","correct":false} ]
+    },
+    {
+      "id": "mars-sci-g1-002", "subject": "science", "gradeBand": "g1", "planet": "mars",
+      "prompt": "Mars has the biggest volcano. What is it called?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"Olympus Mons","correct":true}, {"id":"b","label":"Mount Mars","correct":false}, {"id":"c","label":"Big Hill","correct":false} ]
+    },
+    {
+      "id": "mars-sci-g2-001", "subject": "science", "gradeBand": "g2", "planet": "mars",
+      "prompt": "What are scientists searching for on Mars?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"Signs of water and life","correct":true}, {"id":"b","label":"Pizza","correct":false}, {"id":"c","label":"Cars","correct":false} ]
+    },
+    {
+      "id": "mars-sci-g2-002", "subject": "science", "gradeBand": "g2", "planet": "mars",
+      "prompt": "Mars is the ___ planet from the Sun.", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"4th","correct":true}, {"id":"b","label":"1st","correct":false}, {"id":"c","label":"8th","correct":false} ]
+    },
+    {
+      "id": "mars-sci-g3-001", "subject": "science", "gradeBand": "g3", "planet": "mars",
+      "prompt": "A day on Mars is about as long as a day on Earth. True or false?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"True","correct":true}, {"id":"b","label":"False","correct":false} ]
+    },
+    {
+      "id": "mars-sci-g3-002", "subject": "science", "gradeBand": "g3", "planet": "mars",
+      "prompt": "Why can't humans breathe on Mars?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"The air is mostly carbon dioxide","correct":true}, {"id":"b","label":"It is too loud","correct":false}, {"id":"c","label":"It is too bright","correct":false} ]
+    }
+  ]
+}

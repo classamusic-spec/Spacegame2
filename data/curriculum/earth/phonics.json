@@ -1,0 +1,87 @@
+{
+  "planet": "earth",
+  "subject": "phonics",
+  "version": 1,
+  "questions": [
+    {
+      "id": "earth-phon-tod-001", "subject": "phonics", "gradeBand": "toddler", "planet": "earth",
+      "prompt": "Which one is a cat?", "answerStyle": "picture", "difficulty": 1,
+      "answers": [ {"id":"a","image":"🐱","correct":true}, {"id":"b","image":"🐶","correct":false} ]
+    },
+    {
+      "id": "earth-phon-tod-002", "subject": "phonics", "gradeBand": "toddler", "planet": "earth",
+      "prompt": "Which one says 'moo'?", "answerStyle": "picture", "difficulty": 1,
+      "answers": [ {"id":"a","image":"🐮","correct":true}, {"id":"b","image":"🐔","correct":false}, {"id":"c","image":"🐸","correct":false} ]
+    },
+    {
+      "id": "earth-phon-prek-001", "subject": "phonics", "gradeBand": "prek", "planet": "earth",
+      "prompt": "Which starts with B?", "answerStyle": "picture", "difficulty": 1,
+      "answers": [ {"id":"a","image":"⚽","correct":true}, {"id":"b","image":"🍎","correct":false}, {"id":"c","image":"☀️","correct":false} ]
+    },
+    {
+      "id": "earth-phon-prek-002", "subject": "phonics", "gradeBand": "prek", "planet": "earth",
+      "prompt": "Which starts with S?", "answerStyle": "picture", "difficulty": 1,
+      "answers": [ {"id":"a","image":"☀️","correct":true}, {"id":"b","image":"🐶","correct":false}, {"id":"c","image":"🍎","correct":false} ]
+    },
+    {
+      "id": "earth-phon-k-001", "subject": "phonics", "gradeBand": "k", "planet": "earth",
+      "prompt": "Which picture starts with the letter A?", "answerStyle": "picture", "difficulty": 1,
+      "answers": [ {"id":"a","image":"🍎","correct":true}, {"id":"b","image":"🐝","correct":false}, {"id":"c","image":"🌟","correct":false} ]
+    },
+    {
+      "id": "earth-phon-k-002", "subject": "phonics", "gradeBand": "k", "planet": "earth",
+      "prompt": "What sound does 'D' make?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"duh","correct":true}, {"id":"b","label":"sss","correct":false}, {"id":"c","label":"mmm","correct":false} ]
+    },
+    {
+      "id": "earth-phon-k-003", "subject": "phonics", "gradeBand": "k", "planet": "earth",
+      "prompt": "Which starts with M?", "answerStyle": "picture", "difficulty": 1,
+      "answers": [ {"id":"a","image":"🌙","correct":true}, {"id":"b","image":"🚗","correct":false}, {"id":"c","image":"🐟","correct":false} ]
+    },
+    {
+      "id": "earth-phon-k-004", "subject": "phonics", "gradeBand": "k", "planet": "earth",
+      "prompt": "Which letter does 🐶 start with?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"D","correct":true}, {"id":"b","label":"C","correct":false}, {"id":"c","label":"B","correct":false} ]
+    },
+    {
+      "id": "earth-phon-k-005", "subject": "phonics", "gradeBand": "k", "planet": "earth",
+      "prompt": "Which word rhymes with CAT?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"hat","correct":true}, {"id":"b","label":"dog","correct":false}, {"id":"c","label":"sun","correct":false} ]
+    },
+    {
+      "id": "earth-phon-g1-001", "subject": "phonics", "gradeBand": "g1", "planet": "earth",
+      "prompt": "Which word rhymes with STAR?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"car","correct":true}, {"id":"b","label":"moon","correct":false}, {"id":"c","label":"sky","correct":false} ]
+    },
+    {
+      "id": "earth-phon-g1-002", "subject": "phonics", "gradeBand": "g1", "planet": "earth",
+      "prompt": "What is the first sound in 'ship'?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"sh","correct":true}, {"id":"b","label":"s","correct":false}, {"id":"c","label":"ch","correct":false} ]
+    },
+    {
+      "id": "earth-phon-g1-003", "subject": "phonics", "gradeBand": "g1", "planet": "earth",
+      "prompt": "Which word has a long 'e' sound?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"tree","correct":true}, {"id":"b","label":"bed","correct":false}, {"id":"c","label":"cat","correct":false} ]
+    },
+    {
+      "id": "earth-phon-g2-001", "subject": "phonics", "gradeBand": "g2", "planet": "earth",
+      "prompt": "Which word has a silent letter?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"knee","correct":true}, {"id":"b","label":"jump","correct":false}, {"id":"c","label":"land","correct":false} ]
+    },
+    {
+      "id": "earth-phon-g2-002", "subject": "phonics", "gradeBand": "g2", "planet": "earth",
+      "prompt": "Which word makes the 'oo' sound like in MOON?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"spoon","correct":true}, {"id":"b","label":"book","correct":false}, {"id":"c","label":"top","correct":false} ]
+    },
+    {
+      "id": "earth-phon-g3-001", "subject": "phonics", "gradeBand": "g3", "planet": "earth",
+      "prompt": "How many syllables in 'astronaut'?", "answerStyle": "number", "difficulty": 4,
+      "answers": [ {"id":"a","label":"3","correct":true}, {"id":"b","label":"2","correct":false}, {"id":"c","label":"4","correct":false} ]
+    },
+    {
+      "id": "earth-phon-g3-002", "subject": "phonics", "gradeBand": "g3", "planet": "earth",
+      "prompt": "Which prefix means 'not'?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"un-","correct":true}, {"id":"b","label":"re-","correct":false}, {"id":"c","label":"pre-","correct":false} ]
+    }
+  ]
+}

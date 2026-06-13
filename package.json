@@ -1,0 +1,21 @@
+{
+  "name": "space-explorer-academy",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A 3D educational space game for kids (toddler through 3rd grade).",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/three": "^0.165.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2"
+  },
+  "dependencies": {
+    "three": "^0.165.0"
+  }
+}

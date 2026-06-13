@@ -1,0 +1,42 @@
+{
+  "planet": "mercury",
+  "subject": "science",
+  "version": 1,
+  "questions": [
+    {
+      "id": "merc-sci-tod-001", "subject": "science", "gradeBand": "toddler", "planet": "mercury",
+      "prompt": "Is the Sun hot or cold?", "answerStyle": "text", "difficulty": 1,
+      "answers": [ {"id":"a","label":"Hot","correct":true}, {"id":"b","label":"Cold","correct":false} ]
+    },
+    {
+      "id": "merc-sci-prek-001", "subject": "science", "gradeBand": "prek", "planet": "mercury",
+      "prompt": "Mercury is closest to the ___.", "answerStyle": "picture", "difficulty": 1,
+      "answers": [ {"id":"a","image":"☀️","correct":true}, {"id":"b","image":"🌧️","correct":false}, {"id":"c","image":"🌳","correct":false} ]
+    },
+    {
+      "id": "merc-sci-k-001", "subject": "science", "gradeBand": "k", "planet": "mercury",
+      "prompt": "Mercury is the closest planet to what?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"The Sun","correct":true}, {"id":"b","label":"The Moon","correct":false}, {"id":"c","label":"Earth","correct":false} ]
+    },
+    {
+      "id": "merc-sci-k-002", "subject": "science", "gradeBand": "k", "planet": "mercury",
+      "prompt": "Is Mercury big or small?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"Small","correct":true}, {"id":"b","label":"Very big","correct":false} ]
+    },
+    {
+      "id": "merc-sci-g1-001", "subject": "science", "gradeBand": "g1", "planet": "mercury",
+      "prompt": "Mercury is the ___ planet in our solar system.", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"smallest","correct":true}, {"id":"b","label":"largest","correct":false}, {"id":"c","label":"coldest","correct":false} ]
+    },
+    {
+      "id": "merc-sci-g2-001", "subject": "science", "gradeBand": "g2", "planet": "mercury",
+      "prompt": "Does Mercury have any moons?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"No moons","correct":true}, {"id":"b","label":"Ten moons","correct":false}, {"id":"c","label":"Two moons","correct":false} ]
+    },
+    {
+      "id": "merc-sci-g3-001", "subject": "science", "gradeBand": "g3", "planet": "mercury",
+      "prompt": "Why does Mercury have super hot days and freezing nights?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"It has almost no atmosphere","correct":true}, {"id":"b","label":"It is made of ice cream","correct":false}, {"id":"c","label":"It spins backward","correct":false} ]
+    }
+  ]
+}

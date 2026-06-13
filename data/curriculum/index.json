@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "entries": [
+    { "planet": "earth", "subject": "math", "file": "earth/math.json" },
+    { "planet": "earth", "subject": "phonics", "file": "earth/phonics.json" },
+    { "planet": "earth", "subject": "science", "file": "earth/science.json" },
+    { "planet": "earth", "subject": "geography", "file": "earth/geography-us-states.json" },
+    { "planet": "mars", "subject": "science", "file": "mars/science.json" },
+    { "planet": "mars", "subject": "math", "file": "mars/math.json" },
+    { "planet": "mars", "subject": "history", "file": "mars/history.json" },
+    { "planet": "mercury", "subject": "math", "file": "mercury/math.json" },
+    { "planet": "mercury", "subject": "science", "file": "mercury/science.json" },
+    { "planet": "venus", "subject": "phonics", "file": "venus/phonics.json" },
+    { "planet": "venus", "subject": "spelling", "file": "venus/spelling.json" }
+  ]
+}

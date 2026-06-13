@@ -1,0 +1,37 @@
+{
+  "planet": "venus",
+  "subject": "phonics",
+  "version": 1,
+  "questions": [
+    {
+      "id": "venus-phon-prek-001", "subject": "phonics", "gradeBand": "prek", "planet": "venus",
+      "prompt": "Which starts with V like Venus?", "answerStyle": "picture", "difficulty": 1,
+      "answers": [ {"id":"a","image":"🚐","correct":true}, {"id":"b","image":"🍎","correct":false}, {"id":"c","image":"🐶","correct":false} ]
+    },
+    {
+      "id": "venus-phon-k-001", "subject": "phonics", "gradeBand": "k", "planet": "venus",
+      "prompt": "What letter does 'Venus' start with?", "answerStyle": "text", "difficulty": 1,
+      "answers": [ {"id":"a","label":"V","correct":true}, {"id":"b","label":"B","correct":false}, {"id":"c","label":"W","correct":false} ]
+    },
+    {
+      "id": "venus-phon-k-002", "subject": "phonics", "gradeBand": "k", "planet": "venus",
+      "prompt": "Which word rhymes with 'star'?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"far","correct":true}, {"id":"b","label":"sun","correct":false}, {"id":"c","label":"tree","correct":false} ]
+    },
+    {
+      "id": "venus-phon-g1-001", "subject": "phonics", "gradeBand": "g1", "planet": "venus",
+      "prompt": "What vowel is in the word 'hot'?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"o","correct":true}, {"id":"b","label":"a","correct":false}, {"id":"c","label":"e","correct":false} ]
+    },
+    {
+      "id": "venus-phon-g2-001", "subject": "phonics", "gradeBand": "g2", "planet": "venus",
+      "prompt": "Which word has the 'ou' sound like in 'cloud'?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"loud","correct":true}, {"id":"b","label":"low","correct":false}, {"id":"c","label":"lap","correct":false} ]
+    },
+    {
+      "id": "venus-phon-g3-001", "subject": "phonics", "gradeBand": "g3", "planet": "venus",
+      "prompt": "How many syllables in 'planet'?", "answerStyle": "number", "difficulty": 3,
+      "answers": [ {"id":"a","label":"2","correct":true}, {"id":"b","label":"1","correct":false}, {"id":"c","label":"3","correct":false} ]
+    }
+  ]
+}

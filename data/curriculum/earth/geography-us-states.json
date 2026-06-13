@@ -1,0 +1,57 @@
+{
+  "planet": "earth",
+  "subject": "geography",
+  "version": 1,
+  "questions": [
+    {
+      "id": "earth-geo-k-001", "subject": "geography", "gradeBand": "k", "planet": "earth",
+      "prompt": "What do we call the land and water on a globe?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"A map","correct":true}, {"id":"b","label":"A book","correct":false}, {"id":"c","label":"A toy","correct":false} ]
+    },
+    {
+      "id": "earth-geo-k-002", "subject": "geography", "gradeBand": "k", "planet": "earth",
+      "prompt": "Which is bigger?", "answerStyle": "text", "difficulty": 1,
+      "answers": [ {"id":"a","label":"A country","correct":true}, {"id":"b","label":"A city","correct":false} ]
+    },
+    {
+      "id": "earth-geo-g1-001", "subject": "geography", "gradeBand": "g1", "planet": "earth",
+      "prompt": "What country has 50 states?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"United States","correct":true}, {"id":"b","label":"Canada","correct":false}, {"id":"c","label":"Mexico","correct":false} ]
+    },
+    {
+      "id": "earth-geo-g1-002", "subject": "geography", "gradeBand": "g1", "planet": "earth",
+      "prompt": "What is the big water between land called?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"Ocean","correct":true}, {"id":"b","label":"Puddle","correct":false}, {"id":"c","label":"Cup","correct":false} ]
+    },
+    {
+      "id": "earth-geo-g2-001", "subject": "geography", "gradeBand": "g2", "planet": "earth",
+      "prompt": "Which state is shaped like a boot and has New Orleans?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"Louisiana","correct":true}, {"id":"b","label":"Texas","correct":false}, {"id":"c","label":"Florida","correct":false} ]
+    },
+    {
+      "id": "earth-geo-g2-002", "subject": "geography", "gradeBand": "g2", "planet": "earth",
+      "prompt": "Which state is the sunny home of Disney World?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"Florida","correct":true}, {"id":"b","label":"Alaska","correct":false}, {"id":"c","label":"Ohio","correct":false} ]
+    },
+    {
+      "id": "earth-geo-g2-003", "subject": "geography", "gradeBand": "g2", "planet": "earth",
+      "prompt": "How many states are in the USA?", "answerStyle": "number", "difficulty": 3,
+      "answers": [ {"id":"a","label":"50","correct":true}, {"id":"b","label":"13","correct":false}, {"id":"c","label":"100","correct":false} ]
+    },
+    {
+      "id": "earth-geo-g3-001", "subject": "geography", "gradeBand": "g3", "planet": "earth",
+      "prompt": "What is the capital of the United States?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"Washington, D.C.","correct":true}, {"id":"b","label":"New York","correct":false}, {"id":"c","label":"Los Angeles","correct":false} ]
+    },
+    {
+      "id": "earth-geo-g3-002", "subject": "geography", "gradeBand": "g3", "planet": "earth",
+      "prompt": "Which is the largest state by land?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"Alaska","correct":true}, {"id":"b","label":"Texas","correct":false}, {"id":"c","label":"Rhode Island","correct":false} ]
+    },
+    {
+      "id": "earth-geo-g3-003", "subject": "geography", "gradeBand": "g3", "planet": "earth",
+      "prompt": "Which state is famous for Hollywood?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"California","correct":true}, {"id":"b","label":"Maine","correct":false}, {"id":"c","label":"Iowa","correct":false} ]
+    }
+  ]
+}

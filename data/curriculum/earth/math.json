@@ -1,0 +1,117 @@
+{
+  "planet": "earth",
+  "subject": "math",
+  "version": 1,
+  "questions": [
+    {
+      "id": "earth-math-tod-001", "subject": "math", "gradeBand": "toddler", "planet": "earth",
+      "prompt": "How many stars do you see?", "promptImage": "⭐⭐", "answerStyle": "number", "difficulty": 1,
+      "answers": [ {"id":"a","label":"1","correct":false}, {"id":"b","label":"2","correct":true}, {"id":"c","label":"3","correct":false} ]
+    },
+    {
+      "id": "earth-math-tod-002", "subject": "math", "gradeBand": "toddler", "planet": "earth",
+      "prompt": "How many moons?", "promptImage": "🌕🌕🌕", "answerStyle": "number", "difficulty": 1,
+      "answers": [ {"id":"a","label":"3","correct":true}, {"id":"b","label":"2","correct":false}, {"id":"c","label":"4","correct":false} ]
+    },
+    {
+      "id": "earth-math-tod-003", "subject": "math", "gradeBand": "toddler", "planet": "earth",
+      "prompt": "Which is the BIG planet?", "answerStyle": "picture", "difficulty": 1,
+      "answers": [ {"id":"a","image":"🪐","correct":true}, {"id":"b","image":"•","correct":false} ]
+    },
+    {
+      "id": "earth-math-prek-001", "subject": "math", "gradeBand": "prek", "planet": "earth",
+      "prompt": "Count the rockets!", "promptImage": "🚀🚀🚀🚀", "answerStyle": "number", "difficulty": 1,
+      "answers": [ {"id":"a","label":"3","correct":false}, {"id":"b","label":"4","correct":true}, {"id":"c","label":"5","correct":false} ]
+    },
+    {
+      "id": "earth-math-prek-002", "subject": "math", "gradeBand": "prek", "planet": "earth",
+      "prompt": "Which number comes after 2?", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"1","correct":false}, {"id":"b","label":"3","correct":true}, {"id":"c","label":"5","correct":false} ]
+    },
+    {
+      "id": "earth-math-prek-003", "subject": "math", "gradeBand": "prek", "planet": "earth",
+      "prompt": "How many planets?", "promptImage": "🪐🪐🪐🪐🪐", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"5","correct":true}, {"id":"b","label":"4","correct":false}, {"id":"c","label":"6","correct":false} ]
+    },
+    {
+      "id": "earth-math-k-001", "subject": "math", "gradeBand": "k", "planet": "earth",
+      "prompt": "What is 2 + 1?", "answerStyle": "number", "difficulty": 1,
+      "answers": [ {"id":"a","label":"3","correct":true}, {"id":"b","label":"2","correct":false}, {"id":"c","label":"4","correct":false} ]
+    },
+    {
+      "id": "earth-math-k-002", "subject": "math", "gradeBand": "k", "planet": "earth",
+      "prompt": "What is 3 + 2?", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"4","correct":false}, {"id":"b","label":"5","correct":true}, {"id":"c","label":"6","correct":false} ]
+    },
+    {
+      "id": "earth-math-k-003", "subject": "math", "gradeBand": "k", "planet": "earth",
+      "prompt": "Which number is the biggest?", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"4","correct":false}, {"id":"b","label":"9","correct":true}, {"id":"c","label":"6","correct":false} ]
+    },
+    {
+      "id": "earth-math-k-004", "subject": "math", "gradeBand": "k", "planet": "earth",
+      "prompt": "5 take away 1 is...?", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"4","correct":true}, {"id":"b","label":"6","correct":false}, {"id":"c","label":"3","correct":false} ]
+    },
+    {
+      "id": "earth-math-k-005", "subject": "math", "gradeBand": "k", "planet": "earth",
+      "prompt": "Which shape is a circle?", "answerStyle": "picture", "difficulty": 1,
+      "answers": [ {"id":"a","image":"⭕","correct":true}, {"id":"b","image":"🔺","correct":false}, {"id":"c","image":"⬛","correct":false} ]
+    },
+    {
+      "id": "earth-math-g1-001", "subject": "math", "gradeBand": "g1", "planet": "earth",
+      "prompt": "What is 6 + 4?", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"10","correct":true}, {"id":"b","label":"9","correct":false}, {"id":"c","label":"11","correct":false} ]
+    },
+    {
+      "id": "earth-math-g1-002", "subject": "math", "gradeBand": "g1", "planet": "earth",
+      "prompt": "What is 10 - 3?", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"6","correct":false}, {"id":"b","label":"7","correct":true}, {"id":"c","label":"8","correct":false} ]
+    },
+    {
+      "id": "earth-math-g1-003", "subject": "math", "gradeBand": "g1", "planet": "earth",
+      "prompt": "Count by 2s: 2, 4, 6, ___?", "answerStyle": "number", "difficulty": 3,
+      "answers": [ {"id":"a","label":"7","correct":false}, {"id":"b","label":"8","correct":true}, {"id":"c","label":"9","correct":false} ]
+    },
+    {
+      "id": "earth-math-g1-004", "subject": "math", "gradeBand": "g1", "planet": "earth",
+      "prompt": "Which is an even number?", "answerStyle": "number", "difficulty": 3,
+      "answers": [ {"id":"a","label":"7","correct":false}, {"id":"b","label":"8","correct":true}, {"id":"c","label":"5","correct":false} ]
+    },
+    {
+      "id": "earth-math-g2-001", "subject": "math", "gradeBand": "g2", "planet": "earth",
+      "prompt": "What is 15 + 12?", "answerStyle": "number", "difficulty": 3,
+      "answers": [ {"id":"a","label":"27","correct":true}, {"id":"b","label":"25","correct":false}, {"id":"c","label":"28","correct":false} ]
+    },
+    {
+      "id": "earth-math-g2-002", "subject": "math", "gradeBand": "g2", "planet": "earth",
+      "prompt": "What is 20 - 8?", "answerStyle": "number", "difficulty": 3,
+      "answers": [ {"id":"a","label":"12","correct":true}, {"id":"b","label":"14","correct":false}, {"id":"c","label":"11","correct":false} ]
+    },
+    {
+      "id": "earth-math-g2-003", "subject": "math", "gradeBand": "g2", "planet": "earth",
+      "prompt": "How many sides does a triangle have?", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"3","correct":true}, {"id":"b","label":"4","correct":false}, {"id":"c","label":"5","correct":false} ]
+    },
+    {
+      "id": "earth-math-g3-001", "subject": "math", "gradeBand": "g3", "planet": "earth",
+      "prompt": "What is 4 x 3?", "answerStyle": "number", "difficulty": 3,
+      "answers": [ {"id":"a","label":"12","correct":true}, {"id":"b","label":"7","correct":false}, {"id":"c","label":"9","correct":false} ]
+    },
+    {
+      "id": "earth-math-g3-002", "subject": "math", "gradeBand": "g3", "planet": "earth",
+      "prompt": "What is 6 x 5?", "answerStyle": "number", "difficulty": 4,
+      "answers": [ {"id":"a","label":"30","correct":true}, {"id":"b","label":"25","correct":false}, {"id":"c","label":"35","correct":false} ]
+    },
+    {
+      "id": "earth-math-g3-003", "subject": "math", "gradeBand": "g3", "planet": "earth",
+      "prompt": "What is 12 divided by 4?", "answerStyle": "number", "difficulty": 4,
+      "answers": [ {"id":"a","label":"3","correct":true}, {"id":"b","label":"4","correct":false}, {"id":"c","label":"6","correct":false} ]
+    },
+    {
+      "id": "earth-math-g3-004", "subject": "math", "gradeBand": "g3", "planet": "earth",
+      "prompt": "What is half of 20?", "answerStyle": "number", "difficulty": 3,
+      "answers": [ {"id":"a","label":"10","correct":true}, {"id":"b","label":"5","correct":false}, {"id":"c","label":"15","correct":false} ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "planet": "venus",
+  "subject": "spelling",
+  "version": 1,
+  "questions": [
+    {
+      "id": "venus-spell-k-001", "subject": "spelling", "gradeBand": "k", "planet": "venus",
+      "prompt": "How do you spell the word for ☀️?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"SUN","correct":true}, {"id":"b","label":"SNU","correct":false}, {"id":"c","label":"SON","correct":false} ]
+    },
+    {
+      "id": "venus-spell-k-002", "subject": "spelling", "gradeBand": "k", "planet": "venus",
+      "prompt": "How do you spell the word for 🐱?", "answerStyle": "text", "difficulty": 1,
+      "answers": [ {"id":"a","label":"CAT","correct":true}, {"id":"b","label":"KAT","correct":false}, {"id":"c","label":"CTA","correct":false} ]
+    },
+    {
+      "id": "venus-spell-g1-001", "subject": "spelling", "gradeBand": "g1", "planet": "venus",
+      "prompt": "Which is spelled correctly?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"moon","correct":true}, {"id":"b","label":"moun","correct":false}, {"id":"c","label":"mun","correct":false} ]
+    },
+    {
+      "id": "venus-spell-g2-001", "subject": "spelling", "gradeBand": "g2", "planet": "venus",
+      "prompt": "Which is spelled correctly?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"planet","correct":true}, {"id":"b","label":"planit","correct":false}, {"id":"c","label":"plannet","correct":false} ]
+    },
+    {
+      "id": "venus-spell-g3-001", "subject": "spelling", "gradeBand": "g3", "planet": "venus",
+      "prompt": "Which is spelled correctly?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"rocket","correct":true}, {"id":"b","label":"roket","correct":false}, {"id":"c","label":"rockit","correct":false} ]
+    },
+    {
+      "id": "venus-spell-g3-002", "subject": "spelling", "gradeBand": "g3", "planet": "venus",
+      "prompt": "Which is spelled correctly?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"astronaut","correct":true}, {"id":"b","label":"astronot","correct":false}, {"id":"c","label":"astranaut","correct":false} ]
+    }
+  ]
+}

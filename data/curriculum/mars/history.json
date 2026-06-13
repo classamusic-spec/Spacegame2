@@ -1,0 +1,32 @@
+{
+  "planet": "mars",
+  "subject": "history",
+  "version": 1,
+  "questions": [
+    {
+      "id": "mars-hist-g1-001", "subject": "history", "gradeBand": "g1", "planet": "mars",
+      "prompt": "People use robots called ___ to explore Mars.", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"Rovers","correct":true}, {"id":"b","label":"Trucks","correct":false}, {"id":"c","label":"Trains","correct":false} ]
+    },
+    {
+      "id": "mars-hist-g2-001", "subject": "history", "gradeBand": "g2", "planet": "mars",
+      "prompt": "Which space agency landed rovers on Mars?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"NASA","correct":true}, {"id":"b","label":"A pizza shop","correct":false}, {"id":"c","label":"A zoo","correct":false} ]
+    },
+    {
+      "id": "mars-hist-g2-002", "subject": "history", "gradeBand": "g2", "planet": "mars",
+      "prompt": "Have humans walked on Mars yet?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"Not yet","correct":true}, {"id":"b","label":"Yes, long ago","correct":false} ]
+    },
+    {
+      "id": "mars-hist-g3-001", "subject": "history", "gradeBand": "g3", "planet": "mars",
+      "prompt": "The rover 'Perseverance' landed on Mars in which decade?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"The 2020s","correct":true}, {"id":"b","label":"The 1800s","correct":false}, {"id":"c","label":"The 1500s","correct":false} ]
+    },
+    {
+      "id": "mars-hist-g3-002", "subject": "history", "gradeBand": "g3", "planet": "mars",
+      "prompt": "A small helicopter flew on Mars. What was it named?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"Ingenuity","correct":true}, {"id":"b","label":"Buzzy","correct":false}, {"id":"c","label":"Red Bird","correct":false} ]
+    }
+  ]
+}

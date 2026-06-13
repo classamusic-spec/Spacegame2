@@ -1,0 +1,599 @@
+/* Space Explorer Academy — UI overlay styles.
+   Tablet/touch-first: large fonts, big tap targets (min 64px), playful colors.
+   The DOM layer sits above the WebGL canvas; only interactive bits capture
+   pointer events so taps fall through to the 3D world elsewhere. */
+
+:root {
+  --accent: #ffd24a;
+  --accent2: #5ad1ff;
+  --correct: #46d369;
+  --wrong: #ff5a76;
+  --panel-bg: rgba(12, 10, 32, 0.82);
+  --card-bg: rgba(24, 20, 56, 0.92);
+  --font: 'Baloo 2', 'Comic Sans MS', 'Trebuchet MS', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #05030f;
+  font-family: var(--font);
+  color: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+#game {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#ui-root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#ui-root button,
+.joystick,
+.planet-dock,
+.answer-btn {
+  pointer-events: auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- Layout layers ---------- */
+.panel-layer,
+.overlay-layer {
+  position: absolute;
+  inset: 0;
+}
+.overlay-layer {
+  pointer-events: none;
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(16px, 4vh, 48px);
+  overflow-y: auto;
+}
+.center-screen {
+  justify-content: center;
+  text-align: center;
+  gap: 18px;
+}
+
+/* ---------- Typography ---------- */
+.title {
+  font-size: clamp(40px, 9vw, 96px);
+  margin: 0;
+  line-height: 0.95;
+  text-shadow: 0 0 24px rgba(90, 209, 255, 0.7);
+}
+.title span {
+  color: var(--accent);
+}
+.subtitle,
+.screen-sub {
+  font-size: clamp(16px, 2.6vw, 24px);
+  max-width: 28ch;
+  opacity: 0.92;
+  margin: 4px 0;
+}
+.screen-title,
+.reward-title {
+  font-size: clamp(28px, 6vw, 56px);
+  margin: 0;
+  text-shadow: 0 0 18px rgba(255, 210, 74, 0.6);
+}
+.title-rocket {
+  font-size: clamp(60px, 14vw, 140px);
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(4deg);
+  }
+}
+
+/* ---------- Buttons ---------- */
+.button-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(420px, 90vw);
+}
+.big-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 72px;
+  padding: 14px 28px;
+  font-family: var(--font);
+  font-size: clamp(20px, 3.4vw, 30px);
+  font-weight: 700;
+  color: #1a1030;
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.25);
+}
+.big-btn.primary {
+  background: linear-gradient(180deg, #ffe27a, var(--accent));
+}
+.big-btn.ghost {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+.big-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+.btn-icon {
+  font-size: 1.3em;
+}
+
+/* ---------- Grade select ---------- */
+.grade-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: min(640px, 92vw);
+  margin: 10px 0;
+}
+.grade-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 10px;
+  min-height: 120px;
+  border: 3px solid transparent;
+  border-radius: 22px;
+  background: var(--card-bg);
+  color: #fff;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.grade-card:active {
+  transform: scale(0.96);
+}
+.grade-card.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 22px rgba(255, 210, 74, 0.5);
+}
+.grade-icon {
+  font-size: 44px;
+}
+.grade-name {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* ---------- Rocket select ---------- */
+.rocket-screen {
+  justify-content: flex-end;
+  gap: 18px;
+  padding-bottom: 28px;
+}
+.rocket-screen .screen-title {
+  margin-top: clamp(16px, 5vh, 60px);
+}
+.rocket-cards {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: min(820px, 96vw);
+}
+.rocket-card {
+  flex: 1 1 200px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px;
+  border: 3px solid transparent;
+  border-radius: 22px;
+  background: var(--card-bg);
+  color: #fff;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.rocket-card.selected {
+  border-color: var(--accent2);
+  box-shadow: 0 0 22px rgba(90, 209, 255, 0.5);
+}
+.rocket-card:active {
+  transform: scale(0.96);
+}
+.rocket-emoji {
+  font-size: 52px;
+}
+.rocket-name {
+  font-size: 22px;
+  font-weight: 700;
+}
+.rocket-blurb {
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+/* ---------- HUD ---------- */
+.hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  pointer-events: none;
+}
+.hud > * {
+  pointer-events: auto;
+}
+.hud-back {
+  width: 60px;
+  height: 60px;
+  font-size: 26px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hud-label {
+  flex: 1;
+  text-align: center;
+  font-size: clamp(16px, 2.6vw, 24px);
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+.hud-stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 22px;
+  background: rgba(12, 10, 32, 0.6);
+  font-size: 26px;
+  font-weight: 800;
+}
+.hud-star-icon {
+  font-size: 26px;
+}
+
+/* ---------- Planet dock ---------- */
+.planet-dock {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 26px;
+  background: rgba(12, 10, 32, 0.7);
+  backdrop-filter: blur(6px);
+  pointer-events: auto;
+  max-width: 94vw;
+  overflow-x: auto;
+}
+.dock-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 78px;
+  min-height: 78px;
+  padding: 8px;
+  border: none;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-family: var(--font);
+  cursor: pointer;
+}
+.dock-btn:active {
+  transform: scale(0.94);
+}
+.dock-btn.locked {
+  opacity: 0.55;
+}
+.dock-emoji {
+  font-size: 30px;
+}
+.dock-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ---------- Joystick ---------- */
+.joystick {
+  position: absolute;
+  bottom: 110px;
+  left: 28px;
+  width: 140px;
+  height: 140px;
+  pointer-events: auto;
+  touch-action: none;
+}
+.joy-base {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.joy-knob {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff, var(--accent2));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Arrival / subject menu ---------- */
+.arrival-planet,
+.title-rocket {
+  filter: drop-shadow(0 0 18px rgba(90, 209, 255, 0.6));
+}
+.arrival-planet {
+  font-size: clamp(60px, 14vw, 120px);
+  animation: float 3.5s ease-in-out infinite;
+}
+.menu-hint {
+  font-size: clamp(16px, 2.6vw, 22px);
+  font-weight: 700;
+  margin: 6px 0 0;
+}
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  width: min(560px, 92vw);
+}
+.subject-grid .big-btn {
+  min-height: 64px;
+  font-size: clamp(16px, 2.6vw, 22px);
+}
+
+/* ---------- Question card ---------- */
+.quiz-screen {
+  justify-content: flex-start;
+  gap: 18px;
+  padding-top: 84px;
+}
+.progress-dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.progress-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.progress-dot.active {
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent);
+}
+.question-card {
+  width: min(720px, 94vw);
+  background: var(--panel-bg);
+  border-radius: 28px;
+  padding: clamp(18px, 4vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+.q-prompt-image {
+  font-size: clamp(48px, 12vw, 96px);
+}
+.q-prompt {
+  font-size: clamp(22px, 4vw, 36px);
+  font-weight: 700;
+  text-align: center;
+}
+.q-answers {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+}
+.q-answers-text,
+.q-answers-number {
+  grid-template-columns: 1fr 1fr;
+}
+.q-answers-picture {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+.answer-btn {
+  min-height: 84px;
+  padding: 16px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-radius: 22px;
+  background: var(--card-bg);
+  color: #fff;
+  font-family: var(--font);
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.2s ease, border-color 0.2s ease;
+}
+.answer-btn.picture .ans-image {
+  font-size: clamp(48px, 12vw, 84px);
+}
+.answer-btn:active {
+  transform: scale(0.96);
+}
+.answer-btn.correct {
+  background: var(--correct);
+  border-color: #fff;
+  animation: pop 0.4s ease;
+}
+.answer-btn.wrong {
+  background: var(--wrong);
+  animation: shake 0.4s ease;
+}
+.answer-btn.locked {
+  opacity: 0.45;
+}
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+/* ---------- UFO mini-game ---------- */
+.ufo-banner {
+  position: absolute;
+  top: 78px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(760px, 94vw);
+  text-align: center;
+  font-size: clamp(18px, 3.4vw, 30px);
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 20px;
+  background: rgba(12, 10, 32, 0.7);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+.ufo-banner-hint {
+  color: var(--accent);
+}
+
+/* ---------- Toasts ---------- */
+.toast {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  padding: 14px 28px;
+  border-radius: 22px;
+  font-size: clamp(24px, 5vw, 40px);
+  font-weight: 800;
+  background: rgba(12, 10, 32, 0.85);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.toast-star {
+  color: var(--accent);
+}
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ---------- Reward screen ---------- */
+.reward-stars {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.reward-star {
+  font-size: clamp(36px, 9vw, 72px);
+  animation: pop 0.6s ease;
+}
+.reward-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 22px;
+  border-radius: 22px;
+  background: var(--card-bg);
+  width: min(420px, 90vw);
+}
+.reward-badge-icon {
+  font-size: 52px;
+}
+.reward-badge-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.reward-badge-text strong {
+  font-size: 22px;
+}
+.reward-badge-text span {
+  font-size: 15px;
+  opacity: 0.85;
+}
+.confetti {
+  position: absolute;
+  top: -40px;
+  animation: fall 2.4s linear forwards;
+  pointer-events: none;
+}
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.2;
+  }
+}
