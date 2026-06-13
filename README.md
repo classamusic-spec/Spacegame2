@@ -45,6 +45,8 @@ licensing concerns.
 | ![Saturn](docs/screenshots/saturn.png) | ![Asteroid mini-game](docs/screenshots/asteroid-game.png) |
 | **First-person rocket cockpit** | **First-person UFO dome** |
 | ![Rocket cockpit](docs/screenshots/cockpit-rocket.png) | ![UFO cockpit](docs/screenshots/cockpit-ufo.png) |
+| **Progress & parent dashboard** | |
+| ![Progress dashboard](docs/screenshots/progress.png) | |
 | **Earn stars & badges** | |
 | ![Reward screen](docs/screenshots/reward.png) | |
 
@@ -129,4 +131,7 @@ which planet is set in `src/config/planets.ts`.
 - **Phase 4 (done):** spoken narration — lessons, questions, and instructions
   are read aloud on-device (Web Speech API, no assets), with per-card 🔊 replay
   and a Read Aloud toggle, so pre-readers can play independently.
-- **Phase 5 (next):** content-authoring tools & parent dashboard.
+- **Phase 5 (in progress):** **Progress & parent dashboard** — overall stats
+  (stars, lessons, worlds unlocked, badges), per-subject progress bars for the
+  child's grade, a badge trophy shelf, and settings (Read Aloud, Sound, Change
+  Grade, Reset Progress). Next: content-authoring tools.

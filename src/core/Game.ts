@@ -4,12 +4,13 @@ import { EventBus } from './EventBus';
 import { GameLoop } from './GameLoop';
 import { StateMachine } from './StateMachine';
 import { SaveManager } from '../player/SaveManager';
-import type { PlayerProfile } from '../player/PlayerProfile';
+import { createDefaultProfile, type PlayerProfile } from '../player/PlayerProfile';
 import { RewardSystem } from '../progression/RewardSystem';
 import { CurriculumLoader } from '../curriculum/CurriculumLoader';
 import { QuestionPicker } from '../curriculum/QuestionPicker';
 import { UIRoot } from '../ui/UIRoot';
 import { narrator } from '../utils/narrator';
+import { Sfx, setSfxEnabled } from '../utils/audio';
 
 import { StartScreenState } from '../states/StartScreenState';
 import { GradeSelectState } from '../states/GradeSelectState';
@@ -18,6 +19,7 @@ import { SolarSystemState } from '../states/SolarSystemState';
 import { LessonState } from '../states/LessonState';
 import { UfoGameState } from '../states/UfoGameState';
 import { RewardState } from '../states/RewardState';
+import { ProgressState } from '../states/ProgressState';
 
 // The spine of the game: owns shared services and the loop, registers all
 // screens, and routes state transitions. States reach back into these services
@@ -51,6 +53,7 @@ export class Game {
 
     // Apply the saved narration (read-aloud) preference and wire the HUD toggle.
     narrator.setEnabled(this.profile.settings.narration);
+    setSfxEnabled(this.profile.settings.sfx);
     this.ui.hud.setNarration(this.profile.settings.narration, () => this.toggleNarration());
 
     this.registerStates();
@@ -66,6 +69,25 @@ export class Game {
     if (on) narrator.speak('Read aloud is on.');
   }
 
+  /** Flip sound effects and persist. */
+  toggleSfx(): void {
+    const on = !this.profile.settings.sfx;
+    this.profile.settings.sfx = on;
+    setSfxEnabled(on);
+    if (on) Sfx.tap();
+    this.persistProfile();
+  }
+
+  /** Wipe all progress back to a fresh profile (kept in place for shared refs). */
+  resetProgress(): void {
+    Object.assign(this.profile, createDefaultProfile());
+    this.save.save(this.profile);
+    this.rewards.syncUnlocks();
+    narrator.setEnabled(this.profile.settings.narration);
+    setSfxEnabled(this.profile.settings.sfx);
+    this.ui.hud.setNarration(this.profile.settings.narration, () => this.toggleNarration());
+  }
+
   private registerStates(): void {
     this.states.register(new StartScreenState());
     this.states.register(new GradeSelectState());
@@ -74,6 +96,7 @@ export class Game {
     this.states.register(new LessonState());
     this.states.register(new UfoGameState());
     this.states.register(new RewardState());
+    this.states.register(new ProgressState());
   }
 
   start(): void {

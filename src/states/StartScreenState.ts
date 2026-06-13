@@ -32,8 +32,8 @@ export class StartScreenState implements GameState {
     const buttons = el('div', { class: 'button-col' }, [play]);
     if (onboarded) {
       buttons.append(
-        bigButton('Change Grade', () => game.states.change('grade-select'), {
-          icon: '🎓',
+        bigButton('My Progress', () => game.states.change('progress'), {
+          icon: '📊',
           variant: 'ghost',
         })
       );
