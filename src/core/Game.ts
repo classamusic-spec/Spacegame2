@@ -14,7 +14,7 @@ import { StartScreenState } from '../states/StartScreenState';
 import { GradeSelectState } from '../states/GradeSelectState';
 import { RocketSelectState } from '../states/RocketSelectState';
 import { SolarSystemState } from '../states/SolarSystemState';
-import { PlanetQuizState } from '../states/PlanetQuizState';
+import { LessonState } from '../states/LessonState';
 import { UfoGameState } from '../states/UfoGameState';
 import { RewardState } from '../states/RewardState';
 
@@ -56,7 +56,7 @@ export class Game {
     this.states.register(new GradeSelectState());
     this.states.register(new RocketSelectState());
     this.states.register(new SolarSystemState());
-    this.states.register(new PlanetQuizState());
+    this.states.register(new LessonState());
     this.states.register(new UfoGameState());
     this.states.register(new RewardState());
   }

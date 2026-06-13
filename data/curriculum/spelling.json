@@ -1,0 +1,70 @@
+{
+  "subject": "spelling",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "spelling-k-cvc", "gradeBand": "k", "title": "Spelling Short Words",
+      "objective": "I can spell simple three-letter words.",
+      "teach": [
+        { "text": "Many short words have the pattern consonant-vowel-consonant, like c-a-t.", "image": "🐱" },
+        { "text": "Sound out each letter to spell it.", "example": "🌞 = S-U-N" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "How do you spell 🐱?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"CAT","correct":true}, {"id":"b","label":"KAT","correct":false}, {"id":"c","label":"CTA","correct":false} ] },
+        { "id": "q2", "prompt": "How do you spell ☀️ (sun)?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"SUN","correct":true}, {"id":"b","label":"SNU","correct":false}, {"id":"c","label":"SON","correct":false} ] },
+        { "id": "q3", "prompt": "How do you spell 🎩 (hat)?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"HAT","correct":true}, {"id":"b","label":"HTA","correct":false} ] }
+      ]
+    },
+    {
+      "id": "spelling-g1-sight", "gradeBand": "g1", "title": "Spelling Sight Words",
+      "objective": "I can spell common words correctly.",
+      "teach": [
+        { "text": "Some words we just memorize because we use them so much.", "image": "✏️" },
+        { "text": "Practice words like 'the', 'said', 'you', and 'was'.", "example": "the, you, was" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which is spelled correctly?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"the","correct":true}, {"id":"b","label":"teh","correct":false} ] },
+        { "id": "q2", "prompt": "Which is spelled correctly?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"moon","correct":true}, {"id":"b","label":"moun","correct":false}, {"id":"c","label":"mun","correct":false} ] },
+        { "id": "q3", "prompt": "Which is spelled correctly?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"you","correct":true}, {"id":"b","label":"yoo","correct":false}, {"id":"c","label":"yuw","correct":false} ] }
+      ]
+    },
+    {
+      "id": "spelling-g2-plurals", "gradeBand": "g2", "title": "Making Words Plural",
+      "objective": "I can add -s or -es to mean more than one.",
+      "teach": [
+        { "text": "Plural means more than one. Usually we add -s.", "image": "🐶🐶" },
+        { "text": "If a word ends in s, x, ch, or sh, we add -es.", "example": "one box → two boxes" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "More than one cat is...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"cats","correct":true}, {"id":"b","label":"cates","correct":false} ] },
+        { "id": "q2", "prompt": "More than one box is...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"boxes","correct":true}, {"id":"b","label":"boxs","correct":false} ] },
+        { "id": "q3", "prompt": "More than one bus is...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"buses","correct":true}, {"id":"b","label":"buss","correct":false}, {"id":"c","label":"bus","correct":false} ] }
+      ]
+    },
+    {
+      "id": "spelling-g3-silent", "gradeBand": "g3", "title": "Silent Letters",
+      "objective": "I can spell words with silent letters.",
+      "teach": [
+        { "text": "Some letters are written but not heard. They are silent letters.", "image": "🤫" },
+        { "text": "The 'k' in 'knee' and the 'b' in 'thumb' are silent.", "example": "knee, thumb, write" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which is spelled correctly?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"knee","correct":true}, {"id":"b","label":"nee","correct":false} ] },
+        { "id": "q2", "prompt": "Which is spelled correctly?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"write","correct":true}, {"id":"b","label":"rite","correct":false}, {"id":"c","label":"riet","correct":false} ] },
+        { "id": "q3", "prompt": "Which is spelled correctly?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"thumb","correct":true}, {"id":"b","label":"thum","correct":false} ] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "subject": "geography",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "geo-k-maps", "gradeBand": "k", "title": "Maps Show Places",
+      "objective": "I know a map shows where things are.",
+      "teach": [
+        { "text": "A map is a picture of a place from above.", "image": "🗺️" },
+        { "text": "A globe is a map shaped like a ball — it shows the whole Earth.", "image": "🌍" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "What shows where places are?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"A map","correct":true}, {"id":"b","label":"A spoon","correct":false} ] },
+        { "id": "q2", "prompt": "A globe is shaped like a...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Ball","correct":true}, {"id":"b","label":"Box","correct":false} ] },
+        { "id": "q3", "prompt": "Which one shows the whole Earth?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🌍","correct":true}, {"id":"b","image":"📕","correct":false} ] }
+      ]
+    },
+    {
+      "id": "geo-g1-landwater", "gradeBand": "g1", "title": "Land and Water",
+      "objective": "I can tell land from water on a map.",
+      "teach": [
+        { "text": "On maps, blue usually means water and green or brown means land.", "image": "🌊" },
+        { "text": "Big areas of salty water are oceans. Big areas of land are continents.", "example": "Land 🟫  Water 🟦" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "What color usually shows water on a map?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Blue","correct":true}, {"id":"b","label":"Red","correct":false} ] },
+        { "id": "q2", "prompt": "A very big area of salt water is an...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Ocean","correct":true}, {"id":"b","label":"Puddle","correct":false} ] },
+        { "id": "q3", "prompt": "A huge area of land is a...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Continent","correct":true}, {"id":"b","label":"Cup","correct":false} ] }
+      ]
+    },
+    {
+      "id": "geo-g2-continents", "gradeBand": "g2", "title": "Continents and Oceans",
+      "objective": "I know Earth has 7 continents and big oceans.",
+      "teach": [
+        { "text": "Earth has 7 continents, like North America and Africa.", "image": "🌎" },
+        { "text": "It also has large oceans, like the Pacific and Atlantic.", "example": "7 continents, 5 oceans" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "How many continents does Earth have?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"7","correct":true}, {"id":"b","label":"3","correct":false}, {"id":"c","label":"10","correct":false} ] },
+        { "id": "q2", "prompt": "Which is a continent?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Africa","correct":true}, {"id":"b","label":"Texas","correct":false} ] },
+        { "id": "q3", "prompt": "Which is an ocean?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Pacific","correct":true}, {"id":"b","label":"Sahara","correct":false} ] }
+      ]
+    },
+    {
+      "id": "geo-g3-usa", "gradeBand": "g3", "title": "The United States",
+      "objective": "I know basic facts about the USA.",
+      "teach": [
+        { "text": "The United States has 50 states and a capital city.", "image": "🇺🇸" },
+        { "text": "The capital is Washington, D.C. Each state also has its own capital.", "example": "50 states, capital = Washington, D.C." }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "How many states are in the USA?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"50","correct":true}, {"id":"b","label":"13","correct":false}, {"id":"c","label":"100","correct":false} ] },
+        { "id": "q2", "prompt": "What is the capital of the United States?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Washington, D.C.","correct":true}, {"id":"b","label":"New York","correct":false} ] },
+        { "id": "q3", "prompt": "Which state is the largest by land?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Alaska","correct":true}, {"id":"b","label":"Rhode Island","correct":false} ] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "subject": "arts",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "arts-k-primary", "gradeBand": "k", "title": "Primary Colors",
+      "objective": "I know the three primary colors.",
+      "teach": [
+        { "text": "The primary colors are red, yellow, and blue.", "image": "🔴" },
+        { "text": "We can make all other colors by mixing these.", "example": "🔴 🟡 🔵" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which is a primary color?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🔴","correct":true}, {"id":"b","image":"🟢","correct":false}, {"id":"c","image":"🟠","correct":false} ] },
+        { "id": "q2", "prompt": "How many primary colors are there?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"3","correct":true}, {"id":"b","label":"5","correct":false}, {"id":"c","label":"7","correct":false} ] },
+        { "id": "q3", "prompt": "Which is NOT a primary color?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🟢","correct":true}, {"id":"b","image":"🔵","correct":false} ] }
+      ]
+    },
+    {
+      "id": "arts-g1-mixing", "gradeBand": "g1", "title": "Mixing Colors",
+      "objective": "I know how to make new colors.",
+      "teach": [
+        { "text": "Mixing two primary colors makes a new color.", "image": "🎨" },
+        { "text": "Blue and yellow make green. Red and yellow make orange.", "example": "🔵 + 🟡 = 🟢" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Blue + Yellow makes...", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🟢","correct":true}, {"id":"b","image":"🟣","correct":false} ] },
+        { "id": "q2", "prompt": "Red + Yellow makes...", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🟠","correct":true}, {"id":"b","image":"🟢","correct":false} ] },
+        { "id": "q3", "prompt": "Red + Blue makes...", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🟣","correct":true}, {"id":"b","image":"🟡","correct":false} ] }
+      ]
+    },
+    {
+      "id": "arts-g2-warmcool", "gradeBand": "g2", "title": "Warm and Cool Colors",
+      "objective": "I can sort warm and cool colors.",
+      "teach": [
+        { "text": "Warm colors remind us of fire and sun: red, orange, yellow.", "image": "🔥" },
+        { "text": "Cool colors remind us of water and sky: blue, green, purple.", "image": "❄️" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which is a warm color?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🔴","correct":true}, {"id":"b","image":"🔵","correct":false} ] },
+        { "id": "q2", "prompt": "Which is a cool color?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🔵","correct":true}, {"id":"b","image":"🟠","correct":false} ] },
+        { "id": "q3", "prompt": "Warm colors remind us of...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Fire and sun","correct":true}, {"id":"b","label":"Ice and water","correct":false} ] }
+      ]
+    }
+  ]
+}

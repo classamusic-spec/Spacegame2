@@ -10,7 +10,7 @@ import { AsteroidBelt } from '../scene/entities/AsteroidBelt';
 import { getRocket } from '../config/rockets';
 import { PLANETS, SYSTEM_RADIUS, type PlanetDef } from '../config/planets';
 import { getPlanetProgress } from '../player/PlayerProfile';
-import { SUBJECT_LABELS, SUBJECT_ICONS, type Subject } from '../curriculum/types';
+import { SUBJECT_ICONS } from '../curriculum/types';
 import { FLIGHT } from '../config/constants';
 import { damp, easeInOutCubic } from '../utils/math';
 import { Sfx } from '../utils/audio';
@@ -184,23 +184,29 @@ export class SolarSystemState implements GameState {
     // While in the planet menu, the top-left back button returns to space.
     this.game.ui.hud.setBack(() => this.leaveMenu());
 
-    const subjects = this.game.curriculum.availableSubjects(planet.id, this.game.profile.gradeBand);
-    const subjectBtns = subjects.map((s) =>
-      bigButton(SUBJECT_LABELS[s as Subject] ?? s, () => this.startQuiz(planet.id, s as Subject), {
-        icon: SUBJECT_ICONS[s as Subject] ?? '⭐',
-        variant: 'primary',
-      })
-    );
+    const gradeBand = this.game.profile.gradeBand;
+    const lessons = this.game.curriculum.lessonsForSubjects(planet.subjects, gradeBand);
 
     const body: HTMLElement[] = [
       el('div', { class: 'arrival-planet', text: '🪐' }),
-      el('h2', { class: 'screen-title', text: planet.name }),
+      el('h2', { class: 'screen-title', text: planet.world }),
       el('p', { class: 'screen-sub', text: planet.blurb }),
     ];
 
-    if (subjectBtns.length > 0) {
-      body.push(el('p', { class: 'menu-hint', text: 'What do you want to learn?' }));
-      body.push(el('div', { class: 'subject-grid' }, subjectBtns));
+    if (lessons.length > 0) {
+      body.push(el('p', { class: 'menu-hint', text: 'Pick a lesson:' }));
+      const list = el('div', { class: 'lesson-list' });
+      for (const lesson of lessons) {
+        const done = this.game.rewards.hasCompletedLesson(lesson.id);
+        const item = el('button', { class: `lesson-item ${done ? 'done' : ''}` }, [
+          el('span', { class: 'lesson-item-icon', text: SUBJECT_ICONS[lesson.subject] }),
+          el('span', { class: 'lesson-item-title', text: lesson.title }),
+          el('span', { class: 'lesson-item-check', text: done ? '✅' : '' }),
+        ]);
+        item.addEventListener('click', () => this.startLesson(lesson.id, planet.id));
+        list.append(item);
+      }
+      body.push(list);
     } else {
       body.push(el('p', { class: 'menu-hint', text: 'More lessons coming soon — try the mini-game!' }));
     }
@@ -210,25 +216,26 @@ export class SolarSystemState implements GameState {
       el('div', { class: 'button-col' }, [
         bigButton(
           theme === 'asteroid' ? 'Asteroid Blast' : 'UFO Mini-Game',
-          () => this.startUfo(planet.id, subjects[0] as Subject, theme),
-          {
-            icon: theme === 'asteroid' ? '☄️' : '🛸',
-            variant: subjectBtns.length ? 'ghost' : 'primary',
-          }
+          () => this.startUfo(planet),
+          { icon: theme === 'asteroid' ? '☄️' : '🛸', variant: 'ghost' }
         ),
         bigButton('Back to Space', () => this.leaveMenu(), { icon: '🚀', variant: 'ghost' }),
       ])
     );
 
-    this.game.ui.setPanel(el('div', { class: 'screen center-screen arrival-screen' }, body));
+    this.game.ui.setPanel(el('div', { class: 'screen lesson-menu-screen' }, body));
   }
 
-  private startQuiz(planet: string, subject: Subject): void {
-    this.game.states.change('planet-quiz', { planet, subject });
+  private startLesson(lessonId: string, planet: string): void {
+    this.game.states.change('lesson', { lessonId, planet });
   }
 
-  private startUfo(planet: string, subject: Subject, theme: 'ufo' | 'asteroid'): void {
-    this.game.states.change('ufo-game', { planet, subject: subject ?? 'science', theme });
+  private startUfo(planet: PlanetDef): void {
+    this.game.states.change('ufo-game', {
+      planet: planet.id,
+      subjects: planet.subjects,
+      theme: this.themeFor(planet.id),
+    });
   }
 
   private leaveMenu(): void {

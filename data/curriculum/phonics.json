@@ -1,0 +1,86 @@
+{
+  "subject": "phonics",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "phonics-prek-begin", "gradeBand": "prek", "title": "Beginning Sounds",
+      "objective": "I can hear the first sound in a word.",
+      "teach": [
+        { "text": "Every word starts with a sound. 'Ball' starts with the /b/ sound.", "image": "⚽" },
+        { "text": "Say the word slowly and listen to the very first sound.", "example": "Sun starts with /s/." }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which starts with /b/?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"⚽","correct":true}, {"id":"b","image":"🍎","correct":false}, {"id":"c","image":"☀️","correct":false} ] },
+        { "id": "q2", "prompt": "Which starts with /s/?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"☀️","correct":true}, {"id":"b","image":"🐶","correct":false} ] },
+        { "id": "q3", "prompt": "Which starts with /f/?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🐟","correct":true}, {"id":"b","image":"🚗","correct":false}, {"id":"c","image":"🐱","correct":false} ] }
+      ]
+    },
+    {
+      "id": "phonics-k-sounds", "gradeBand": "k", "title": "Letter Sounds",
+      "objective": "I know the sound each letter makes.",
+      "teach": [
+        { "text": "Each letter has a sound. 'D' says /d/, 'M' says /m/.", "image": "🔤" },
+        { "text": "Knowing letter sounds helps us read new words.", "example": "M-A-T → /m/ /a/ /t/ → mat" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "What sound does 'D' make?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"/d/ duh","correct":true}, {"id":"b","label":"/s/ sss","correct":false}, {"id":"c","label":"/m/ mmm","correct":false} ] },
+        { "id": "q2", "prompt": "🌙 (moon) starts with which letter?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"M","correct":true}, {"id":"b","label":"N","correct":false}, {"id":"c","label":"W","correct":false} ] },
+        { "id": "q3", "prompt": "Which letter makes the /s/ sound?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"S","correct":true}, {"id":"b","label":"T","correct":false}, {"id":"c","label":"B","correct":false} ] }
+      ]
+    },
+    {
+      "id": "phonics-k-rhyme", "gradeBand": "k", "title": "Rhyming Words",
+      "objective": "I can find words that rhyme.",
+      "teach": [
+        { "text": "Rhyming words end with the same sound, like cat and hat.", "image": "🐱" },
+        { "text": "Listen to the ending: -at, -an, -ig.", "example": "cat, hat, bat all rhyme." }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which word rhymes with CAT?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"hat","correct":true}, {"id":"b","label":"dog","correct":false}, {"id":"c","label":"sun","correct":false} ] },
+        { "id": "q2", "prompt": "Which word rhymes with STAR?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"car","correct":true}, {"id":"b","label":"moon","correct":false} ] },
+        { "id": "q3", "prompt": "Which word rhymes with PIG?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"dig","correct":true}, {"id":"b","label":"cup","correct":false}, {"id":"c","label":"top","correct":false} ] }
+      ]
+    },
+    {
+      "id": "phonics-g1-blend", "gradeBand": "g1", "title": "Blending Sounds",
+      "objective": "I can blend sounds to read a word.",
+      "teach": [
+        { "text": "Blending means smooshing sounds together to say a word.", "image": "🔗" },
+        { "text": "/s/ /u/ /n/ blends into 'sun'.", "example": "s-u-n → sun ☀️" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Blend /m/ /a/ /p/. What word is it?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"map","correct":true}, {"id":"b","label":"mop","correct":false}, {"id":"c","label":"man","correct":false} ] },
+        { "id": "q2", "prompt": "Blend /d/ /o/ /g/. What word is it?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"dog","correct":true}, {"id":"b","label":"dig","correct":false} ] },
+        { "id": "q3", "prompt": "What is the first sound in 'ship'?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"/sh/","correct":true}, {"id":"b","label":"/s/","correct":false}, {"id":"c","label":"/ch/","correct":false} ] }
+      ]
+    },
+    {
+      "id": "phonics-g2-vowelteams", "gradeBand": "g2", "title": "Long Vowel Teams",
+      "objective": "I know vowel teams make long vowel sounds.",
+      "teach": [
+        { "text": "When two vowels go walking, the first one often does the talking — it says its name.", "image": "🚶" },
+        { "text": "'ea' in 'team' and 'ai' in 'rain' make long vowel sounds.", "example": "rain, boat, team" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which word has a long 'a' team sound?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"rain","correct":true}, {"id":"b","label":"cat","correct":false}, {"id":"c","label":"hop","correct":false} ] },
+        { "id": "q2", "prompt": "Which word makes the long 'e' sound?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"tree","correct":true}, {"id":"b","label":"bed","correct":false} ] },
+        { "id": "q3", "prompt": "Which has the 'oa' team like in 'boat'?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"coat","correct":true}, {"id":"b","label":"cot","correct":false}, {"id":"c","label":"cut","correct":false} ] }
+      ]
+    }
+  ]
+}

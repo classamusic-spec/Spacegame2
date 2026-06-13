@@ -59,6 +59,19 @@ export class RewardSystem {
     this.persist();
   }
 
+  completeLesson(lessonId: string, planetId: string, subject: string): void {
+    if (!this.profile.lessonsCompleted.includes(lessonId)) {
+      this.profile.lessonsCompleted.push(lessonId);
+    }
+    this.completeQuiz(planetId, subject);
+    if (subject === 'math') this.grantBadge('math-star');
+    if (subject === 'phonics') this.grantBadge('phonics-pro');
+  }
+
+  hasCompletedLesson(lessonId: string): boolean {
+    return this.profile.lessonsCompleted.includes(lessonId);
+  }
+
   grantBadge(badgeId: string): void {
     if (this.profile.badges.includes(badgeId)) return;
     this.profile.badges.push(badgeId);

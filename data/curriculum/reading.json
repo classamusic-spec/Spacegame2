@@ -1,0 +1,102 @@
+{
+  "subject": "reading",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "reading-tod-pictures", "gradeBand": "toddler", "title": "Pictures Tell Stories",
+      "objective": "I can understand pictures in a book.",
+      "teach": [
+        { "text": "Before we read words, pictures tell us what is happening.", "image": "📖" },
+        { "text": "Look at a picture and think: what do you see?", "image": "👀" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which picture is a dog?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🐶","correct":true}, {"id":"b","image":"🚗","correct":false} ] },
+        { "id": "q2", "prompt": "Which one is a book?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"📖","correct":true}, {"id":"b","image":"🍎","correct":false}, {"id":"c","image":"⚽","correct":false} ] },
+        { "id": "q3", "prompt": "Which one can you read?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"📚","correct":true}, {"id":"b","image":"🥶","correct":false} ] }
+      ]
+    },
+    {
+      "id": "reading-prek-letters", "gradeBand": "prek", "title": "Letters Make Words",
+      "objective": "I know letters build words.",
+      "teach": [
+        { "text": "Words are made of letters. The alphabet has 26 letters.", "image": "🔤" },
+        { "text": "Letters together make words we can read, like C-A-T.", "example": "C + A + T = CAT 🐱" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which one is a letter?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"B","correct":true}, {"id":"b","label":"7","correct":false}, {"id":"c","label":"#","correct":false} ] },
+        { "id": "q2", "prompt": "How many letters are in the word CAT?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"3","correct":true}, {"id":"b","label":"2","correct":false}, {"id":"c","label":"4","correct":false} ] },
+        { "id": "q3", "prompt": "Which is the first letter of the alphabet?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"A","correct":true}, {"id":"b","label":"Z","correct":false} ] }
+      ]
+    },
+    {
+      "id": "reading-k-sightwords", "gradeBand": "k", "title": "Sight Words",
+      "objective": "I can read common sight words.",
+      "teach": [
+        { "text": "Sight words are little words we see a lot, like 'the', 'and', 'is'.", "image": "👁️" },
+        { "text": "We learn them by sight so reading is faster.", "example": "The dog is big." }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which is a real sight word?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"the","correct":true}, {"id":"b","label":"zix","correct":false}, {"id":"c","label":"qop","correct":false} ] },
+        { "id": "q2", "prompt": "Finish it: I ___ a cat.", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"see","correct":true}, {"id":"b","label":"sea","correct":false}, {"id":"c","label":"say","correct":false} ] },
+        { "id": "q3", "prompt": "Which word is 'and'?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"and","correct":true}, {"id":"b","label":"end","correct":false}, {"id":"c","label":"ant","correct":false} ] }
+      ]
+    },
+    {
+      "id": "reading-g1-details", "gradeBand": "g1", "title": "Story Details",
+      "objective": "I can find who and what in a story.",
+      "teach": [
+        { "text": "A story has characters (who) and events (what happens).", "image": "📖" },
+        { "text": "Read: 'Sam ran to the park with his red ball.' Sam is who; he ran is what.", "example": "Who? Sam. What? Ran to the park." }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Read: 'Mia fed her cat.' Who is in the story?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Mia","correct":true}, {"id":"b","label":"A bus","correct":false}, {"id":"c","label":"The sun","correct":false} ] },
+        { "id": "q2", "prompt": "Read: 'The dog dug a hole.' What did the dog do?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Dug a hole","correct":true}, {"id":"b","label":"Went to school","correct":false} ] },
+        { "id": "q3", "prompt": "Read: 'Sam ran with his red ball.' What color is the ball?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Red","correct":true}, {"id":"b","label":"Blue","correct":false}, {"id":"c","label":"Green","correct":false} ] }
+      ]
+    },
+    {
+      "id": "reading-g2-sequence", "gradeBand": "g2", "title": "Beginning, Middle, End",
+      "objective": "I can put a story in order.",
+      "teach": [
+        { "text": "Stories happen in order: a beginning, a middle, and an end.", "image": "1️⃣2️⃣3️⃣" },
+        { "text": "First the seed is planted, then it grows, then it becomes a flower.", "example": "🌱 → 🌿 → 🌸" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "What comes FIRST when growing a plant?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Plant a seed","correct":true}, {"id":"b","label":"Pick the flower","correct":false} ] },
+        { "id": "q2", "prompt": "Read a story's last part. That is the...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"End","correct":true}, {"id":"b","label":"Beginning","correct":false}, {"id":"c","label":"Title","correct":false} ] },
+        { "id": "q3", "prompt": "Order: wake up, eat breakfast. What is first?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Wake up","correct":true}, {"id":"b","label":"Eat breakfast","correct":false} ] }
+      ]
+    },
+    {
+      "id": "reading-g3-mainidea", "gradeBand": "g3", "title": "Main Idea",
+      "objective": "I can find what a passage is mostly about.",
+      "teach": [
+        { "text": "The main idea is what the whole passage is MOSTLY about.", "image": "💡" },
+        { "text": "Details are smaller facts that support the main idea.", "example": "Passage about bees pollinating flowers → main idea: bees help flowers." }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "A passage describes a dog's ears, tail, and bark. It is mostly about...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"A dog","correct":true}, {"id":"b","label":"A car","correct":false}, {"id":"c","label":"The weather","correct":false} ] },
+        { "id": "q2", "prompt": "The 'main idea' is...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"What it is mostly about","correct":true}, {"id":"b","label":"One small detail","correct":false} ] },
+        { "id": "q3", "prompt": "Small facts that support the main idea are called...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Details","correct":true}, {"id":"b","label":"Titles","correct":false}, {"id":"c","label":"Covers","correct":false} ] }
+      ]
+    }
+  ]
+}

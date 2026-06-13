@@ -9,7 +9,7 @@ import { Projectile } from '../scene/entities/Projectile';
 import { ParticleSystem } from '../scene/entities/ParticleSystem';
 import { Rocket } from '../scene/entities/Rocket';
 import { getRocket } from '../config/rockets';
-import type { Question, Subject } from '../curriculum/types';
+import type { PracticeItem, Subject } from '../curriculum/types';
 import { PROGRESSION } from '../config/constants';
 import { randRange, shuffle } from '../utils/math';
 import { Sfx } from '../utils/audio';
@@ -31,8 +31,7 @@ export class UfoGameState implements GameState {
 
   private theme: Theme = 'ufo';
   private planet = '';
-  private subject: Subject = 'science';
-  private questions: Question[] = [];
+  private items: PracticeItem[] = [];
   private qIndex = 0;
   private correctCount = 0;
 
@@ -46,7 +45,7 @@ export class UfoGameState implements GameState {
   enter(game: Game, params?: Record<string, unknown>): void {
     this.game = game;
     this.planet = String(params?.planet ?? 'earth');
-    this.subject = (params?.subject as Subject) ?? 'science';
+    const subjects = (params?.subjects as Subject[]) ?? [];
     this.theme = (params?.theme as Theme) ?? 'ufo';
     this.qIndex = 0;
     this.correctCount = 0;
@@ -70,20 +69,19 @@ export class UfoGameState implements GameState {
     game.ui.hud.setLabel(this.theme === 'asteroid' ? 'Asteroid Blast' : 'UFO Mini-Game');
     game.ui.hud.setBack(() => game.states.change('solar-system'));
 
-    // Build question list, with graceful fallbacks so the game is never empty.
-    let pool = game.curriculum.query(this.planet, game.profile.gradeBand, this.subject);
-    if (pool.length === 0) {
-      pool = game.curriculum.all().filter((q) => q.gradeBand === game.profile.gradeBand);
-    }
+    // Build the question list from this world's lessons, with a grade-wide
+    // fallback so the game is never empty.
+    let pool = game.curriculum.practiceForSubjects(subjects, game.profile.gradeBand);
+    if (pool.length === 0) pool = game.curriculum.practiceForGrade(game.profile.gradeBand);
     game.picker.reset();
-    this.questions = game.picker.pick(pool, PROGRESSION.ufoQuestionsPerRound);
+    this.items = game.picker.pick(pool, PROGRESSION.ufoQuestionsPerRound);
 
     this.banner = el('div', { class: 'ufo-banner' });
     game.ui.overlay.append(this.banner);
 
     this.offTap = game.input.onTap((t) => this.onTap(t.ndcX, t.ndcY));
 
-    if (this.questions.length === 0) {
+    if (this.items.length === 0) {
       this.banner.textContent = 'Loading mission…';
       setTimeout(() => game.states.change('solar-system'), 1200);
       return;
@@ -99,7 +97,7 @@ export class UfoGameState implements GameState {
 
   private spawnWave(): void {
     this.locked = false;
-    const q = this.questions[this.qIndex];
+    const q = this.items[this.qIndex].question;
     const noun = this.theme === 'asteroid' ? 'asteroid' : 'UFO';
     this.banner.innerHTML = `<span class="ufo-banner-hint">🎯 Tap the ${noun}:</span> ${q.prompt}`;
 
@@ -152,14 +150,15 @@ export class UfoGameState implements GameState {
       Sfx.explode();
       Sfx.star();
       this.correctCount += 1;
-      this.game.rewards.recordAnswer(this.planet, this.subject);
-      this.game.rewards.awardStars(PROGRESSION.starsPerCorrect, this.planet, this.subject);
+      const subject = this.items[this.qIndex].subject;
+      this.game.rewards.recordAnswer(this.planet, subject);
+      this.game.rewards.awardStars(PROGRESSION.starsPerCorrect, this.planet, subject);
       this.game.ui.hud.setStars(this.game.profile.totalStars);
       this.game.ui.toast('+1 ⭐', 'star');
       this.clearWave();
       this.qIndex += 1;
       this.locked = true;
-      if (this.qIndex >= this.questions.length) {
+      if (this.qIndex >= this.items.length) {
         setTimeout(() => this.finish(), 700);
       } else {
         setTimeout(() => this.spawnWave(), 700);
@@ -178,8 +177,6 @@ export class UfoGameState implements GameState {
   private finish(): void {
     this.game.rewards.grantBadge(this.theme === 'asteroid' ? 'asteroid-blaster' : 'ufo-buster');
     this.game.states.change('reward', {
-      planet: this.planet,
-      subject: this.subject,
       stars: this.correctCount,
       title: 'Mission Complete!',
       next: 'solar-system',

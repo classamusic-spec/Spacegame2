@@ -1,0 +1,102 @@
+{
+  "subject": "science",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "science-prek-living", "gradeBand": "prek", "title": "Living and Nonliving",
+      "objective": "I can tell living things from nonliving things.",
+      "teach": [
+        { "text": "Living things grow, eat, and need water — like plants and animals.", "image": "🌳" },
+        { "text": "Nonliving things do not grow or eat — like rocks and toys.", "image": "🪨" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which one is living?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🐶","correct":true}, {"id":"b","image":"🪨","correct":false} ] },
+        { "id": "q2", "prompt": "Which one is NOT living?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🚗","correct":true}, {"id":"b","image":"🌻","correct":false} ] },
+        { "id": "q3", "prompt": "Living things need...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Water","correct":true}, {"id":"b","label":"Nothing","correct":false} ] }
+      ]
+    },
+    {
+      "id": "science-k-senses", "gradeBand": "k", "title": "The Five Senses",
+      "objective": "I know my five senses.",
+      "teach": [
+        { "text": "We learn about the world with five senses.", "image": "👀" },
+        { "text": "See with eyes, hear with ears, smell with nose, taste with tongue, touch with skin.", "example": "👀 👂 👃 👅 ✋" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which body part do we SEE with?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"👀","correct":true}, {"id":"b","image":"👂","correct":false}, {"id":"c","image":"👃","correct":false} ] },
+        { "id": "q2", "prompt": "How many senses do we have?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"5","correct":true}, {"id":"b","label":"3","correct":false}, {"id":"c","label":"7","correct":false} ] },
+        { "id": "q3", "prompt": "We hear with our...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Ears","correct":true}, {"id":"b","label":"Hands","correct":false} ] }
+      ]
+    },
+    {
+      "id": "science-g1-seasons", "gradeBand": "g1", "title": "The Four Seasons",
+      "objective": "I know the four seasons of the year.",
+      "teach": [
+        { "text": "A year has four seasons: spring, summer, fall, and winter.", "image": "🍂" },
+        { "text": "Plants grow in spring; it's hot in summer; leaves fall in autumn; it's cold in winter.", "example": "🌸 ☀️ 🍂 ❄️" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "How many seasons are in a year?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"4","correct":true}, {"id":"b","label":"2","correct":false}, {"id":"c","label":"7","correct":false} ] },
+        { "id": "q2", "prompt": "Which season is the coldest, with snow?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Winter","correct":true}, {"id":"b","label":"Summer","correct":false} ] },
+        { "id": "q3", "prompt": "In which season do leaves fall from trees?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Fall (Autumn)","correct":true}, {"id":"b","label":"Spring","correct":false} ] }
+      ]
+    },
+    {
+      "id": "science-g2-matter", "gradeBand": "g2", "title": "States of Matter",
+      "objective": "I know solids, liquids, and gases.",
+      "teach": [
+        { "text": "Matter can be a solid, a liquid, or a gas.", "image": "🧊" },
+        { "text": "Ice is a solid, water is a liquid, and steam is a gas — all made of water!", "example": "🧊 → 💧 → 💨" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which is a solid?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🧊","correct":true}, {"id":"b","image":"💧","correct":false}, {"id":"c","image":"💨","correct":false} ] },
+        { "id": "q2", "prompt": "Water you can pour is a...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Liquid","correct":true}, {"id":"b","label":"Solid","correct":false} ] },
+        { "id": "q3", "prompt": "When water freezes it becomes...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Ice","correct":true}, {"id":"b","label":"Steam","correct":false}, {"id":"c","label":"Cloud","correct":false} ] }
+      ]
+    },
+    {
+      "id": "science-g2-watercycle", "gradeBand": "g2", "title": "The Water Cycle",
+      "objective": "I understand how water moves in a cycle.",
+      "teach": [
+        { "text": "The sun heats water and it rises as vapor — that's evaporation.", "image": "☀️" },
+        { "text": "Vapor cools into clouds (condensation), then falls as rain (precipitation).", "example": "evaporate → clouds → rain → repeat" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "What heats the water to start the cycle?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"The Sun","correct":true}, {"id":"b","label":"The Moon","correct":false} ] },
+        { "id": "q2", "prompt": "Water that falls from clouds is called...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Rain","correct":true}, {"id":"b","label":"Smoke","correct":false} ] },
+        { "id": "q3", "prompt": "Clouds are made of tiny drops of...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Water","correct":true}, {"id":"b","label":"Sand","correct":false}, {"id":"c","label":"Cotton","correct":false} ] }
+      ]
+    },
+    {
+      "id": "science-g3-solarsystem", "gradeBand": "g3", "title": "Our Solar System",
+      "objective": "I know the Sun and planets in our solar system.",
+      "teach": [
+        { "text": "Our solar system has the Sun and 8 planets that orbit it.", "image": "🪐" },
+        { "text": "Earth is the third planet, and the only one we know with life.", "example": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "How many planets are in our solar system?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"8","correct":true}, {"id":"b","label":"5","correct":false}, {"id":"c","label":"12","correct":false} ] },
+        { "id": "q2", "prompt": "What is at the center of our solar system?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"The Sun","correct":true}, {"id":"b","label":"Earth","correct":false}, {"id":"c","label":"The Moon","correct":false} ] },
+        { "id": "q3", "prompt": "Which planet do we live on?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Earth","correct":true}, {"id":"b","label":"Mars","correct":false}, {"id":"c","label":"Jupiter","correct":false} ] }
+      ]
+    }
+  ]
+}

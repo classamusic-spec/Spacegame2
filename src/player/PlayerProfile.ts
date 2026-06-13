@@ -21,8 +21,10 @@ export interface PlayerProfile {
   totalStars: number;
   badges: string[];
   planetProgress: Record<string, PlanetProgress>;
+  /** Ids of lessons the player has finished (for ✓ marks). */
+  lessonsCompleted: string[];
   settings: { sfx: boolean; music: boolean };
-  /** Whether the player has finished the start/grade/rocket onboarding. */
+  /** Whether the player has finished the start/rocket/grade onboarding. */
   onboarded: boolean;
 }
 
@@ -35,6 +37,7 @@ export function createDefaultProfile(): PlayerProfile {
     totalStars: 0,
     badges: [],
     planetProgress: {},
+    lessonsCompleted: [],
     settings: { sfx: true, music: false },
     onboarded: false,
   };

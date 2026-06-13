@@ -1,0 +1,182 @@
+{
+  "subject": "math",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "math-tod-count3", "gradeBand": "toddler", "title": "Count to 3",
+      "objective": "I can count 1, 2, 3.",
+      "teach": [
+        { "text": "Numbers help us count things. Let's count to three!", "image": "1️⃣2️⃣3️⃣" },
+        { "text": "Touch each one as you say: one… two… three!", "image": "🍎🍎🍎" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "How many balloons?", "promptImage": "🎈🎈", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"2","correct":true}, {"id":"b","label":"3","correct":false} ] },
+        { "id": "q2", "prompt": "Count the cats!", "promptImage": "🐱🐱🐱", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"3","correct":true}, {"id":"b","label":"1","correct":false}, {"id":"c","label":"2","correct":false} ] },
+        { "id": "q3", "prompt": "How many suns?", "promptImage": "☀️", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"1","correct":true}, {"id":"b","label":"2","correct":false} ] }
+      ]
+    },
+    {
+      "id": "math-prek-count5", "gradeBand": "prek", "title": "Count to 5",
+      "objective": "I can count up to 5 things.",
+      "teach": [
+        { "text": "We can count even more! After 3 comes 4, then 5.", "image": "✋" },
+        { "text": "Your hand has 5 fingers. Count them: 1, 2, 3, 4, 5!", "image": "🖐️" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Count the stars!", "promptImage": "⭐⭐⭐⭐", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"4","correct":true}, {"id":"b","label":"3","correct":false}, {"id":"c","label":"5","correct":false} ] },
+        { "id": "q2", "prompt": "How many fingers on one hand?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"5","correct":true}, {"id":"b","label":"4","correct":false}, {"id":"c","label":"10","correct":false} ] },
+        { "id": "q3", "prompt": "Which group has MORE?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🐟🐟🐟","correct":true}, {"id":"b","image":"🐟","correct":false} ] }
+      ]
+    },
+    {
+      "id": "math-k-count10", "gradeBand": "k", "title": "Counting to 10",
+      "objective": "I can count to 10 and know which number is bigger.",
+      "teach": [
+        { "text": "Counting goes 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.", "image": "🔢" },
+        { "text": "Bigger numbers mean MORE. 9 is bigger than 4.", "example": "10 is the biggest number we count to today!" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "What number comes after 6?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"7","correct":true}, {"id":"b","label":"5","correct":false}, {"id":"c","label":"8","correct":false} ] },
+        { "id": "q2", "prompt": "Which number is bigger?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"9","correct":true}, {"id":"b","label":"4","correct":false}, {"id":"c","label":"6","correct":false} ] },
+        { "id": "q3", "prompt": "Count: how many planets?", "promptImage": "🪐🪐🪐🪐🪐🪐🪐", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"7","correct":true}, {"id":"b","label":"6","correct":false}, {"id":"c","label":"8","correct":false} ] }
+      ]
+    },
+    {
+      "id": "math-k-add10", "gradeBand": "k", "title": "Adding Within 10",
+      "objective": "I can add two numbers that make 10 or less.",
+      "teach": [
+        { "text": "Adding means putting groups together to find how many in all.", "image": "➕" },
+        { "text": "2 apples and 1 apple makes 3 apples.", "example": "2 + 1 = 3" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "What is 2 + 1?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"3","correct":true}, {"id":"b","label":"2","correct":false}, {"id":"c","label":"4","correct":false} ] },
+        { "id": "q2", "prompt": "What is 3 + 2?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"5","correct":true}, {"id":"b","label":"4","correct":false}, {"id":"c","label":"6","correct":false} ] },
+        { "id": "q3", "prompt": "What is 4 + 4?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"8","correct":true}, {"id":"b","label":"7","correct":false}, {"id":"c","label":"6","correct":false} ] }
+      ]
+    },
+    {
+      "id": "math-k-shapes", "gradeBand": "k", "title": "Simple Shapes",
+      "objective": "I can name a circle, square, and triangle.",
+      "teach": [
+        { "text": "A circle is round with no corners.", "image": "⭕" },
+        { "text": "A square has 4 equal sides. A triangle has 3 sides.", "image": "🔺" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which one is a circle?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"⭕","correct":true}, {"id":"b","image":"🔺","correct":false}, {"id":"c","image":"⬛","correct":false} ] },
+        { "id": "q2", "prompt": "How many sides does a triangle have?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"3","correct":true}, {"id":"b","label":"4","correct":false}, {"id":"c","label":"2","correct":false} ] },
+        { "id": "q3", "prompt": "Which shape is a square?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"⬛","correct":true}, {"id":"b","image":"⭕","correct":false} ] }
+      ]
+    },
+    {
+      "id": "math-g1-add20", "gradeBand": "g1", "title": "Adding Within 20",
+      "objective": "I can add numbers up to 20.",
+      "teach": [
+        { "text": "When adding bigger numbers, you can count on from the larger number.", "image": "➕" },
+        { "text": "For 8 + 5, start at 8 and count up 5: 9, 10, 11, 12, 13.", "example": "8 + 5 = 13" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "What is 6 + 4?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"10","correct":true}, {"id":"b","label":"9","correct":false}, {"id":"c","label":"11","correct":false} ] },
+        { "id": "q2", "prompt": "What is 8 + 5?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"13","correct":true}, {"id":"b","label":"12","correct":false}, {"id":"c","label":"14","correct":false} ] },
+        { "id": "q3", "prompt": "What is 9 + 9?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"18","correct":true}, {"id":"b","label":"17","correct":false}, {"id":"c","label":"19","correct":false} ] }
+      ]
+    },
+    {
+      "id": "math-g1-subtract", "gradeBand": "g1", "title": "Subtraction",
+      "objective": "I can take away to find how many are left.",
+      "teach": [
+        { "text": "Subtraction means taking some away. The amount left is the answer.", "image": "➖" },
+        { "text": "5 cookies, eat 2, and 3 are left.", "example": "5 - 2 = 3" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "What is 7 - 3?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"4","correct":true}, {"id":"b","label":"5","correct":false}, {"id":"c","label":"3","correct":false} ] },
+        { "id": "q2", "prompt": "What is 10 - 6?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"4","correct":true}, {"id":"b","label":"6","correct":false}, {"id":"c","label":"3","correct":false} ] },
+        { "id": "q3", "prompt": "What is 9 - 9?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"0","correct":true}, {"id":"b","label":"1","correct":false}, {"id":"c","label":"9","correct":false} ] }
+      ]
+    },
+    {
+      "id": "math-g2-twodigit", "gradeBand": "g2", "title": "Two-Digit Addition",
+      "objective": "I can add two-digit numbers.",
+      "teach": [
+        { "text": "Add the ones first, then the tens.", "image": "🔟" },
+        { "text": "For 25 + 13: add ones (5+3=8), add tens (20+10=30), so 38.", "example": "25 + 13 = 38" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "What is 25 + 13?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"38","correct":true}, {"id":"b","label":"28","correct":false}, {"id":"c","label":"48","correct":false} ] },
+        { "id": "q2", "prompt": "What is 40 + 35?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"75","correct":true}, {"id":"b","label":"70","correct":false}, {"id":"c","label":"85","correct":false} ] },
+        { "id": "q3", "prompt": "What is 50 - 20?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"30","correct":true}, {"id":"b","label":"20","correct":false}, {"id":"c","label":"40","correct":false} ] }
+      ]
+    },
+    {
+      "id": "math-g2-time", "gradeBand": "g2", "title": "Telling Time",
+      "objective": "I can tell time to the hour and half hour.",
+      "teach": [
+        { "text": "A clock has two hands. The short hand shows the hour.", "image": "🕐" },
+        { "text": "When the long hand points to 12, it is o'clock. When it points to 6, it is half past.", "example": "Long hand on 12, short on 3 = 3 o'clock." }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which hand shows the hour?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"The short hand","correct":true}, {"id":"b","label":"The long hand","correct":false} ] },
+        { "id": "q2", "prompt": "How many minutes are in one hour?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"60","correct":true}, {"id":"b","label":"30","correct":false}, {"id":"c","label":"100","correct":false} ] },
+        { "id": "q3", "prompt": "When the long hand is on 12, it is...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"o'clock","correct":true}, {"id":"b","label":"half past","correct":false} ] }
+      ]
+    },
+    {
+      "id": "math-g3-multiply", "gradeBand": "g3", "title": "Multiplication",
+      "objective": "I can multiply small numbers.",
+      "teach": [
+        { "text": "Multiplication is fast adding of equal groups.", "image": "✖️" },
+        { "text": "3 groups of 4 is 4 + 4 + 4 = 12, so 3 × 4 = 12.", "example": "3 × 4 = 12" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "What is 4 × 3?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"12","correct":true}, {"id":"b","label":"7","correct":false}, {"id":"c","label":"9","correct":false} ] },
+        { "id": "q2", "prompt": "What is 6 × 5?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"30","correct":true}, {"id":"b","label":"25","correct":false}, {"id":"c","label":"35","correct":false} ] },
+        { "id": "q3", "prompt": "What is 7 × 2?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"14","correct":true}, {"id":"b","label":"12","correct":false}, {"id":"c","label":"16","correct":false} ] }
+      ]
+    },
+    {
+      "id": "math-g3-fractions", "gradeBand": "g3", "title": "Fractions",
+      "objective": "I understand halves, thirds, and fourths.",
+      "teach": [
+        { "text": "A fraction is an equal part of a whole.", "image": "🍕" },
+        { "text": "Cut a pizza into 2 equal parts and each part is one half (1/2).", "example": "1/2 means 1 of 2 equal parts." }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "How many halves make a whole?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"2","correct":true}, {"id":"b","label":"3","correct":false}, {"id":"c","label":"4","correct":false} ] },
+        { "id": "q2", "prompt": "What is half of 10?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"5","correct":true}, {"id":"b","label":"2","correct":false}, {"id":"c","label":"10","correct":false} ] },
+        { "id": "q3", "prompt": "A shape cut into 4 equal parts shows...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Fourths","correct":true}, {"id":"b","label":"Halves","correct":false}, {"id":"c","label":"Thirds","correct":false} ] }
+      ]
+    }
+  ]
+}

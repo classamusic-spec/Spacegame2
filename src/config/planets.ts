@@ -26,8 +26,10 @@ export interface PlanetDef {
   hasRing: boolean;
   /** Axial tilt in radians, for a touch of realism. */
   tilt: number;
-  /** Subjects taught at this planet. */
+  /** Subjects taught at this planet (this is its "subject world"). */
   subjects: Subject[];
+  /** Display name for the subject world, e.g. "Math World". */
+  world: string;
   /** Stars required before this planet unlocks (0 = open from start). */
   unlockStars: number;
   /** Fun one-liner shown on approach. */
@@ -46,9 +48,10 @@ export const PLANETS: PlanetDef[] = [
     visual: 'rocky',
     hasRing: false,
     tilt: 0.02,
-    subjects: ['math', 'science'],
+    subjects: ['math'],
+    world: 'Math World',
     unlockStars: 0,
-    blurb: 'The smallest, fastest planet — closest to the Sun!',
+    blurb: 'Count, add, take away, and solve number puzzles!',
   },
   {
     id: 'venus',
@@ -62,9 +65,10 @@ export const PLANETS: PlanetDef[] = [
     atmosphere: 0xffd98a,
     hasRing: false,
     tilt: 0.05,
-    subjects: ['phonics', 'spelling'],
+    subjects: ['phonics'],
+    world: 'Phonics World',
     unlockStars: 5,
-    blurb: 'The hottest planet, wrapped in golden clouds.',
+    blurb: 'Sound out letters and blend them into words!',
   },
   {
     id: 'earth',
@@ -79,9 +83,10 @@ export const PLANETS: PlanetDef[] = [
     clouds: true,
     hasRing: false,
     tilt: 0.41,
-    subjects: ['math', 'phonics', 'science', 'geography'],
+    subjects: ['reading'],
+    world: 'Reading World',
     unlockStars: 0,
-    blurb: 'Our home! Land here to learn about states and more.',
+    blurb: 'Read words and stories here on our home planet!',
   },
   {
     id: 'mars',
@@ -95,9 +100,10 @@ export const PLANETS: PlanetDef[] = [
     atmosphere: 0xff7a4a,
     hasRing: false,
     tilt: 0.44,
-    subjects: ['science', 'math', 'history'],
+    subjects: ['science'],
+    world: 'Science World',
     unlockStars: 10,
-    blurb: 'The Red Planet — could robots find water here?',
+    blurb: 'Explore plants, animals, weather, and space!',
   },
   {
     id: 'jupiter',
@@ -111,9 +117,10 @@ export const PLANETS: PlanetDef[] = [
     atmosphere: 0xe0b487,
     hasRing: false,
     tilt: 0.05,
-    subjects: ['math', 'science'],
+    subjects: ['history', 'geography'],
+    world: 'Social Studies World',
     unlockStars: 15,
-    blurb: 'The GIANT! It has a storm bigger than Earth.',
+    blurb: 'Learn about people, places, maps, and the past!',
   },
   {
     id: 'saturn',
@@ -127,9 +134,10 @@ export const PLANETS: PlanetDef[] = [
     atmosphere: 0xf0e2b0,
     hasRing: true,
     tilt: 0.47,
-    subjects: ['science', 'reading'],
+    subjects: ['spelling'],
+    world: 'Spelling World',
     unlockStars: 22,
-    blurb: 'Famous for its beautiful icy rings!',
+    blurb: 'Spell tricky words among the icy rings!',
   },
   {
     id: 'uranus',
@@ -143,9 +151,10 @@ export const PLANETS: PlanetDef[] = [
     atmosphere: 0xbff2f6,
     hasRing: false,
     tilt: 1.7,
-    subjects: ['science', 'spelling'],
+    subjects: ['grammar'],
+    world: 'Grammar World',
     unlockStars: 30,
-    blurb: 'The tilted ice giant that spins on its side!',
+    blurb: 'Build great sentences with nouns, verbs, and more!',
   },
   {
     id: 'neptune',
@@ -159,9 +168,10 @@ export const PLANETS: PlanetDef[] = [
     atmosphere: 0x6f8ff0,
     hasRing: false,
     tilt: 0.49,
-    subjects: ['science', 'math'],
+    subjects: ['arts', 'music', 'health'],
+    world: 'Arts & Wellness World',
     unlockStars: 38,
-    blurb: 'The windiest, farthest big planet — deep blue!',
+    blurb: 'Discover art, music, and how to stay healthy!',
   },
 ];
 

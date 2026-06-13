@@ -1,0 +1,54 @@
+{
+  "subject": "music",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "music-k-loudsoft", "gradeBand": "k", "title": "Loud and Soft",
+      "objective": "I can tell loud sounds from soft sounds.",
+      "teach": [
+        { "text": "In music, sounds can be loud or soft.", "image": "🔊" },
+        { "text": "A drum can be loud. A whisper is soft.", "example": "🥁 loud   🤫 soft" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which is usually LOUD?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🥁","correct":true}, {"id":"b","image":"🤫","correct":false} ] },
+        { "id": "q2", "prompt": "A whisper is...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Soft","correct":true}, {"id":"b","label":"Loud","correct":false} ] },
+        { "id": "q3", "prompt": "Which makes a soft sound?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🔔","correct":true}, {"id":"b","image":"📢","correct":false} ] }
+      ]
+    },
+    {
+      "id": "music-g1-beat", "gradeBand": "g1", "title": "Beat and Tempo",
+      "objective": "I understand a steady beat and fast or slow tempo.",
+      "teach": [
+        { "text": "A beat is a steady pulse you can clap to.", "image": "👏" },
+        { "text": "Tempo is how fast or slow the music goes.", "example": "Fast 🐇  Slow 🐢" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "A steady pulse in music is the...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Beat","correct":true}, {"id":"b","label":"Color","correct":false} ] },
+        { "id": "q2", "prompt": "How fast or slow music goes is the...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Tempo","correct":true}, {"id":"b","label":"Title","correct":false} ] },
+        { "id": "q3", "prompt": "A turtle's music would be...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Slow","correct":true}, {"id":"b","label":"Fast","correct":false} ] }
+      ]
+    },
+    {
+      "id": "music-g2-instruments", "gradeBand": "g2", "title": "Instrument Families",
+      "objective": "I can group instruments by how they make sound.",
+      "teach": [
+        { "text": "Instruments belong to families: strings, percussion, and wind.", "image": "🎻" },
+        { "text": "You strum strings, hit percussion, and blow into wind instruments.", "example": "🎻 strings  🥁 percussion  🎺 wind" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which do you hit to play?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🥁","correct":true}, {"id":"b","image":"🎺","correct":false} ] },
+        { "id": "q2", "prompt": "Which do you blow into?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🎺","correct":true}, {"id":"b","image":"🎻","correct":false} ] },
+        { "id": "q3", "prompt": "A guitar belongs to which family?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Strings","correct":true}, {"id":"b","label":"Percussion","correct":false} ] }
+      ]
+    }
+  ]
+}

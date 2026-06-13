@@ -1,0 +1,54 @@
+{
+  "subject": "health",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "health-k-foods", "gradeBand": "k", "title": "Healthy Foods",
+      "objective": "I can choose healthy foods.",
+      "teach": [
+        { "text": "Healthy foods give our bodies energy to grow and play.", "image": "🍎" },
+        { "text": "Fruits and vegetables are healthy. Candy is a sometimes treat.", "example": "🍎🥕🥦 every day" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which is a healthy snack?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🍎","correct":true}, {"id":"b","image":"🍭","correct":false} ] },
+        { "id": "q2", "prompt": "Which helps your body grow strong?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🥦","correct":true}, {"id":"b","image":"🍰","correct":false} ] },
+        { "id": "q3", "prompt": "We should drink lots of...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Water","correct":true}, {"id":"b","label":"Soda","correct":false} ] }
+      ]
+    },
+    {
+      "id": "health-g1-hygiene", "gradeBand": "g1", "title": "Staying Clean",
+      "objective": "I know how to keep germs away.",
+      "teach": [
+        { "text": "Washing hands with soap and water washes away germs.", "image": "🧼" },
+        { "text": "Wash before eating and after using the bathroom. Brush your teeth twice a day.", "example": "Scrub for 20 seconds! 🪥" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "What washes germs off your hands?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Soap and water","correct":true}, {"id":"b","label":"Mud","correct":false} ] },
+        { "id": "q2", "prompt": "How many times a day should you brush your teeth?", "answerStyle": "number",
+          "answers": [ {"id":"a","label":"2","correct":true}, {"id":"b","label":"0","correct":false} ] },
+        { "id": "q3", "prompt": "When should you wash your hands?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Before eating","correct":true}, {"id":"b","label":"Never","correct":false} ] }
+      ]
+    },
+    {
+      "id": "health-g2-body", "gradeBand": "g2", "title": "Exercise and Sleep",
+      "objective": "I know my body needs activity and rest.",
+      "teach": [
+        { "text": "Exercise like running and playing keeps our hearts strong.", "image": "🏃" },
+        { "text": "Kids need about 10 hours of sleep to feel their best.", "example": "Move every day 🏃, sleep well 😴" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Exercise keeps which body part strong?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Your heart","correct":true}, {"id":"b","label":"Your TV","correct":false} ] },
+        { "id": "q2", "prompt": "Your body rests and grows when you...", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"Sleep","correct":true}, {"id":"b","label":"Watch screens","correct":false} ] },
+        { "id": "q3", "prompt": "Which is good exercise?", "answerStyle": "picture",
+          "answers": [ {"id":"a","image":"🏃","correct":true}, {"id":"b","image":"🛋️","correct":false} ] }
+      ]
+    }
+  ]
+}

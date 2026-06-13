@@ -1,0 +1,70 @@
+{
+  "subject": "grammar",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "grammar-k-nouns", "gradeBand": "k", "title": "Naming Words (Nouns)",
+      "objective": "I know a noun names a person, place, or thing.",
+      "teach": [
+        { "text": "A noun is a naming word. It names a person, place, animal, or thing.", "image": "🏷️" },
+        { "text": "Dog, school, and ball are all nouns.", "example": "dog 🐶, school 🏫, ball ⚽" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which word is a noun (a thing)?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"ball","correct":true}, {"id":"b","label":"jump","correct":false}, {"id":"c","label":"happy","correct":false} ] },
+        { "id": "q2", "prompt": "Which word names a place?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"school","correct":true}, {"id":"b","label":"run","correct":false} ] },
+        { "id": "q3", "prompt": "Which is a naming word?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"cat","correct":true}, {"id":"b","label":"fast","correct":false}, {"id":"c","label":"sing","correct":false} ] }
+      ]
+    },
+    {
+      "id": "grammar-g1-verbs", "gradeBand": "g1", "title": "Action Words (Verbs)",
+      "objective": "I know a verb is an action word.",
+      "teach": [
+        { "text": "A verb is an action word. It tells what someone does.", "image": "🏃" },
+        { "text": "Run, jump, and read are verbs.", "example": "The dog runs. 'Runs' is the verb." }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which word is an action (verb)?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"jump","correct":true}, {"id":"b","label":"chair","correct":false}, {"id":"c","label":"blue","correct":false} ] },
+        { "id": "q2", "prompt": "In 'She sings', which word is the verb?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"sings","correct":true}, {"id":"b","label":"She","correct":false} ] },
+        { "id": "q3", "prompt": "Which word shows action?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"swim","correct":true}, {"id":"b","label":"table","correct":false} ] }
+      ]
+    },
+    {
+      "id": "grammar-g2-adjectives", "gradeBand": "g2", "title": "Describing Words (Adjectives)",
+      "objective": "I can use adjectives to describe nouns.",
+      "teach": [
+        { "text": "An adjective describes a noun — its color, size, or how it feels.", "image": "🌈" },
+        { "text": "In 'the big red ball', 'big' and 'red' are adjectives.", "example": "the soft, fluffy cat" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "Which word is a describing word?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"tiny","correct":true}, {"id":"b","label":"run","correct":false}, {"id":"c","label":"dog","correct":false} ] },
+        { "id": "q2", "prompt": "In 'the red apple', which is the adjective?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"red","correct":true}, {"id":"b","label":"apple","correct":false} ] },
+        { "id": "q3", "prompt": "Which word describes how something feels?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"soft","correct":true}, {"id":"b","label":"jump","correct":false}, {"id":"c","label":"box","correct":false} ] }
+      ]
+    },
+    {
+      "id": "grammar-g3-sentences", "gradeBand": "g3", "title": "Capital Letters & Periods",
+      "objective": "I can start and end a sentence correctly.",
+      "teach": [
+        { "text": "A sentence begins with a CAPITAL letter.", "image": "🔠" },
+        { "text": "A telling sentence ends with a period. A question ends with a question mark.", "example": "The sky is blue.  Is it raining?" }
+      ],
+      "questions": [
+        { "id": "q1", "prompt": "How should a sentence begin?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"With a capital letter","correct":true}, {"id":"b","label":"With a number","correct":false} ] },
+        { "id": "q2", "prompt": "Which ends a telling sentence?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"A period .","correct":true}, {"id":"b","label":"A comma ,","correct":false} ] },
+        { "id": "q3", "prompt": "Which sentence is written correctly?", "answerStyle": "text",
+          "answers": [ {"id":"a","label":"The dog ran.","correct":true}, {"id":"b","label":"the dog ran","correct":false} ] }
+      ]
+    }
+  ]
+}

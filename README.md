@@ -1,9 +1,26 @@
 # 🚀 Space Explorer Academy
 
 A gorgeous, touch-first **3D educational space game** for kids **toddler through 3rd grade**.
-Kids choose a rocket, fly a 3D solar system, land on planets to answer
-age-appropriate questions across a full school curriculum, and play UFO-shooting
-mini-games — earning stars, unlocking planets, and collecting badges.
+Kids choose a rocket and fly a 3D solar system where **each planet is a school
+subject world**. They land to take real **lessons** — a short, illustrated
+explanation followed by practice — across the full elementary curriculum, and
+play shooting mini-games, earning stars, unlocking planets, and collecting badges.
+
+### The curriculum (each planet is a subject world)
+
+| Planet | Subject world | Sample lessons |
+|---|---|---|
+| Mercury | **Math** | Counting, Adding/Subtracting, Time, Multiplication, Fractions |
+| Venus | **Phonics** | Beginning sounds, Letter sounds, Rhyming, Blending, Vowel teams |
+| Earth | **Reading** | Sight words, Story details, Sequencing, Main idea |
+| Mars | **Science** | Living things, Five senses, Seasons, Matter, Water cycle, Solar system |
+| Jupiter | **Social Studies** | Then & now, Community helpers, Holidays, Maps, Continents, USA |
+| Saturn | **Spelling** | Short words, Sight words, Plurals, Silent letters |
+| Uranus | **Grammar & Writing** | Nouns, Verbs, Adjectives, Capitals & punctuation |
+| Neptune | **Arts, Music & Health** | Colors, Mixing, Beat & tempo, Healthy foods, Hygiene |
+
+Every lesson **teaches first, then quizzes** — content is grade-leveled
+(toddler → 3rd) and pre-readers get picture/emoji answers.
 
 Built with **Three.js + Vite + TypeScript**. Tablet/touch-first, with full mouse
 & keyboard support. Visuals are almost entirely **procedural** (shaders, particles,
@@ -18,7 +35,9 @@ licensing concerns.
 | ![Title screen](docs/screenshots/title.png) | ![Grade select](docs/screenshots/grade-select.png) |
 | **Choose your rocket** | **Explore the full solar system** |
 | ![Rocket select](docs/screenshots/rocket-select.png) | ![Solar system](docs/screenshots/solar-system.png) |
-| **Answer questions** | **UFO mini-game (inner planets)** |
+| **Pick a lesson (subject world)** | **Learn, then practice** |
+| ![Lesson menu](docs/screenshots/lesson-menu.png) | ![Lesson teach card](docs/screenshots/lesson.png) |
+| **Practice questions** | **UFO mini-game (inner planets)** |
 | ![Quiz](docs/screenshots/quiz.png) | ![UFO mini-game](docs/screenshots/ufo-game.png) |
 | **Saturn & its rings** | **Asteroid Blast (outer planets)** |
 | ![Saturn](docs/screenshots/saturn.png) | ![Asteroid mini-game](docs/screenshots/asteroid-game.png) |
@@ -44,7 +63,8 @@ npm run preview  # serve the production build
    or tap a planet / its dock button to **auto-travel** there. Tap the **👁️ button**
    to switch into a **first-person cockpit** view — a rocket flight deck or a UFO
    glass dome, matched to your chosen ship.
-3. At a planet, pick a **subject** to start a quiz, or play the **mini-game**
+3. Each planet is a **subject world**. Pick a **lesson** to learn a concept
+   (illustrated teaching cards) and then practice it, or play the **mini-game**
    (UFO shooter at the inner planets, Asteroid Blast at the outer ones).
 4. Earn **⭐ stars** for correct answers — they unlock new planets and earn **badges**.
    Progress saves automatically to your browser.
@@ -55,25 +75,39 @@ planned later phase.
 ## Project layout
 
 ```
-data/curriculum/<planet>/<subject>.json   # all questions — easy to edit & expand
+data/curriculum/<subject>.json   # lessons (teach + practice) per subject — easy to edit
 src/core/        # Game spine, loop, state machine, event bus
-src/states/      # screens: start, grade/rocket select, solar system, quiz, UFO, reward
+src/states/      # screens: start, grade/rocket select, solar system, lesson, UFO, reward
 src/scene/       # Three.js: renderer, bloom, starfield, planets, rocket, UFOs, particles
 src/curriculum/  # schema + JSON loader/validator + question picker
 src/player/      # profile + localStorage persistence
 src/progression/ # stars, planet unlocks, badges
-src/ui/          # DOM overlay: HUD, buttons, question cards, toasts
+src/ui/          # DOM overlay: HUD, buttons, question/teach cards, cockpit, toasts
 src/input/       # unified touch + mouse/keyboard intents, virtual joystick
 ```
 
 ## Adding curriculum content
 
-Add or edit JSON files under `data/curriculum/<planet>/<subject>.json`. Each
-question is validated at load time against the schema in
-`src/curriculum/types.ts`; bad entries are logged and skipped. Grade bands:
-`toddler, prek, k, g1, g2, g3`. Answer styles: `text`, `number`, `picture`
-(emoji). Register new `(planet, subject)` files in
-`data/curriculum/index.json`.
+Each subject has one file, `data/curriculum/<subject>.json`, containing a list
+of **lessons**. A lesson has a `gradeBand`, a `title`, an "I can…" `objective`,
+`teach` cards (the explanation), and `questions` (the practice):
+
+```jsonc
+{
+  "id": "math-k-add10", "gradeBand": "k", "title": "Adding Within 10",
+  "objective": "I can add two numbers that make 10 or less.",
+  "teach": [ { "text": "Adding puts groups together.", "image": "➕" } ],
+  "questions": [
+    { "id": "q1", "prompt": "What is 2 + 1?", "answerStyle": "number",
+      "answers": [ {"id":"a","label":"3","correct":true}, {"id":"b","label":"2","correct":false} ] }
+  ]
+}
+```
+
+Everything is validated at load time against `src/curriculum/types.ts`; bad
+entries are logged and skipped. Grade bands: `toddler, prek, k, g1, g2, g3`.
+Answer styles: `text`, `number`, `picture` (emoji). Which subjects appear on
+which planet is set in `src/config/planets.ts`.
 
 ## Roadmap
 
@@ -83,7 +117,11 @@ question is validated at load time against the schema in
 - **Phase 3 (done):** full solar system — Jupiter, Saturn (with rings!), Uranus,
   Neptune with per-type gorgeous textures, atmospheric glow, an asteroid belt,
   extended unlock progression, and the Asteroid Blast mini-game variant.
-- **Phase 2 (done):** broadened curriculum — reading added, plus math, science,
-  spelling and reading content for the outer planets across grade bands.
+- **Phase 2 (done):** broadened curriculum across grade bands.
+- **Curriculum overhaul (done):** real **lessons** (teach then practice) across
+  the whole elementary curriculum — Math, Reading, Phonics, Spelling, Grammar,
+  Science, Social Studies (History & Geography), and Arts/Music/Health. Each
+  planet is now a coherent **subject world** (53 lessons / 159 practice items).
+- **First-person cockpit (done):** rocket flight deck & UFO dome views.
 - **Phase 4 (next):** spoken narration & richer audio for pre-readers.
 - **Phase 5:** content-authoring tools & parent dashboard.
