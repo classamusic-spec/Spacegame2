@@ -1,49 +1,210 @@
 import * as THREE from 'three';
 
 // Procedural planet & sun textures drawn to a canvas — no image files needed.
-// Each planet gets banded noise tinted by its base + accent colors, giving a
-// distinct, colorful look that reads well for kids.
+// Each planet type gets its own gorgeous, distinct look that reads well for kids.
 
-function hex(color: number): string {
-  return '#' + color.toString(16).padStart(6, '0');
+export type PlanetVisual = 'rocky' | 'earthlike' | 'gas' | 'ice';
+
+function rgba(c: THREE.Color, a: number): string {
+  return `rgba(${(c.r * 255) | 0},${(c.g * 255) | 0},${(c.b * 255) | 0},${a})`;
 }
 
-export function makePlanetTexture(base: number, accent: number): THREE.Texture {
-  const w = 512;
-  const h = 256;
+// Build a planet surface texture appropriate to its type. Higher resolution +
+// layered passes (base gradient, bands/continents, detail, highlights) give a
+// rich, painterly look while staying cheap (drawn once at load).
+export function makePlanetTexture(base: number, accent: number, visual: PlanetVisual = 'rocky'): THREE.Texture {
+  const w = 1024;
+  const h = 512;
   const canvas = document.createElement('canvas');
   canvas.width = w;
   canvas.height = h;
   const ctx = canvas.getContext('2d')!;
-
-  ctx.fillStyle = hex(base);
-  ctx.fillRect(0, 0, w, h);
-
-  // Horizontal accent bands with soft wobble for a cloudy/striped surface.
   const baseC = new THREE.Color(base);
   const accentC = new THREE.Color(accent);
-  const bands = 14;
+
+  // Subtle vertical lighting gradient (poles darker) for every type.
+  const grad = ctx.createLinearGradient(0, 0, 0, h);
+  grad.addColorStop(0, rgba(baseC.clone().multiplyScalar(0.7), 1));
+  grad.addColorStop(0.5, rgba(baseC, 1));
+  grad.addColorStop(1, rgba(baseC.clone().multiplyScalar(0.65), 1));
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, w, h);
+
+  if (visual === 'earthlike') {
+    drawEarthlike(ctx, w, h, baseC, accentC);
+  } else if (visual === 'gas') {
+    drawGasGiant(ctx, w, h, baseC, accentC);
+  } else if (visual === 'ice') {
+    drawIceGiant(ctx, w, h, baseC, accentC);
+  } else {
+    drawRocky(ctx, w, h, baseC, accentC);
+  }
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.anisotropy = 4;
+  tex.needsUpdate = true;
+  return tex;
+}
+
+function drawRocky(ctx: CanvasRenderingContext2D, w: number, h: number, base: THREE.Color, accent: THREE.Color): void {
+  // Mottled patches.
+  for (let i = 0; i < 60; i++) {
+    const mix = base.clone().lerp(accent, Math.random());
+    ctx.fillStyle = rgba(mix, 0.25 + Math.random() * 0.3);
+    ctx.beginPath();
+    ctx.ellipse(Math.random() * w, Math.random() * h, 30 + Math.random() * 90, 20 + Math.random() * 60, Math.random() * Math.PI, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  // Craters: dark rim + lighter floor for a 3D feel.
+  for (let i = 0; i < 90; i++) {
+    const x = Math.random() * w;
+    const y = Math.random() * h;
+    const r = 4 + Math.random() * 16;
+    ctx.fillStyle = 'rgba(0,0,0,0.22)';
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = rgba(base.clone().lerp(accent, 0.4), 0.5);
+    ctx.beginPath();
+    ctx.arc(x - r * 0.2, y - r * 0.2, r * 0.7, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+function drawEarthlike(ctx: CanvasRenderingContext2D, w: number, h: number, _ocean: THREE.Color, land: THREE.Color): void {
+  // Ocean base already laid; paint blobby continents with green/brown.
+  const landC = land;
+  const sand = land.clone().lerp(new THREE.Color(0xc2a05a), 0.5);
+  for (let c = 0; c < 14; c++) {
+    const cx = Math.random() * w;
+    const cy = h * (0.2 + Math.random() * 0.6);
+    const blobs = 8 + (Math.random() * 10) | 0;
+    ctx.fillStyle = rgba(landC, 0.95);
+    for (let b = 0; b < blobs; b++) {
+      const ang = Math.random() * Math.PI * 2;
+      const dist = Math.random() * 70;
+      ctx.beginPath();
+      ctx.ellipse(cx + Math.cos(ang) * dist, cy + Math.sin(ang) * dist, 18 + Math.random() * 34, 14 + Math.random() * 26, Math.random() * Math.PI, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    // Coastal sand accents.
+    ctx.fillStyle = rgba(sand, 0.5);
+    for (let b = 0; b < 6; b++) {
+      ctx.beginPath();
+      ctx.arc(cx + (Math.random() - 0.5) * 120, cy + (Math.random() - 0.5) * 90, 6 + Math.random() * 12, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+  // Polar ice caps.
+  ctx.fillStyle = 'rgba(255,255,255,0.85)';
+  ctx.fillRect(0, 0, w, h * 0.06);
+  ctx.fillRect(0, h * 0.94, w, h * 0.06);
+  ctx.fillStyle = 'rgba(255,255,255,0.4)';
+  ctx.fillRect(0, h * 0.06, w, h * 0.04);
+  ctx.fillRect(0, h * 0.9, w, h * 0.04);
+}
+
+function drawGasGiant(ctx: CanvasRenderingContext2D, w: number, h: number, base: THREE.Color, accent: THREE.Color): void {
+  // Flowing horizontal bands.
+  const bands = 22;
   for (let i = 0; i < bands; i++) {
     const t = i / bands;
-    const mix = baseC.clone().lerp(accentC, Math.random() * 0.8);
-    ctx.fillStyle = `rgba(${(mix.r * 255) | 0},${(mix.g * 255) | 0},${(mix.b * 255) | 0},0.5)`;
-    const y = t * h + Math.sin(i) * 6;
-    const bh = (h / bands) * (0.5 + Math.random());
+    const mix = base.clone().lerp(accent, (Math.sin(i * 1.7) * 0.5 + 0.5) * 0.9);
+    const y = t * h;
+    const bh = h / bands + 2;
+    ctx.fillStyle = rgba(mix, 0.85);
+    ctx.fillRect(0, y, w, bh);
+  }
+  // Turbulent swirl wisps along the band edges.
+  for (let i = 0; i < 400; i++) {
+    const y = Math.random() * h;
+    const mix = base.clone().lerp(accent, Math.random());
+    ctx.strokeStyle = rgba(mix, 0.15);
+    ctx.lineWidth = 1 + Math.random() * 3;
     ctx.beginPath();
-    ctx.ellipse(w / 2, y, w, bh, 0, 0, Math.PI * 2);
+    const x = Math.random() * w;
+    ctx.moveTo(x, y);
+    ctx.bezierCurveTo(x + 40, y - 8, x + 80, y + 8, x + 130, y);
+    ctx.stroke();
+  }
+  // A signature storm (Great-Red-Spot style oval).
+  const sx = w * (0.3 + Math.random() * 0.4);
+  const sy = h * (0.45 + Math.random() * 0.2);
+  const storm = accent.clone().lerp(new THREE.Color(0xffffff), 0.2);
+  for (let r = 4; r > 0; r--) {
+    ctx.fillStyle = rgba(storm.clone().multiplyScalar(0.6 + r * 0.1), 0.5);
+    ctx.beginPath();
+    ctx.ellipse(sx, sy, 60 * (r / 4), 34 * (r / 4), 0, 0, Math.PI * 2);
     ctx.fill();
   }
+}
 
-  // Scatter lighter speckles (craters / clouds).
-  for (let i = 0; i < 240; i++) {
-    const r = Math.random() * 5 + 1;
-    const light = Math.random() > 0.5;
-    ctx.fillStyle = light ? 'rgba(255,255,255,0.18)' : 'rgba(0,0,0,0.15)';
+function drawIceGiant(ctx: CanvasRenderingContext2D, w: number, h: number, base: THREE.Color, accent: THREE.Color): void {
+  // Smooth, faint bands for a serene icy look.
+  const bands = 10;
+  for (let i = 0; i < bands; i++) {
+    const t = i / bands;
+    const mix = base.clone().lerp(accent, (Math.sin(i) * 0.5 + 0.5) * 0.5);
+    ctx.fillStyle = rgba(mix, 0.4);
+    ctx.fillRect(0, t * h, w, h / bands + 2);
+  }
+  // Soft high clouds.
+  for (let i = 0; i < 40; i++) {
+    ctx.fillStyle = 'rgba(255,255,255,0.08)';
     ctx.beginPath();
-    ctx.arc(Math.random() * w, Math.random() * h, r, 0, Math.PI * 2);
+    ctx.ellipse(Math.random() * w, Math.random() * h, 40 + Math.random() * 80, 10 + Math.random() * 20, 0, 0, Math.PI * 2);
     ctx.fill();
   }
+}
 
+// A transparent cloud layer (white blobs on alpha) for earthlike planets,
+// drawn on a slightly larger second sphere that rotates independently.
+export function makeCloudTexture(): THREE.Texture {
+  const w = 1024;
+  const h = 512;
+  const canvas = document.createElement('canvas');
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d')!;
+  ctx.clearRect(0, 0, w, h);
+  for (let i = 0; i < 60; i++) {
+    const cx = Math.random() * w;
+    const cy = Math.random() * h;
+    ctx.fillStyle = `rgba(255,255,255,${0.25 + Math.random() * 0.4})`;
+    for (let b = 0; b < 10; b++) {
+      ctx.beginPath();
+      ctx.ellipse(cx + (Math.random() - 0.5) * 90, cy + (Math.random() - 0.5) * 40, 16 + Math.random() * 34, 8 + Math.random() * 16, 0, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.needsUpdate = true;
+  return tex;
+}
+
+// A banded ring texture (for Saturn) with a transparent center, drawn radially.
+export function makeRingTexture(base: number, accent: number): THREE.Texture {
+  const size = 512;
+  const canvas = document.createElement('canvas');
+  canvas.width = canvas.height = size;
+  const ctx = canvas.getContext('2d')!;
+  const cx = size / 2;
+  const baseC = new THREE.Color(base);
+  const accentC = new THREE.Color(accent);
+  ctx.clearRect(0, 0, size, size);
+  for (let r = size / 2; r > size * 0.28; r -= 1) {
+    const t = (r - size * 0.28) / (size * 0.22);
+    const noise = Math.sin(r * 0.6) * 0.5 + 0.5;
+    const mix = baseC.clone().lerp(accentC, noise);
+    const alpha = (0.25 + noise * 0.55) * Math.min(1, t * 3);
+    ctx.strokeStyle = rgba(mix, alpha);
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.arc(cx, cx, r, 0, Math.PI * 2);
+    ctx.stroke();
+  }
   const tex = new THREE.CanvasTexture(canvas);
   tex.colorSpace = THREE.SRGBColorSpace;
   tex.needsUpdate = true;

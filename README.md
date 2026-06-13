@@ -16,10 +16,12 @@ licensing concerns.
 |---|---|
 | **Title** | **Choose your grade** |
 | ![Title screen](docs/screenshots/title.png) | ![Grade select](docs/screenshots/grade-select.png) |
-| **Choose your rocket** | **Explore the solar system** |
+| **Choose your rocket** | **Explore the full solar system** |
 | ![Rocket select](docs/screenshots/rocket-select.png) | ![Solar system](docs/screenshots/solar-system.png) |
-| **Answer questions** | **UFO mini-game** |
+| **Answer questions** | **UFO mini-game (inner planets)** |
 | ![Quiz](docs/screenshots/quiz.png) | ![UFO mini-game](docs/screenshots/ufo-game.png) |
+| **Saturn & its rings** | **Asteroid Blast (outer planets)** |
+| ![Saturn](docs/screenshots/saturn.png) | ![Asteroid mini-game](docs/screenshots/asteroid-game.png) |
 | **Earn stars & badges** | |
 | ![Reward screen](docs/screenshots/reward.png) | |
 
@@ -73,8 +75,10 @@ question is validated at load time against the schema in
 - **Phase 1 (done):** polished vertical slice — onboarding, inner solar system,
   flight, quizzes (math/phonics/science/geography & more), UFO mini-game, stars,
   unlocks, badges, persistence.
-- **Phase 2:** broaden curriculum across all subjects & grade bands.
-- **Phase 3:** outer planets (Jupiter, Saturn's rings, Uranus, Neptune), more
-  mini-games.
-- **Phase 4:** spoken narration & richer audio for pre-readers.
+- **Phase 3 (done):** full solar system — Jupiter, Saturn (with rings!), Uranus,
+  Neptune with per-type gorgeous textures, atmospheric glow, an asteroid belt,
+  extended unlock progression, and the Asteroid Blast mini-game variant.
+- **Phase 2 (done):** broadened curriculum — reading added, plus math, science,
+  spelling and reading content for the outer planets across grade bands.
+- **Phase 4 (next):** spoken narration & richer audio for pre-readers.
 - **Phase 5:** content-authoring tools & parent dashboard.

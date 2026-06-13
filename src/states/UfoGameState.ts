@@ -3,6 +3,8 @@ import type { GameState } from './GameState';
 import type { Game } from '../core/Game';
 import { el } from '../utils/dom';
 import { Ufo } from '../scene/entities/Ufo';
+import { Asteroid } from '../scene/entities/Asteroid';
+import type { TargetEntity } from '../scene/entities/TargetEntity';
 import { Projectile } from '../scene/entities/Projectile';
 import { ParticleSystem } from '../scene/entities/ParticleSystem';
 import { Rocket } from '../scene/entities/Rocket';
@@ -12,10 +14,14 @@ import { PROGRESSION } from '../config/constants';
 import { randRange, shuffle } from '../utils/math';
 import { Sfx } from '../utils/audio';
 
-// "Shoot the right answer": the question shows at the top, several UFOs fly past
-// each carrying an answer, and the player taps the UFO holding the correct one.
-// A homing laser flies from the rocket so young kids always connect their tap.
-// Wrong UFOs gently pop with no penalty.
+type Theme = 'ufo' | 'asteroid';
+
+// "Shoot the right answer": the question shows at the top, several targets fly
+// past each carrying an answer, and the player taps the one holding the correct
+// answer. A homing laser flies from the rocket so young kids always connect
+// their tap. Wrong targets gently pop with no penalty. The theme (UFOs for the
+// inner system, asteroids for the outer system) is purely cosmetic — the same
+// engine drives both.
 export class UfoGameState implements GameState {
   readonly name = 'ufo-game';
   private game!: Game;
@@ -23,14 +29,15 @@ export class UfoGameState implements GameState {
   private particles = new ParticleSystem();
   private rocket!: Rocket;
 
+  private theme: Theme = 'ufo';
   private planet = '';
   private subject: Subject = 'science';
   private questions: Question[] = [];
   private qIndex = 0;
   private correctCount = 0;
 
-  private ufos: Ufo[] = [];
-  private shots: { proj: Projectile; target: Ufo | null }[] = [];
+  private targets: TargetEntity[] = [];
+  private shots: { proj: Projectile; target: TargetEntity }[] = [];
   private banner!: HTMLElement;
   private offTap: (() => void) | null = null;
   private locked = false; // brief lock between waves
@@ -40,6 +47,7 @@ export class UfoGameState implements GameState {
     this.game = game;
     this.planet = String(params?.planet ?? 'earth');
     this.subject = (params?.subject as Subject) ?? 'science';
+    this.theme = (params?.theme as Theme) ?? 'ufo';
     this.qIndex = 0;
     this.correctCount = 0;
 
@@ -49,7 +57,7 @@ export class UfoGameState implements GameState {
 
     this.rocket = new Rocket(getRocket(game.profile.rocketId));
     this.rocket.group.position.set(0, -13, 6);
-    this.rocket.group.rotation.x = Math.PI; // nose pointing "up" toward the UFOs
+    this.rocket.group.rotation.x = Math.PI; // nose pointing "up" toward the targets
     this.rocket.setThrust(0.3);
     this.root.add(this.rocket.group);
 
@@ -59,7 +67,7 @@ export class UfoGameState implements GameState {
     game.input.joystick.hide();
     game.ui.hud.show();
     game.ui.hud.setStars(game.profile.totalStars);
-    game.ui.hud.setLabel('UFO Mini-Game');
+    game.ui.hud.setLabel(this.theme === 'asteroid' ? 'Asteroid Blast' : 'UFO Mini-Game');
     game.ui.hud.setBack(() => game.states.change('solar-system'));
 
     // Build question list, with graceful fallbacks so the game is never empty.
@@ -83,55 +91,62 @@ export class UfoGameState implements GameState {
     this.spawnWave();
   }
 
+  private makeTarget(answerId: string, correct: boolean, display: string, isImage: boolean): TargetEntity {
+    return this.theme === 'asteroid'
+      ? new Asteroid(answerId, correct, display, isImage)
+      : new Ufo(answerId, correct, display, isImage);
+  }
+
   private spawnWave(): void {
     this.locked = false;
     const q = this.questions[this.qIndex];
-    this.banner.innerHTML = `<span class="ufo-banner-hint">🎯 Tap the UFO:</span> ${q.prompt}`;
+    const noun = this.theme === 'asteroid' ? 'asteroid' : 'UFO';
+    this.banner.innerHTML = `<span class="ufo-banner-hint">🎯 Tap the ${noun}:</span> ${q.prompt}`;
 
     const answers = shuffle(q.answers);
     const spread = 30 / Math.max(answers.length, 1);
     answers.forEach((ans, i) => {
       const isImage = q.answerStyle === 'picture';
       const display = isImage ? ans.image ?? '❓' : ans.label ?? '?';
-      const ufo = new Ufo(ans.id, ans.correct, display, isImage);
+      const target = this.makeTarget(ans.id, ans.correct, display, isImage);
       const startX = -15 + i * spread + randRange(-1, 1);
-      ufo.group.position.set(startX, randRange(2, 9), randRange(-2, 2));
-      ufo.velocity.set(randRange(-2.5, 2.5), randRange(-0.4, 0.4), 0);
-      this.ufos.push(ufo);
-      this.root.add(ufo.group);
+      target.group.position.set(startX, randRange(2, 9), randRange(-2, 2));
+      target.velocity.set(randRange(-2.5, 2.5), randRange(-0.4, 0.4), 0);
+      this.targets.push(target);
+      this.root.add(target.group);
     });
   }
 
   private onTap(ndcX: number, ndcY: number): void {
     if (this.locked) return;
-    const meshes = this.ufos.filter((u) => u.alive).map((u) => u.mesh);
+    const meshes = this.targets.filter((t) => t.alive).map((t) => t.mesh);
     const hits = this.game.scene.pick(ndcX, ndcY, meshes);
     if (hits.length === 0) return;
-    const ufo = hits[0].object.userData.ufo as Ufo;
-    if (!ufo || !ufo.alive) return;
-    this.fireAt(ufo);
+    const target = hits[0].object.userData.target as TargetEntity;
+    if (!target || !target.alive) return;
+    this.fireAt(target);
   }
 
-  private fireAt(ufo: Ufo): void {
+  private fireAt(target: TargetEntity): void {
     const origin = this.rocket.group.position.clone();
-    const dir = this.tmp.copy(ufo.group.position).sub(origin).normalize();
+    const dir = this.tmp.copy(target.group.position).sub(origin).normalize();
     const proj = new Projectile(origin, dir);
     this.root.add(proj.mesh);
-    this.shots.push({ proj, target: ufo });
-    ufo.alive = false; // claimed by this shot; prevents double-fire
+    this.shots.push({ proj, target });
+    target.alive = false; // claimed by this shot; prevents double-fire
     Sfx.laser();
   }
 
-  private resolveHit(ufo: Ufo): void {
-    const correct = ufo.correct;
+  private resolveHit(target: TargetEntity): void {
+    const correct = target.correct;
     this.particles.burst(
-      ufo.group.position.clone(),
+      target.group.position.clone(),
       correct ? 0x46d369 : 0xff5a76,
       correct ? 30 : 14,
       correct ? 10 : 6
     );
-    ufo.dispose(this.root);
-    this.ufos = this.ufos.filter((u) => u !== ufo);
+    target.dispose(this.root);
+    this.targets = this.targets.filter((t) => t !== target);
 
     if (correct) {
       Sfx.explode();
@@ -150,18 +165,18 @@ export class UfoGameState implements GameState {
         setTimeout(() => this.spawnWave(), 700);
       }
     } else {
-      // Wrong UFO popped — let them keep trying the rest.
+      // Wrong target popped — let them keep trying the rest.
       Sfx.wrong();
     }
   }
 
   private clearWave(): void {
-    for (const u of this.ufos) u.dispose(this.root);
-    this.ufos = [];
+    for (const t of this.targets) t.dispose(this.root);
+    this.targets = [];
   }
 
   private finish(): void {
-    this.game.rewards.grantBadge('ufo-buster');
+    this.game.rewards.grantBadge(this.theme === 'asteroid' ? 'asteroid-blaster' : 'ufo-buster');
     this.game.states.change('reward', {
       planet: this.planet,
       subject: this.subject,
@@ -184,28 +199,25 @@ export class UfoGameState implements GameState {
     this.rocket.update(dt);
     this.particles.update(dt);
 
-    for (const u of this.ufos) {
-      u.update(dt);
-      // Bounce UFOs off the side walls so they stay on screen.
-      if (u.group.position.x > 16 || u.group.position.x < -16) u.velocity.x *= -1;
-      if (u.group.position.y > 11 || u.group.position.y < 1) u.velocity.y *= -1;
+    for (const t of this.targets) {
+      t.update(dt);
+      // Bounce targets off the side walls so they stay on screen.
+      if (t.group.position.x > 16 || t.group.position.x < -16) t.velocity.x *= -1;
+      if (t.group.position.y > 11 || t.group.position.y < 1) t.velocity.y *= -1;
     }
 
-    // Advance shots; home toward their claimed UFO and detonate on contact.
+    // Advance shots; home toward their claimed target and detonate on contact.
     for (let i = this.shots.length - 1; i >= 0; i--) {
       const shot = this.shots[i];
-      const target = shot.target;
-      if (target) {
-        const toTarget = this.tmp.copy(target.group.position).sub(shot.proj.mesh.position);
-        if (toTarget.length() < 1.6) {
-          this.root.remove(shot.proj.mesh);
-          this.shots.splice(i, 1);
-          this.resolveHit(target);
-          continue;
-        }
-        // Gentle homing so the shot always connects.
-        shot.proj.velocity.lerp(toTarget.normalize().multiplyScalar(60), 0.2);
+      const toTarget = this.tmp.copy(shot.target.group.position).sub(shot.proj.mesh.position);
+      if (toTarget.length() < 1.8) {
+        this.root.remove(shot.proj.mesh);
+        this.shots.splice(i, 1);
+        this.resolveHit(shot.target);
+        continue;
       }
+      // Gentle homing so the shot always connects.
+      shot.proj.velocity.lerp(toTarget.normalize().multiplyScalar(60), 0.2);
       shot.proj.update(dt);
       if (!shot.proj.alive) {
         this.root.remove(shot.proj.mesh);

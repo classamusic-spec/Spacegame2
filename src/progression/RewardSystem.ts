@@ -54,6 +54,7 @@ export class RewardSystem {
       prog.subjectsCompleted.push(subject);
     }
     if (planetId === 'earth') this.grantBadge('earth-explorer');
+    if (['jupiter', 'saturn', 'uranus', 'neptune'].includes(planetId)) this.grantBadge('gas-giant');
     this.bus.emit('planet:completed', { planet: planetId });
     this.persist();
   }

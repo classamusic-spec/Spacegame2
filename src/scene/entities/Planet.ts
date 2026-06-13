@@ -1,15 +1,24 @@
 import * as THREE from 'three';
 import type { PlanetDef } from '../../config/planets';
-import { makePlanetTexture, makeGlowSprite, makeTextSprite } from '../textures';
+import {
+  makePlanetTexture,
+  makeGlowSprite,
+  makeTextSprite,
+  makeCloudTexture,
+  makeRingTexture,
+} from '../textures';
 
 // A planet in the scene. The planet orbits the Sun via a pivot at the origin;
-// `mesh` is the tappable sphere (used for raycasting). A floating troika label
-// and a selectable halo communicate state to kids.
+// `mesh` is the tappable sphere (used for raycasting). Gorgeous extras — an
+// atmospheric rim glow, a drifting cloud layer (earthlike), and textured rings
+// (Saturn) — make each world feel distinct. A label and halo communicate state.
 export class Planet {
   readonly def: PlanetDef;
   readonly pivot = new THREE.Group(); // rotates about the Sun
   readonly group = new THREE.Group(); // holds sphere + ring + label, positioned on orbit
   readonly mesh: THREE.Mesh;
+  private clouds?: THREE.Mesh;
+  private atmosphere?: THREE.Mesh;
   private label: THREE.Sprite;
   private halo: THREE.Sprite;
   private lock: THREE.Sprite;
@@ -19,27 +28,71 @@ export class Planet {
   constructor(def: PlanetDef) {
     this.def = def;
 
-    const geo = new THREE.SphereGeometry(def.radius, 40, 40);
+    const geo = new THREE.SphereGeometry(def.radius, 48, 48);
     const mat = new THREE.MeshStandardMaterial({
-      map: makePlanetTexture(def.color, def.accent),
-      roughness: 0.9,
+      map: makePlanetTexture(def.color, def.accent, def.visual),
+      roughness: def.visual === 'earthlike' ? 0.7 : 0.95,
       metalness: 0.0,
     });
     this.mesh = new THREE.Mesh(geo, mat);
-    this.mesh.rotation.z = def.tilt;
     this.mesh.userData.planetId = def.id;
     this.group.add(this.mesh);
 
+    // Drifting cloud layer for earthlike worlds.
+    if (def.clouds) {
+      this.clouds = new THREE.Mesh(
+        new THREE.SphereGeometry(def.radius * 1.02, 48, 48),
+        new THREE.MeshStandardMaterial({
+          map: makeCloudTexture(),
+          transparent: true,
+          opacity: 0.85,
+          depthWrite: false,
+          roughness: 1,
+        })
+      );
+      this.mesh.add(this.clouds);
+    }
+
+    // Soft atmospheric rim glow (a slightly larger back-facing additive shell).
+    if (def.atmosphere !== undefined) {
+      this.atmosphere = new THREE.Mesh(
+        new THREE.SphereGeometry(def.radius * 1.18, 32, 32),
+        new THREE.MeshBasicMaterial({
+          color: def.atmosphere,
+          transparent: true,
+          opacity: 0.28,
+          side: THREE.BackSide,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false,
+        })
+      );
+      this.group.add(this.atmosphere);
+    }
+
+    // Apply axial tilt to the whole world (sphere + clouds tilt together).
+    this.mesh.rotation.z = def.tilt;
+
     if (def.hasRing) {
-      const ringGeo = new THREE.RingGeometry(def.radius * 1.4, def.radius * 2.2, 48);
+      const ringGeo = new THREE.RingGeometry(def.radius * 1.35, def.radius * 2.4, 96);
+      // Remap UVs so the ring texture maps radially (inner→outer).
+      const pos = ringGeo.attributes.position as THREE.BufferAttribute;
+      const uv = ringGeo.attributes.uv as THREE.BufferAttribute;
+      const v = new THREE.Vector3();
+      const inner = def.radius * 1.35;
+      const outer = def.radius * 2.4;
+      for (let i = 0; i < pos.count; i++) {
+        v.fromBufferAttribute(pos, i);
+        const r = v.length();
+        uv.setXY(i, (r - inner) / (outer - inner), 0.5);
+      }
       const ringMat = new THREE.MeshBasicMaterial({
-        color: def.accent,
+        map: makeRingTexture(def.color, def.accent),
         side: THREE.DoubleSide,
         transparent: true,
-        opacity: 0.6,
+        depthWrite: false,
       });
       const ring = new THREE.Mesh(ringGeo, ringMat);
-      ring.rotation.x = Math.PI / 2.3;
+      ring.rotation.x = Math.PI / 2 + 0.35;
       this.group.add(ring);
     }
 
@@ -53,32 +106,32 @@ export class Planet {
         depthWrite: false,
       })
     );
-    this.halo.scale.setScalar(def.radius * 5);
+    this.halo.scale.setScalar(def.radius * 4.5);
     this.group.add(this.halo);
 
     // Name label floating above (canvas sprite — always faces the camera).
-    const labelH = def.radius * 0.9;
+    const labelH = Math.max(def.radius * 0.7, 1.2);
     const made = makeTextSprite(def.name, { fontSize: 72 });
     this.label = made.sprite;
     this.label.scale.set(labelH * made.aspect, labelH, 1);
-    this.label.position.set(0, def.radius * 2.0, 0);
+    this.label.position.set(0, def.radius * 1.7 + 1.2, 0);
     this.group.add(this.label);
 
     // Padlock for locked planets.
     const lock = makeTextSprite('🔒', { fontSize: 80 });
     this.lock = lock.sprite;
-    this.lock.scale.setScalar(def.radius * 1.3);
-    this.lock.position.set(0, 0, def.radius + 0.6);
+    this.lock.scale.setScalar(Math.max(def.radius * 1.1, 1.5));
+    this.lock.position.set(0, 0, def.radius + 0.8);
     this.group.add(this.lock);
 
     // Orbit ring (faint) so kids see the path.
     const orbitRing = new THREE.Mesh(
-      new THREE.RingGeometry(def.orbitRadius - 0.06, def.orbitRadius + 0.06, 128),
+      new THREE.RingGeometry(def.orbitRadius - 0.08, def.orbitRadius + 0.08, 160),
       new THREE.MeshBasicMaterial({
         color: 0x4466aa,
         side: THREE.DoubleSide,
         transparent: true,
-        opacity: 0.25,
+        opacity: 0.22,
       })
     );
     orbitRing.rotation.x = Math.PI / 2;
@@ -92,8 +145,10 @@ export class Planet {
     this.unlocked = unlocked;
     (this.halo.material as THREE.SpriteMaterial).opacity = unlocked ? 0.5 : 0;
     this.lock.visible = !unlocked;
-    (this.mesh.material as THREE.MeshStandardMaterial).opacity = unlocked ? 1 : 0.6;
-    (this.mesh.material as THREE.MeshStandardMaterial).transparent = !unlocked;
+    const mat = this.mesh.material as THREE.MeshStandardMaterial;
+    mat.opacity = unlocked ? 1 : 0.65;
+    mat.transparent = !unlocked;
+    if (this.atmosphere) this.atmosphere.visible = unlocked;
   }
 
   /** World position of the planet (for camera framing and travel targets). */
@@ -110,14 +165,15 @@ export class Planet {
   }
 
   update(dt: number, orbiting: boolean): void {
-    this.mesh.rotation.y += dt * 0.15;
+    this.mesh.rotation.y += dt * 0.12;
+    if (this.clouds) this.clouds.rotation.y += dt * 0.05;
     if (orbiting) {
       this.orbitAngle += dt * this.def.orbitSpeed;
       this.positionOnOrbit();
     }
     // Gently pulse the halo so unlocked planets feel alive.
     if (this.unlocked) {
-      const s = this.def.radius * 5 * (1 + Math.sin(performance.now() * 0.003) * 0.06);
+      const s = this.def.radius * 4.5 * (1 + Math.sin(performance.now() * 0.003) * 0.06);
       this.halo.scale.setScalar(s);
     }
   }

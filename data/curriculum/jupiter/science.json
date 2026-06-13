@@ -1,0 +1,47 @@
+{
+  "planet": "jupiter",
+  "subject": "science",
+  "version": 1,
+  "questions": [
+    {
+      "id": "jup-sci-tod-001", "subject": "science", "gradeBand": "toddler", "planet": "jupiter",
+      "prompt": "Is Jupiter big or small?", "answerStyle": "text", "difficulty": 1,
+      "answers": [ {"id":"a","label":"Big","correct":true}, {"id":"b","label":"Small","correct":false} ]
+    },
+    {
+      "id": "jup-sci-prek-001", "subject": "science", "gradeBand": "prek", "planet": "jupiter",
+      "prompt": "Jupiter is the BIGGEST ___.", "answerStyle": "picture", "difficulty": 1,
+      "answers": [ {"id":"a","image":"🪐","correct":true}, {"id":"b","image":"🐶","correct":false}, {"id":"c","image":"🍎","correct":false} ]
+    },
+    {
+      "id": "jup-sci-k-001", "subject": "science", "gradeBand": "k", "planet": "jupiter",
+      "prompt": "Jupiter is the biggest planet. True or false?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"True","correct":true}, {"id":"b","label":"False","correct":false} ]
+    },
+    {
+      "id": "jup-sci-k-002", "subject": "science", "gradeBand": "k", "planet": "jupiter",
+      "prompt": "Jupiter is mostly made of what?", "answerStyle": "text", "difficulty": 2,
+      "answers": [ {"id":"a","label":"Gas","correct":true}, {"id":"b","label":"Rock","correct":false}, {"id":"c","label":"Candy","correct":false} ]
+    },
+    {
+      "id": "jup-sci-g1-001", "subject": "science", "gradeBand": "g1", "planet": "jupiter",
+      "prompt": "Jupiter's Great Red Spot is a giant ___.", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"Storm","correct":true}, {"id":"b","label":"Lake","correct":false}, {"id":"c","label":"City","correct":false} ]
+    },
+    {
+      "id": "jup-sci-g2-001", "subject": "science", "gradeBand": "g2", "planet": "jupiter",
+      "prompt": "Does Jupiter have many moons?", "answerStyle": "text", "difficulty": 3,
+      "answers": [ {"id":"a","label":"Yes, lots of them","correct":true}, {"id":"b","label":"No, none","correct":false} ]
+    },
+    {
+      "id": "jup-sci-g3-001", "subject": "science", "gradeBand": "g3", "planet": "jupiter",
+      "prompt": "Jupiter spins so fast a day there is only about how long?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"10 hours","correct":true}, {"id":"b","label":"100 hours","correct":false}, {"id":"c","label":"1 minute","correct":false} ]
+    },
+    {
+      "id": "jup-sci-g3-002", "subject": "science", "gradeBand": "g3", "planet": "jupiter",
+      "prompt": "Which is one of Jupiter's big moons?", "answerStyle": "text", "difficulty": 4,
+      "answers": [ {"id":"a","label":"Europa","correct":true}, {"id":"b","label":"Texas","correct":false}, {"id":"c","label":"London","correct":false} ]
+    }
+  ]
+}

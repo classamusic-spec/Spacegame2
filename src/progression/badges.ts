@@ -15,7 +15,9 @@ export const BADGES: BadgeDef[] = [
   { id: 'phonics-pro', name: 'Phonics Pro', icon: '🔤', description: 'Answered 5 phonics questions.' },
   { id: 'earth-explorer', name: 'Earth Explorer', icon: '🌍', description: 'Completed a quiz on Earth.' },
   { id: 'ufo-buster', name: 'UFO Buster', icon: '🛸', description: 'Won the UFO mini-game.' },
+  { id: 'asteroid-blaster', name: 'Asteroid Blaster', icon: '☄️', description: 'Cleared an asteroid field.' },
   { id: 'planet-unlocker', name: 'Trailblazer', icon: '🔓', description: 'Unlocked a new planet.' },
+  { id: 'gas-giant', name: 'Giant Explorer', icon: '🪐', description: 'Visited a giant outer planet.' },
 ];
 
 export function getBadge(id: string): BadgeDef | undefined {

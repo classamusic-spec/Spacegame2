@@ -6,8 +6,9 @@ import { bigButton } from '../ui/components/Button';
 import { Sun } from '../scene/entities/Sun';
 import { Planet } from '../scene/entities/Planet';
 import { Rocket } from '../scene/entities/Rocket';
+import { AsteroidBelt } from '../scene/entities/AsteroidBelt';
 import { getRocket } from '../config/rockets';
-import { PLANETS, type PlanetDef } from '../config/planets';
+import { PLANETS, SYSTEM_RADIUS, type PlanetDef } from '../config/planets';
 import { getPlanetProgress } from '../player/PlayerProfile';
 import { SUBJECT_LABELS, SUBJECT_ICONS, type Subject } from '../curriculum/types';
 import { FLIGHT } from '../config/constants';
@@ -26,6 +27,7 @@ export class SolarSystemState implements GameState {
   private root = new THREE.Group();
   private sun!: Sun;
   private planets: Planet[] = [];
+  private belt!: AsteroidBelt;
   private rocket!: Rocket;
 
   private mode: Mode = 'fly';
@@ -51,6 +53,10 @@ export class SolarSystemState implements GameState {
       this.root.add(p.pivot);
       return p;
     });
+
+    // Decorative asteroid belt between Mars and Jupiter.
+    this.belt = new AsteroidBelt();
+    this.root.add(this.belt.mesh);
 
     // Player rocket starts just outside Earth's orbit.
     this.rocket = new Rocket(getRocket(game.profile.rocketId));
@@ -138,14 +144,21 @@ export class SolarSystemState implements GameState {
   /** Approach point: just outside the planet, on the side facing the camera. */
   private approachPoint(planet: Planet, out: THREE.Vector3): THREE.Vector3 {
     planet.getWorldPosition(out);
-    const offset = this.tmp.copy(out).normalize().multiplyScalar(planet.def.radius + 6);
+    const offset = this.tmp.copy(out).normalize().multiplyScalar(planet.def.radius * 1.4 + 6);
     return out.add(offset).setY(out.y + 2);
+  }
+
+  /** Outer planets host the asteroid-blast mini-game variant; inner host UFOs. */
+  private themeFor(planetId: string): 'ufo' | 'asteroid' {
+    return ['jupiter', 'saturn', 'uranus', 'neptune'].includes(planetId) ? 'asteroid' : 'ufo';
   }
 
   private showArrivalMenu(planet: PlanetDef): void {
     this.mode = 'arrived';
     this.game.input.joystick.hide();
     this.dock.classList.add('hidden');
+    // While in the planet menu, the top-left back button returns to space.
+    this.game.ui.hud.setBack(() => this.leaveMenu());
 
     const subjects = this.game.curriculum.availableSubjects(planet.id, this.game.profile.gradeBand);
     const subjectBtns = subjects.map((s) =>
@@ -168,12 +181,17 @@ export class SolarSystemState implements GameState {
       body.push(el('p', { class: 'menu-hint', text: 'More lessons coming soon — try the mini-game!' }));
     }
 
+    const theme = this.themeFor(planet.id);
     body.push(
       el('div', { class: 'button-col' }, [
-        bigButton('UFO Mini-Game', () => this.startUfo(planet.id, subjects[0] as Subject), {
-          icon: '🛸',
-          variant: subjectBtns.length ? 'ghost' : 'primary',
-        }),
+        bigButton(
+          theme === 'asteroid' ? 'Asteroid Blast' : 'UFO Mini-Game',
+          () => this.startUfo(planet.id, subjects[0] as Subject, theme),
+          {
+            icon: theme === 'asteroid' ? '☄️' : '🛸',
+            variant: subjectBtns.length ? 'ghost' : 'primary',
+          }
+        ),
         bigButton('Back to Space', () => this.leaveMenu(), { icon: '🚀', variant: 'ghost' }),
       ])
     );
@@ -185,8 +203,8 @@ export class SolarSystemState implements GameState {
     this.game.states.change('planet-quiz', { planet, subject });
   }
 
-  private startUfo(planet: string, subject: Subject): void {
-    this.game.states.change('ufo-game', { planet, subject: subject ?? 'science' });
+  private startUfo(planet: string, subject: Subject, theme: 'ufo' | 'asteroid'): void {
+    this.game.states.change('ufo-game', { planet, subject: subject ?? 'science', theme });
   }
 
   private leaveMenu(): void {
@@ -195,6 +213,8 @@ export class SolarSystemState implements GameState {
     this.game.input.joystick.show();
     this.mode = 'fly';
     this.game.ui.hud.setLabel('Pick a planet to explore!');
+    // Restore the top-left back button to "leave the map" (to the title).
+    this.game.ui.hud.setBack(() => this.game.states.change('start'));
     // Nudge the rocket back out so the player is free-flying again.
     this.velocity.set(0, 0, 0.001);
   }
@@ -210,6 +230,7 @@ export class SolarSystemState implements GameState {
 
   update(dt: number): void {
     this.sun.update(dt);
+    this.belt.update(dt);
     const orbiting = this.mode === 'fly';
     for (const p of this.planets) p.update(dt, orbiting);
 
@@ -241,7 +262,7 @@ export class SolarSystemState implements GameState {
     this.rocket.group.position.addScaledVector(this.velocity, dt);
     // Keep the player within a friendly bounding sphere around the system.
     const dist = this.rocket.group.position.length();
-    if (dist > 120) this.rocket.group.position.multiplyScalar(120 / dist);
+    if (dist > SYSTEM_RADIUS) this.rocket.group.position.multiplyScalar(SYSTEM_RADIUS / dist);
     const speed = this.velocity.length();
     this.rocket.setThrust(Math.min(1, speed * 0.05));
     if (speed > 0.5) {

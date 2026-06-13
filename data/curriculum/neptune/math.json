@@ -1,0 +1,32 @@
+{
+  "planet": "neptune",
+  "subject": "math",
+  "version": 1,
+  "questions": [
+    {
+      "id": "nep-math-k-001", "subject": "math", "gradeBand": "k", "planet": "neptune",
+      "prompt": "Neptune is planet number 8. What is 8 - 1?", "answerStyle": "number", "difficulty": 2,
+      "answers": [ {"id":"a","label":"7","correct":true}, {"id":"b","label":"6","correct":false}, {"id":"c","label":"9","correct":false} ]
+    },
+    {
+      "id": "nep-math-g1-001", "subject": "math", "gradeBand": "g1", "planet": "neptune",
+      "prompt": "Count by 10s: 10, 20, 30, ___?", "answerStyle": "number", "difficulty": 3,
+      "answers": [ {"id":"a","label":"40","correct":true}, {"id":"b","label":"35","correct":false}, {"id":"c","label":"50","correct":false} ]
+    },
+    {
+      "id": "nep-math-g2-001", "subject": "math", "gradeBand": "g2", "planet": "neptune",
+      "prompt": "What is 60 + 40?", "answerStyle": "number", "difficulty": 3,
+      "answers": [ {"id":"a","label":"100","correct":true}, {"id":"b","label":"90","correct":false}, {"id":"c","label":"110","correct":false} ]
+    },
+    {
+      "id": "nep-math-g3-001", "subject": "math", "gradeBand": "g3", "planet": "neptune",
+      "prompt": "What is 9 x 9?", "answerStyle": "number", "difficulty": 4,
+      "answers": [ {"id":"a","label":"81","correct":true}, {"id":"b","label":"72","correct":false}, {"id":"c","label":"99","correct":false} ]
+    },
+    {
+      "id": "nep-math-g3-002", "subject": "math", "gradeBand": "g3", "planet": "neptune",
+      "prompt": "What is 144 divided by 12?", "answerStyle": "number", "difficulty": 5,
+      "answers": [ {"id":"a","label":"12","correct":true}, {"id":"b","label":"10","correct":false}, {"id":"c","label":"14","correct":false} ]
+    }
+  ]
+}

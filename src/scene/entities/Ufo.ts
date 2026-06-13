@@ -1,10 +1,11 @@
 import * as THREE from 'three';
 import { makeGlowSprite, makeTextSprite } from '../textures';
+import type { TargetEntity } from './TargetEntity';
 
 // A UFO for the mini-game. Each UFO carries one answer (label or emoji image)
 // floating above it. It drifts across the play area; the player shoots the one
 // holding the correct answer.
-export class Ufo {
+export class Ufo implements TargetEntity {
   readonly group = new THREE.Group();
   readonly answerId: string;
   readonly correct: boolean;
@@ -24,7 +25,7 @@ export class Ufo {
     });
     const disc = new THREE.Mesh(new THREE.CylinderGeometry(1.1, 1.6, 0.4, 20), bodyMat);
     this.mesh = disc;
-    this.mesh.userData.ufo = this;
+    this.mesh.userData.target = this;
     this.group.add(disc);
 
     const dome = new THREE.Mesh(
