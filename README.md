@@ -10,6 +10,19 @@ Built with **Three.js + Vite + TypeScript**. Tablet/touch-first, with full mouse
 canvas textures, primitive-geometry rockets) — no large binary assets, no
 licensing concerns.
 
+## Screenshots
+
+| | |
+|---|---|
+| **Title** | **Choose your grade** |
+| ![Title screen](docs/screenshots/title.png) | ![Grade select](docs/screenshots/grade-select.png) |
+| **Choose your rocket** | **Explore the solar system** |
+| ![Rocket select](docs/screenshots/rocket-select.png) | ![Solar system](docs/screenshots/solar-system.png) |
+| **Answer questions** | **UFO mini-game** |
+| ![Quiz](docs/screenshots/quiz.png) | ![UFO mini-game](docs/screenshots/ufo-game.png) |
+| **Earn stars & badges** | |
+| ![Reward screen](docs/screenshots/reward.png) | |
+
 ## Getting started
 
 ```bash

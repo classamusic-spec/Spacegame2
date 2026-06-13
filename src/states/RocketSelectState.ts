@@ -13,6 +13,7 @@ export class RocketSelectState implements GameState {
   private game!: Game;
   private previewGroup = new THREE.Group();
   private preview: Rocket | null = null;
+  private previewLight = new THREE.PointLight(0xffffff, 60, 0, 1.5);
   private selected: RocketId = 'comet';
   private cardsWrap!: HTMLElement;
 
@@ -27,6 +28,10 @@ export class RocketSelectState implements GameState {
     game.scene.camera.lookAt(0, 0, 0);
     this.previewGroup.position.set(0, 1.2, 0);
     game.scene.scene.add(this.previewGroup);
+    // A front fill light so the rocket is brightly lit toward the camera,
+    // instead of a dark silhouette against the deep-space backdrop.
+    this.previewLight.position.set(3, 4, 8);
+    game.scene.scene.add(this.previewLight);
     this.buildPreview();
 
     const heading = el('h2', { class: 'screen-title', text: 'Choose Your Rocket!' });
@@ -77,6 +82,7 @@ export class RocketSelectState implements GameState {
 
   exit(): void {
     this.game.scene.scene.remove(this.previewGroup);
+    this.game.scene.scene.remove(this.previewLight);
     this.previewGroup.clear();
     this.preview = null;
     this.game.ui.hidePanel();
