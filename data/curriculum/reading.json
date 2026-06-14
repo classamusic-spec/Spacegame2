@@ -622,6 +622,178 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-k-titleauthor",
+      "gradeBand": "k",
+      "title": "Title and Author",
+      "objective": "I know what a title and author are.",
+      "teach": [
+        {
+          "text": "The title is the name of a book, on the cover.",
+          "image": "📕"
+        },
+        {
+          "text": "The author is the person who wrote the book.",
+          "image": "✍️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "The name of a book is its...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Title",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Author",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "The person who writes a book is the...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Author",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Title",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Where do you find the title?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "On the cover",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Under the bed",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "What does an author do?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Writes the book",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Eats the book",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-g2-causeeffect",
+      "gradeBand": "g2",
+      "title": "Cause and Effect",
+      "objective": "I can tell why something happened.",
+      "teach": [
+        {
+          "text": "A cause is WHY something happens. The effect is WHAT happens.",
+          "image": "🔗"
+        },
+        {
+          "text": "It rained (cause), so the ground got wet (effect).",
+          "image": "🌧️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "It rained, so the ground got wet. What is the effect?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "The wet ground",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "The rain",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "She dropped the glass, so it...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "broke",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "flew away",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A cause tells us...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Why it happened",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "The color",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "The sun came out, so the snow...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "melted",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "grew",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

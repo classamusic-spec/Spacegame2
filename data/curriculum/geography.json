@@ -408,6 +408,178 @@
           ]
         }
       ]
+    },
+    {
+      "id": "geo-k-mycountry",
+      "gradeBand": "k",
+      "title": "My Country",
+      "objective": "I know what a country is.",
+      "teach": [
+        {
+          "text": "A country is a big land with its own people, leaders, and flag.",
+          "image": "🌎"
+        },
+        {
+          "text": "The United States is a country.",
+          "image": "🇺🇸"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "A big land with its own flag and leaders is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Country",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Cookie",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "The United States is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Country",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "City block",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "What stands for a country?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "A flag",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A spoon",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Which is bigger?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "A country",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A city",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geo-g3-landforms2",
+      "gradeBand": "g3",
+      "title": "Islands and Valleys",
+      "objective": "I can name more landforms.",
+      "teach": [
+        {
+          "text": "Earth has many landforms.",
+          "image": "🗺️"
+        },
+        {
+          "text": "An island has water all around it; a valley is low land between hills.",
+          "image": "🏝️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Land with water all around it is an...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Island",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Mountain",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A very tall landform is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Mountain",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Valley",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Low land between hills or mountains is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Valley",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Island",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "A dry, sandy place with little rain is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Desert",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Lake",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -468,6 +468,178 @@
           ]
         }
       ]
+    },
+    {
+      "id": "music-k-clapbeat",
+      "gradeBand": "k",
+      "title": "Clap the Beat",
+      "objective": "I can clap a steady beat.",
+      "teach": [
+        {
+          "text": "The beat is a steady pulse in music, like a heartbeat.",
+          "image": "❤️"
+        },
+        {
+          "text": "We can clap our hands to the beat.",
+          "image": "👏"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "A steady pulse you clap to is the...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Beat",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Color",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "To feel the beat you can...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Clap",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Sleep",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A good beat stays...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Steady",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "All mixed up",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Fast beat music makes you want to...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Dance",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Yawn",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "music-g3-composers",
+      "gradeBand": "g3",
+      "title": "Composers",
+      "objective": "I know a composer writes music.",
+      "teach": [
+        {
+          "text": "A composer is a person who writes music.",
+          "image": "🎼"
+        },
+        {
+          "text": "Long ago, Beethoven composed famous symphonies.",
+          "image": "🎹"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "A person who writes music is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Composer",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Catcher",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Composers write music using...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Notes",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Bricks",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A long piece for an orchestra is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Symphony",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Sandwich",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Which is a famous composer from long ago?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Beethoven",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A robot",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

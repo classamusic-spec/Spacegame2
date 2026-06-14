@@ -490,6 +490,178 @@
           ]
         }
       ]
+    },
+    {
+      "id": "arts-k-tools",
+      "gradeBand": "k",
+      "title": "Art Tools",
+      "objective": "I know tools we use to make art.",
+      "teach": [
+        {
+          "text": "We make art with crayons, markers, and paint.",
+          "image": "🖍️"
+        },
+        {
+          "text": "We paint with a brush on paper.",
+          "image": "🖌️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which do you color with?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🖍️",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🍴",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which holds paint colors?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🎨",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🧦",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which do you paint with?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🖌️",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🔨",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "What do we usually draw on?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "📄",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🧊",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arts-g2-printmaking",
+      "gradeBand": "g2",
+      "title": "Prints and Stamps",
+      "objective": "I know how prints repeat a shape.",
+      "teach": [
+        {
+          "text": "A stamp prints the same shape again and again.",
+          "image": "🔁"
+        },
+        {
+          "text": "Dip a shape in paint and press to make a print.",
+          "image": "🎨"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "A stamp makes the same shape...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Again and again",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Only once ever",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Printing repeats a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Shape or pattern",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Smell",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which can make a print?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🖐️",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "📻",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Pressing a painted leaf on paper makes a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Print",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Song",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

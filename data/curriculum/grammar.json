@@ -647,6 +647,178 @@
           ]
         }
       ]
+    },
+    {
+      "id": "grammar-g1-plurals",
+      "gradeBand": "g1",
+      "title": "Plural Nouns",
+      "objective": "I can make naming words mean more than one.",
+      "teach": [
+        {
+          "text": "Add -s to most nouns to mean more than one.",
+          "image": "➕"
+        },
+        {
+          "text": "One dog, two dogs.",
+          "image": "🐶"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "More than one dog is...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "dogs",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "dog",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "One cat, two...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "cats",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "cates",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Plural means...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "more than one",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "just one",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "More than one star is...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "stars",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "starz",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar-g3-quotes",
+      "gradeBand": "g3",
+      "title": "Quotation Marks",
+      "objective": "I know quotation marks show talking.",
+      "teach": [
+        {
+          "text": "Quotation marks \" \" go around the exact words someone says.",
+          "image": "💬"
+        },
+        {
+          "text": "Sam said, \"Hello!\"",
+          "image": "🗣️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Quotation marks show that someone is...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "talking",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "sleeping",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which shows someone speaking?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "\"Hi,\" said Sam.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Hi said Sam.",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "We put quotation marks around the...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "spoken words",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "whole page",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "The marks \" \" are called...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "quotation marks",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "periods",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

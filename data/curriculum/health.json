@@ -463,6 +463,178 @@
           ]
         }
       ]
+    },
+    {
+      "id": "health-g1-choices",
+      "gradeBand": "g1",
+      "title": "Healthy Choices",
+      "objective": "I can make healthy choices each day.",
+      "teach": [
+        {
+          "text": "Healthy choices help our body and mind.",
+          "image": "💚"
+        },
+        {
+          "text": "Drink water, play outside, and get good sleep.",
+          "image": "💧"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "A healthier drink is...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Water",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Soda",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Instead of lots of screen time, you can...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Play outside",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Watch all day",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which helps your body grow?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Sleep",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Staying up all night",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Which is a healthy snack?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🍎",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🍩",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health-g3-germs",
+      "gradeBand": "g3",
+      "title": "Germs and Staying Well",
+      "objective": "I know how to keep germs from spreading.",
+      "teach": [
+        {
+          "text": "Germs are tiny and can make us sick. They spread by touch.",
+          "image": "🦠"
+        },
+        {
+          "text": "Cover a cough with your elbow and wash your hands.",
+          "image": "💪"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "When you cough, cover it with your...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Elbow",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Toy",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Germs often spread by...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Touch",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Rainbows",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Washing your hands removes...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Germs",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Bones",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "You should wash your hands before...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Eating",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Never",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

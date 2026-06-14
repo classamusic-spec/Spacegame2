@@ -501,6 +501,178 @@
           ]
         }
       ]
+    },
+    {
+      "id": "history-g2-transport",
+      "gradeBand": "g2",
+      "title": "Travel Then and Now",
+      "objective": "I know how travel changed over time.",
+      "teach": [
+        {
+          "text": "Long ago people walked or rode horses and wagons.",
+          "image": "🐴"
+        },
+        {
+          "text": "Today we ride in cars, trains, and airplanes.",
+          "image": "✈️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Long ago, people traveled by...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Horse and wagon",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Airplane",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which is a newer way to travel?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Airplane",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Walking",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Boats travel on...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Water",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Clouds",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Which is faster today?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "A plane",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A horse",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "history-g3-leaders",
+      "gradeBand": "g3",
+      "title": "Leaders and Voting",
+      "objective": "I know people vote to choose leaders.",
+      "teach": [
+        {
+          "text": "In our country, people VOTE to choose their leaders.",
+          "image": "🗳️"
+        },
+        {
+          "text": "The president leads the country; a mayor leads a city.",
+          "image": "🏛️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Who leads the United States?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "The president",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A wizard",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "How do people choose their leaders?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "By voting",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "By guessing",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Voting means you...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Make a choice",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Take a nap",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "The leader of a city is often a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Mayor",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Pilot",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -838,6 +838,183 @@
           ]
         }
       ]
+    },
+    {
+      "id": "science-g1-animalgroups",
+      "gradeBand": "g1",
+      "title": "Animal Groups",
+      "objective": "I can sort animals into groups.",
+      "teach": [
+        {
+          "text": "Animals come in groups: mammals, birds, fish, and insects.",
+          "image": "🐾"
+        },
+        {
+          "text": "Birds have feathers; fish have gills; insects have 6 legs.",
+          "image": "🐦"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which animal has feathers and can fly?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "A bird",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "A fish",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A fish breathes underwater using...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Gills",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Lungs only",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "How many legs does an insect have?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "6",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "4",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "8",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "A dog with fur that feeds it babies milk is a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Mammal",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Bird",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science-g3-machines",
+      "gradeBand": "g3",
+      "title": "Simple Machines",
+      "objective": "I know simple machines make work easier.",
+      "teach": [
+        {
+          "text": "Simple machines help us do work with less effort.",
+          "image": "⚙️"
+        },
+        {
+          "text": "A ramp, a wheel, and a lever are simple machines.",
+          "image": "🛞"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "A ramp helps you move heavy things...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Up more easily",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Straight down hard",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "A wheel helps things...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Roll",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Stop",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "A see-saw is a kind of...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Lever",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Wheel",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Simple machines make work...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Easier",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Harder",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

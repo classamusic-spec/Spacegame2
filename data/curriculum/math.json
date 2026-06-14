@@ -1126,6 +1126,194 @@
           ]
         }
       ]
+    },
+    {
+      "id": "math-g1-wordproblems",
+      "gradeBand": "g1",
+      "title": "Story Problems",
+      "objective": "I can solve add and subtract word problems.",
+      "teach": [
+        {
+          "text": "Read the story, then add (put together) or take away.",
+          "image": "📖"
+        },
+        {
+          "text": "You have 3 apples and get 2 more: 3 + 2 = 5.",
+          "image": "🍎"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "You have 3 apples and get 2 more. How many?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "5",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "4",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "6",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "5 birds sit on a wire, 2 fly away. How many are left?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "3",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "2",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "7",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "You see 6 stars, then 1 more appears. How many?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "7",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "5",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "There are 4 red and 4 blue blocks. How many in all?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "8",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "6",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math-g3-rounding",
+      "gradeBand": "g3",
+      "title": "Rounding",
+      "objective": "I can round numbers to the nearest ten.",
+      "teach": [
+        {
+          "text": "Rounding finds the nearest ten. Look at the ones digit.",
+          "image": "🔟"
+        },
+        {
+          "text": "If ones are 5 or more, round up. 28 rounds up to 30.",
+          "image": "⬆️",
+          "example": "28 → 30"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Round 28 to the nearest ten.",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "30",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "20",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "25",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Round 42 to the nearest ten.",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "40",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "50",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Round 15 to the nearest ten.",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "20",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "10",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Is 34 closer to 30 or 40?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "30",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "40",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -687,6 +687,183 @@
           ]
         }
       ]
+    },
+    {
+      "id": "phonics-k-endsounds",
+      "gradeBand": "k",
+      "title": "Ending Sounds",
+      "objective": "I can hear the last sound in a word.",
+      "teach": [
+        {
+          "text": "Words end with a sound too. Say the word slowly.",
+          "image": "👂"
+        },
+        {
+          "text": "\"cat\" ends with /t/. \"dog\" ends with /g/.",
+          "image": "🐱"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which ends with the /t/ sound?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐱",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "☀️",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which ends with the /g/ sound?",
+          "answerStyle": "picture",
+          "answers": [
+            {
+              "id": "a",
+              "image": "🐶",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "image": "🐟",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "What sound ends the word \"map\"?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "/p/",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "/m/",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "What sound ends the word \"sun\"?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "/n/",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "/s/",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phonics-g2-syllables",
+      "gradeBand": "g2",
+      "title": "Syllables",
+      "objective": "I can count beats (syllables) in words.",
+      "teach": [
+        {
+          "text": "A syllable is a beat in a word. Clap as you say it!",
+          "image": "👏"
+        },
+        {
+          "text": "\"rab-bit\" has 2 claps, so 2 syllables.",
+          "image": "🐰"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "How many syllables in \"rabbit\"?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "2",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "1",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "3",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "How many syllables in \"sun\"?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "1",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "2",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "How many syllables in \"banana\"?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "3",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "2",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "How many syllables in \"pencil\"?",
+          "answerStyle": "number",
+          "answers": [
+            {
+              "id": "a",
+              "label": "2",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "3",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }

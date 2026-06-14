@@ -491,6 +491,188 @@
           ]
         }
       ]
+    },
+    {
+      "id": "spelling-k-colorwords",
+      "gradeBand": "k",
+      "title": "Color Words",
+      "objective": "I can spell color words.",
+      "teach": [
+        {
+          "text": "We can write the names of colors.",
+          "image": "🌈"
+        },
+        {
+          "text": "Red is spelled R-E-D.",
+          "image": "🔴"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "How do you spell the color 🔴?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "RED",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "RAD",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "RED?",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "How do you spell the color 🔵?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "BLUE",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "BLOO",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Which spells the color green?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "green",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "gren",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Which is spelled correctly?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "yellow",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "yelow",
+              "correct": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spelling-g3-daysmonths",
+      "gradeBand": "g3",
+      "title": "Days and Months",
+      "objective": "I can spell days and months with a capital.",
+      "teach": [
+        {
+          "text": "Days of the week and months always start with a CAPITAL letter.",
+          "image": "📅"
+        },
+        {
+          "text": "Monday, Friday, January, July.",
+          "image": "🗓️"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Which is spelled correctly?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Monday",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "munday",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "label": "Munday",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "prompt": "Which month is spelled correctly?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "January",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Janurary",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "prompt": "Days of the week begin with a...",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Capital letter",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "Number",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "prompt": "Which is written correctly?",
+          "answerStyle": "text",
+          "answers": [
+            {
+              "id": "a",
+              "label": "Friday",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "label": "friday",
+              "correct": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }
