@@ -7,6 +7,8 @@ import { Sun } from '../scene/entities/Sun';
 import { Planet } from '../scene/entities/Planet';
 import { Rocket } from '../scene/entities/Rocket';
 import { AsteroidBelt } from '../scene/entities/AsteroidBelt';
+import { ParticleSystem } from '../scene/entities/ParticleSystem';
+import { Projectile } from '../scene/entities/Projectile';
 import { getRocket } from '../config/rockets';
 import { PLANETS, SYSTEM_RADIUS, type PlanetDef } from '../config/planets';
 import { getPlanetProgress } from '../player/PlayerProfile';
@@ -33,6 +35,8 @@ export class SolarSystemState implements GameState {
   private planets: Planet[] = [];
   private belt!: AsteroidBelt;
   private rocket!: Rocket;
+  private particles = new ParticleSystem();
+  private lasers: Projectile[] = [];
 
   private mode: Mode = 'fly';
   private velocity = new THREE.Vector3();
@@ -41,6 +45,8 @@ export class SolarSystemState implements GameState {
   private travelFrom = new THREE.Vector3();
   private dock!: HTMLElement;
   private offTap: (() => void) | null = null;
+  private offFire: (() => void) | null = null;
+  private fireCooldown = 0;
   private tmp = new THREE.Vector3();
 
   private view: ViewMode = 'third';
@@ -70,15 +76,18 @@ export class SolarSystemState implements GameState {
     this.rocket = new Rocket(getRocket(game.profile.rocketId));
     this.rocket.group.position.set(0, 4, 70);
     this.root.add(this.rocket.group);
+    this.root.add(this.particles.group);
+    this.lasers = [];
 
     game.scene.camera.position.set(0, 12, 95);
 
     // HUD + dock.
     game.ui.hud.show();
     game.ui.hud.setStars(game.profile.totalStars);
-    game.ui.hud.setLabel('Pick a planet to explore!');
+    game.ui.hud.setLabel('Fly with the joystick — FIRE to shoot!');
     game.ui.hud.setBack(() => game.states.change('start'));
-    game.input.joystick.show();
+    game.input.showFlightControls();
+    this.offFire = game.input.onFire(() => this.shoot());
     this.buildDock();
 
     // First-person cockpit (matched to the chosen ship) + a view toggle.
@@ -179,7 +188,7 @@ export class SolarSystemState implements GameState {
 
   private showArrivalMenu(planet: PlanetDef): void {
     this.mode = 'arrived';
-    this.game.input.joystick.hide();
+    this.game.input.hideFlightControls();
     this.dock.classList.add('hidden');
     this.cockpit.hide();
     // While in the planet menu, the top-left back button returns to space.
@@ -255,9 +264,9 @@ export class SolarSystemState implements GameState {
   private leaveMenu(): void {
     this.game.ui.hidePanel();
     this.dock.classList.remove('hidden');
-    this.game.input.joystick.show();
+    this.game.input.showFlightControls();
     this.mode = 'fly';
-    this.game.ui.hud.setLabel('Pick a planet to explore!');
+    this.game.ui.hud.setLabel('Fly with the joystick — FIRE to shoot!');
     // Restore the top-left back button to "leave the map" (to the title).
     this.game.ui.hud.setBack(() => this.game.states.change('start'));
     if (this.view === 'first') this.cockpit.show();
@@ -267,6 +276,8 @@ export class SolarSystemState implements GameState {
 
   exit(): void {
     this.offTap?.();
+    this.offFire?.();
+    this.game.input.hideFlightControls();
     this.game.scene.scene.remove(this.root);
     this.root.clear();
     this.dock.remove();
@@ -297,16 +308,50 @@ export class SolarSystemState implements GameState {
     }
 
     this.rocket.update(dt);
+    this.updateLasers(dt);
     this.updateCamera(dt);
+  }
+
+  // Fire a laser bolt forward from the ship's nose.
+  private shoot(): void {
+    if (this.mode !== 'fly' || this.fireCooldown > 0) return;
+    this.fireCooldown = 0.16;
+    const fwd = new THREE.Vector3(0, 0, -1).applyQuaternion(this.rocket.group.quaternion);
+    const origin = this.rocket.group.position.clone().addScaledVector(fwd, 2.4);
+    const proj = new Projectile(origin, fwd);
+    this.root.add(proj.mesh);
+    this.lasers.push(proj);
+    this.particles.burst(origin, 0x8affff, 5, 4);
+    Sfx.laser();
+  }
+
+  private updateLasers(dt: number): void {
+    this.fireCooldown = Math.max(0, this.fireCooldown - dt);
+    this.particles.update(dt);
+    for (let i = this.lasers.length - 1; i >= 0; i--) {
+      const p = this.lasers[i];
+      p.update(dt);
+      // Pop a belt asteroid if a bolt flies close enough.
+      const hit = this.belt.tryHit(p.mesh.position, 2.4);
+      if (hit) {
+        this.particles.burst(hit, 0xffd24a, 20, 9);
+        Sfx.explode();
+        p.alive = false;
+      }
+      if (!p.alive) {
+        this.root.remove(p.mesh);
+        this.lasers.splice(i, 1);
+      }
+    }
   }
 
   // Joystick / keyboard free-flight: steer the rocket around space.
   private handleFreeFlight(dt: number): void {
     const move = this.game.input.move;
-    const accel = 40;
+    const accel = this.game.input.boost ? 90 : 42; // BOOST button / Shift
     this.velocity.x += move.x * accel * dt;
     this.velocity.z += move.y * accel * dt;
-    this.velocity.multiplyScalar(0.9); // damping
+    this.velocity.multiplyScalar(this.game.input.boost ? 0.94 : 0.9); // damping
     this.rocket.group.position.addScaledVector(this.velocity, dt);
     // Keep the player within a friendly bounding sphere around the system.
     const dist = this.rocket.group.position.length();

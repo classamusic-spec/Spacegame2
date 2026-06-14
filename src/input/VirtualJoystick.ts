@@ -6,6 +6,7 @@ export class VirtualJoystick {
   readonly root: HTMLElement;
   private base: HTMLElement;
   private knob: HTMLElement;
+  private shaft: HTMLElement;
   private active = false;
   private pointerId = -1;
   private originX = 0;
@@ -16,8 +17,9 @@ export class VirtualJoystick {
 
   constructor(parent: HTMLElement) {
     this.knob = el('div', { class: 'joy-knob' });
-    this.base = el('div', { class: 'joy-base' }, [this.knob]);
-    this.root = el('div', { class: 'joystick hidden' }, [this.base]);
+    this.shaft = el('div', { class: 'joy-shaft' });
+    this.base = el('div', { class: 'joy-base' }, [this.shaft, this.knob]);
+    this.root = el('div', { class: 'joystick vintage hidden' }, [this.base]);
     parent.append(this.root);
 
     this.root.addEventListener('pointerdown', this.onDown, { passive: false });
@@ -61,6 +63,8 @@ export class VirtualJoystick {
     this.value.x = 0;
     this.value.y = 0;
     this.knob.style.transform = 'translate(0px, 0px)';
+    // Stick returns upright.
+    this.shaft.style.transform = 'translate(-50%, 0) rotate(0deg) scaleY(0.55)';
   }
 
   private updateKnob(px: number, py: number): void {
@@ -74,5 +78,9 @@ export class VirtualJoystick {
     this.knob.style.transform = `translate(${dx}px, ${dy}px)`;
     this.value.x = dx / this.maxDist;
     this.value.y = dy / this.maxDist;
+    // Lean the vintage stick toward the knob (origin at base center, points up).
+    const angle = (Math.atan2(dx, -dy) * 180) / Math.PI;
+    const lean = 0.55 + (dist / this.maxDist) * 0.5;
+    this.shaft.style.transform = `translate(-50%, 0) rotate(${angle}deg) scaleY(${lean})`;
   }
 }

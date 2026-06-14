@@ -3,6 +3,7 @@ import { COLORS, RENDER } from '../config/constants';
 import { createStarfield } from './Skybox';
 import { createLighting } from './Lighting';
 import { PostFX } from './PostFX';
+import { ShootingStars } from './ShootingStars';
 
 // Owns the renderer, scene, camera, and post-processing. It persists across
 // game states so the 3D world stays alive while DOM panels overlay it. Provides
@@ -12,6 +13,7 @@ export class SceneManager {
   readonly scene = new THREE.Scene();
   readonly camera: THREE.PerspectiveCamera;
   readonly starfield: THREE.Points;
+  private shootingStars = new ShootingStars();
   private postFX: PostFX;
   private raycaster = new THREE.Raycaster();
 
@@ -44,6 +46,7 @@ export class SceneManager {
 
     this.starfield = createStarfield();
     this.scene.add(this.starfield);
+    this.scene.add(this.shootingStars.group);
     this.scene.add(createLighting());
 
     this.postFX = new PostFX(this.renderer, this.scene, this.camera, {
@@ -77,6 +80,7 @@ export class SceneManager {
 
   render(dt: number): void {
     this.starfield.rotation.y += dt * 0.005;
+    this.shootingStars.update(dt, this.camera);
     this.adaptQuality(dt);
     this.postFX.render();
   }

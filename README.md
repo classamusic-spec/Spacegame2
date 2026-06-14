@@ -73,10 +73,13 @@ install is needed. Tap once to enable sound. Regenerate it anytime with
 
 1. **Start Adventure** → pick your **grade** (sets question difficulty) → choose one
    of **3 rockets**.
-2. In the **solar system**, free-fly with the on-screen joystick (or WASD/arrows),
-   or tap a planet / its dock button to **auto-travel** there. Tap the **👁️ button**
-   to switch into a **first-person cockpit** view — a rocket flight deck or a UFO
-   glass dome, matched to your chosen ship.
+2. In the **solar system**, fly with the **vintage arcade joystick** (or
+   WASD/arrows), hold **BOOST** to go faster, and press **FIRE** (or Space) to
+   shoot laser bolts — pop the asteroids in the belt! Or tap a planet / its dock
+   button to **auto-travel** there. Tap the **👁️ button** to switch into a
+   **first-person cockpit** view — a rocket flight deck or a UFO glass dome,
+   matched to your chosen ship. Shooting stars streak across the background
+   throughout.
 3. Each planet is a **subject world**. Pick a **lesson** to learn a concept
    (illustrated teaching cards) and then practice it, or play the **mini-game**
    (UFO shooter at the inner planets, Asteroid Blast at the outer ones).
