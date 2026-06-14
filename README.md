@@ -57,7 +57,17 @@ npm install
 npm run dev      # dev server at http://localhost:5173 (use the Network URL on a tablet)
 npm run build    # type-check + production bundle to dist/
 npm run preview  # serve the production build
+npm run single   # build a single, self-contained space-explorer-academy.html
 ```
+
+### Play with no setup
+
+A prebuilt, fully self-contained **`space-explorer-academy.html`** is included at
+the repo root — just **open it in any modern browser** (double-click, or drag it
+onto a browser tab; works on tablets too). Everything — Three.js, all 154
+lessons, music, and narration — is inlined into that one file, so no server or
+install is needed. Tap once to enable sound. Regenerate it anytime with
+`npm run single`.
 
 ## How to play
 
