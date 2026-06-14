@@ -8,6 +8,7 @@ import {
   type Subject,
   type SubjectFile,
 } from './types';
+import { shuffle } from '../utils/math';
 
 // Loads curriculum JSON via Vite's glob import (bundled, no network fetch),
 // validates each subject file against the schema, and exposes lessons + practice
@@ -109,5 +110,31 @@ export class CurriculumLoader {
       for (const q of l.questions) items.push({ question: q, subject: l.subject });
     }
     return items;
+  }
+
+  /**
+   * Build a synthetic "Mixed Review" lesson: a fresh shuffle of questions drawn
+   * from a world's lessons at the grade band. Returns null if there isn't
+   * enough variety to review.
+   */
+  buildReview(planetId: string, subjects: Subject[], gradeBand: GradeBand, count = 6): Lesson | null {
+    const pool = this.practiceForSubjects(subjects, gradeBand);
+    if (pool.length < 3) return null;
+    const picked = shuffle(pool).slice(0, Math.min(count, pool.length));
+    const questions: Question[] = picked.map((it, i) => ({ ...it.question, id: `rv-${i}` }));
+    return {
+      id: `review-${planetId}-${gradeBand}`,
+      subject: subjects[0],
+      gradeBand,
+      title: 'Mixed Review',
+      objective: 'I can practice everything I have learned in this world!',
+      teach: [
+        {
+          text: "Let's review! Listen to each question and pick the best answer. You've got this!",
+          image: '🌟',
+        },
+      ],
+      questions,
+    };
   }
 }

@@ -13,7 +13,7 @@ import type { PracticeItem, Subject } from '../curriculum/types';
 import { PROGRESSION } from '../config/constants';
 import { randRange, shuffle } from '../utils/math';
 import { Sfx } from '../utils/audio';
-import { narrator } from '../utils/narrator';
+import { narrator, answerPhrase } from '../utils/narrator';
 
 type Theme = 'ufo' | 'asteroid';
 
@@ -101,7 +101,7 @@ export class UfoGameState implements GameState {
     const q = this.items[this.qIndex].question;
     const noun = this.theme === 'asteroid' ? 'asteroid' : 'UFO';
     this.banner.innerHTML = `<span class="ufo-banner-hint">🎯 Tap the ${noun}:</span> ${q.prompt}`;
-    narrator.speak(`Tap the ${noun} that shows: ${q.prompt}`);
+    narrator.speak(`Tap the ${noun} that shows: ${q.prompt}${answerPhrase(q.answers, q.answerStyle)}`);
 
     const answers = shuffle(q.answers);
     const spread = 30 / Math.max(answers.length, 1);

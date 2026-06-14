@@ -85,3 +85,54 @@ class Narrator {
 }
 
 export const narrator = new Narrator();
+
+// Spoken names for the emojis used as picture answers, so the choices can be
+// read aloud for pre-readers. Unknown emojis are simply skipped.
+const EMOJI_NAMES: Record<string, string> = {
+  '🍎': 'apple', '🍌': 'banana', '🥕': 'carrot', '🥦': 'broccoli', '🥖': 'bread',
+  '🧀': 'cheese', '🍕': 'pizza', '🍪': 'cookie', '🍭': 'lollipop', '🍬': 'candy',
+  '🍰': 'cake', '🍩': 'donut', '🥗': 'salad', '☕': 'cup',
+  '🐶': 'dog', '🐱': 'cat', '🐮': 'cow', '🐔': 'chicken', '🐸': 'frog', '🐟': 'fish',
+  '🐦': 'bird', '🦅': 'eagle', '🐘': 'elephant', '🐭': 'mouse', '🐰': 'rabbit',
+  '🐇': 'rabbit', '🐢': 'turtle', '🐌': 'snail', '🐝': 'bee', '🐜': 'ant', '🐛': 'caterpillar',
+  '🦋': 'butterfly', '🦊': 'fox', '🐪': 'camel', '🐳': 'whale', '🐉': 'dragon', '🐴': 'horse',
+  '☀️': 'sun', '🌙': 'moon', '⭐': 'star', '🌈': 'rainbow', '❄️': 'snowflake', '🔥': 'fire',
+  '🌧️': 'rain', '🌤️': 'sunshine', '💧': 'water drop', '💨': 'wind', '🌊': 'ocean wave',
+  '🌍': 'Earth', '🌎': 'Earth', '🪐': 'planet', '🧊': 'ice', '🪨': 'rock', '⛰️': 'mountain',
+  '🏝️': 'island', '🏞️': 'park', '🌋': 'volcano',
+  '🌳': 'tree', '🌱': 'sprout', '🌻': 'sunflower', '🌷': 'tulip', '🌿': 'leaf', '🍂': 'leaves',
+  '⚽': 'ball', '🚗': 'car', '🚌': 'bus', '🚀': 'rocket', '✈️': 'airplane', '🚢': 'boat',
+  '🚒': 'fire truck', '🪁': 'kite', '🎈': 'balloon',
+  '🏠': 'house', '🏫': 'school', '🏥': 'hospital', '🏪': 'store', '🏬': 'store', '🏢': 'building',
+  '🔴': 'red', '🔵': 'blue', '🟢': 'green', '🟡': 'yellow', '🟠': 'orange', '🟣': 'purple',
+  '🟥': 'red square', '🟦': 'blue square', '⬛': 'black square', '⭕': 'circle', '🔺': 'triangle', '🔷': 'diamond',
+  '😀': 'happy face', '😢': 'sad face', '🙂': 'smile', '🤗': 'hug',
+  '🥁': 'drum', '🎸': 'guitar', '🎺': 'trumpet', '🎻': 'violin', '🔔': 'bell', '🎵': 'music note',
+  '📖': 'book', '📚': 'books', '📕': 'book', '📜': 'scroll', '✏️': 'pencil', '🖍️': 'crayon',
+  '🖌️': 'paintbrush', '🎨': 'paint palette', '📄': 'paper', '🔨': 'hammer', '🧼': 'soap',
+  '🪥': 'toothbrush', '🪙': 'coin', '🔑': 'key', '🧦': 'sock', '🧱': 'brick', '🪑': 'chair',
+  '🏃': 'running', '🛋️': 'couch', '👀': 'eyes', '👂': 'ear', '👃': 'nose', '🦵': 'leg', '👏': 'clapping',
+  '🅰️': 'letter A', '🇺🇸': 'American flag', '🧭': 'compass', '🧲': 'magnet', '🛞': 'wheel', '🖐️': 'hand',
+};
+
+export function emojiName(e: string): string | null {
+  return EMOJI_NAMES[e] ?? null;
+}
+
+/** Build a spoken "Is it X, or Y?" phrase from a question's answers. */
+export function answerPhrase(
+  answers: { label?: string; image?: string }[],
+  style: 'text' | 'picture' | 'number'
+): string {
+  const toWord = (a: { label?: string; image?: string }): string => {
+    if (style === 'picture') return emojiName(a.image ?? '') ?? '';
+    const label = a.label ?? '';
+    // A label might itself be an emoji (e.g. pattern answers) — speak its name.
+    if (label && !/[a-z0-9]/i.test(label)) return emojiName(label) ?? '';
+    return label;
+  };
+  const words = answers.map(toWord).filter(Boolean);
+  if (words.length < 2) return '';
+  const last = words.pop()!;
+  return ` Is it ${words.join(', ')}, or ${last}?`;
+}

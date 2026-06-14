@@ -1,16 +1,11 @@
 import { el } from '../../utils/dom';
 import { Sfx, unlockAudio } from '../../utils/audio';
-import { narrator } from '../../utils/narrator';
+import { narrator, answerPhrase } from '../../utils/narrator';
 import type { Answer, Question } from '../../curriculum/types';
 
-/** Read a question + its text/number options aloud (for pre-readers). */
+/** Read a question + its answer options aloud (for pre-readers). */
 export function narrateQuestion(q: Question): void {
-  let text = q.prompt;
-  if (q.answerStyle !== 'picture') {
-    const opts = q.answers.map((a) => a.label ?? '').filter(Boolean);
-    if (opts.length) text += `. Is it ${opts.join(', ')}?`;
-  }
-  narrator.speak(text);
+  narrator.speak(q.prompt + answerPhrase(q.answers, q.answerStyle));
 }
 
 // Renders a single question with big tappable answers. The `answerStyle`

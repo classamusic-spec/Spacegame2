@@ -18,6 +18,7 @@ export const BADGES: BadgeDef[] = [
   { id: 'asteroid-blaster', name: 'Asteroid Blaster', icon: '☄️', description: 'Cleared an asteroid field.' },
   { id: 'planet-unlocker', name: 'Trailblazer', icon: '🔓', description: 'Unlocked a new planet.' },
   { id: 'gas-giant', name: 'Giant Explorer', icon: '🪐', description: 'Visited a giant outer planet.' },
+  { id: 'reviewer', name: 'Review Star', icon: '🌟', description: 'Completed a Mixed Review.' },
 ];
 
 export function getBadge(id: string): BadgeDef | undefined {

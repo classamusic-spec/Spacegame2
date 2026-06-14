@@ -73,9 +73,13 @@ npm run preview  # serve the production build
 4. Earn **⭐ stars** for correct answers — they unlock new planets and earn **badges**.
    Progress saves automatically to your browser.
 
-Pre-readers are fully covered: **everything is read aloud** automatically, each
-card has a 🔊 replay button, and a **Read Aloud** toggle (on the title screen and
-in the HUD) turns narration on/off. Answers also come in **picture/emoji** form.
+Pre-readers are fully covered: **everything is read aloud** automatically —
+including the **answer options** ("…Is it blue, or red?"), even picture/emoji
+choices, which are spoken by name. Each card has a 🔊 replay button, and a **Read
+Aloud** toggle (on the title screen and in the HUD) turns narration on/off.
+
+Every world also has a replayable **🌟 Mixed Review** that shuffles questions
+from across that world's lessons for spaced practice.
 
 ## Project layout
 

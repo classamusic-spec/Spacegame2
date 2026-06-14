@@ -207,6 +207,18 @@ export class SolarSystemState implements GameState {
         item.addEventListener('click', () => this.startLesson(lesson.id, planet.id));
         list.append(item);
       }
+      // A replayable "Mixed Review" that shuffles questions from this world.
+      if (lessons.length >= 2) {
+        const review = el('button', { class: 'lesson-item review-item' }, [
+          el('span', { class: 'lesson-item-icon', text: '🌟' }),
+          el('span', { class: 'lesson-item-title', text: 'Mixed Review' }),
+          el('span', { class: 'lesson-item-check', text: '🔁' }),
+        ]);
+        review.addEventListener('click', () =>
+          this.game.states.change('lesson', { review: true, planet: planet.id })
+        );
+        list.append(review);
+      }
       body.push(list);
     } else {
       body.push(el('p', { class: 'menu-hint', text: 'More lessons coming soon — try the mini-game!' }));

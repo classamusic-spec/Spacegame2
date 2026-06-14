@@ -5,6 +5,7 @@ import { bigButton } from '../ui/components/Button';
 import { QuestionCard } from '../ui/components/QuestionCard';
 import { ProgressDots } from '../ui/components/ProgressBar';
 import { SUBJECT_ICONS, SUBJECT_LABELS, type Lesson } from '../curriculum/types';
+import { getPlanet } from '../config/planets';
 import { PROGRESSION } from '../config/constants';
 import { narrator } from '../utils/narrator';
 
@@ -19,11 +20,24 @@ export class LessonState implements GameState {
   private teachIndex = 0;
   private qIndex = 0;
   private correct = 0;
+  private isReview = false;
 
   enter(game: Game, params?: Record<string, unknown>): void {
     this.game = game;
     this.planet = String(params?.planet ?? '');
-    const lesson = game.curriculum.lessonById(String(params?.lessonId));
+
+    // A "Mixed Review" builds a fresh shuffled lesson from this world's content.
+    let lesson: Lesson | null | undefined;
+    if (params?.review) {
+      this.isReview = true;
+      const def = getPlanet(this.planet);
+      lesson = def
+        ? game.curriculum.buildReview(this.planet, def.subjects, game.profile.gradeBand)
+        : null;
+    } else {
+      this.isReview = false;
+      lesson = game.curriculum.lessonById(String(params?.lessonId));
+    }
     if (!lesson) {
       game.states.change('solar-system');
       return;
@@ -134,10 +148,15 @@ export class LessonState implements GameState {
   }
 
   private finish(): void {
-    this.game.rewards.completeLesson(this.lesson.id, this.planet, this.lesson.subject);
+    if (this.isReview) {
+      // Review is replayable, so don't mark a lesson done — just reward effort.
+      this.game.rewards.grantBadge('reviewer');
+    } else {
+      this.game.rewards.completeLesson(this.lesson.id, this.planet, this.lesson.subject);
+    }
     this.game.states.change('reward', {
       stars: this.correct,
-      title: 'Lesson Complete!',
+      title: this.isReview ? 'Review Complete!' : 'Lesson Complete!',
       next: 'solar-system',
     });
   }
