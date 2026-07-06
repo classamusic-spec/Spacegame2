@@ -289,3 +289,119 @@ export function makeGlowSprite(color = '#ffffff'): THREE.Texture {
   tex.needsUpdate = true;
   return tex;
 }
+
+// A painterly equirectangular nebula sky used as the scene background AND (via
+// PMREM) as the environment map so metals pick up soft colored reflections.
+export function makeNebulaTexture(): THREE.Texture {
+  const w = 2048;
+  const h = 1024;
+  const canvas = document.createElement('canvas');
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d')!;
+
+  // Deep-space base with a gentle vertical tint.
+  const base = ctx.createLinearGradient(0, 0, 0, h);
+  base.addColorStop(0, '#070512');
+  base.addColorStop(0.5, '#0a0820');
+  base.addColorStop(1, '#05030f');
+  ctx.fillStyle = base;
+  ctx.fillRect(0, 0, w, h);
+
+  // Soft colored nebula clouds (additive) in a cohesive palette.
+  const palette = ['#3a2b8f', '#7b2f8a', '#1f5f8b', '#8a2f5a', '#2f7b6b'];
+  ctx.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < 26; i++) {
+    const cx = Math.random() * w;
+    const cy = Math.random() * h;
+    const r = 120 + Math.random() * 420;
+    const col = palette[(Math.random() * palette.length) | 0];
+    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+    g.addColorStop(0, col);
+    g.addColorStop(0.4, col + '55');
+    g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.globalAlpha = 0.10 + Math.random() * 0.16;
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, r, r * (0.5 + Math.random() * 0.5), Math.random() * Math.PI, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  ctx.globalCompositeOperation = 'source-over';
+
+  // Baked star dust so the background reads rich even before the Points layer.
+  for (let i = 0; i < 1400; i++) {
+    const b = Math.random();
+    ctx.fillStyle = `rgba(255,255,255,${0.15 + b * 0.7})`;
+    const s = b > 0.96 ? 2.2 : b > 0.8 ? 1.3 : 0.7;
+    ctx.beginPath();
+    ctx.arc(Math.random() * w, Math.random() * h, s, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.mapping = THREE.EquirectangularReflectionMapping;
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.needsUpdate = true;
+  return tex;
+}
+
+// A grayscale relief map (bumpMap) matched to a planet type, giving the surface
+// real depth under lighting instead of looking painted-on-flat.
+export function makePlanetBump(visual: PlanetVisual): THREE.Texture {
+  const w = 1024;
+  const h = 512;
+  const canvas = document.createElement('canvas');
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d')!;
+  ctx.fillStyle = '#808080'; // neutral height
+  ctx.fillRect(0, 0, w, h);
+
+  if (visual === 'gas') {
+    for (let i = 0; i < 26; i++) {
+      const y = (i / 26) * h;
+      const shade = 96 + Math.sin(i * 1.7) * 60;
+      ctx.fillStyle = `rgb(${shade | 0},${shade | 0},${shade | 0})`;
+      ctx.fillRect(0, y, w, h / 26 + 2);
+    }
+  } else if (visual === 'ice') {
+    for (let i = 0; i < 200; i++) {
+      ctx.fillStyle = Math.random() > 0.5 ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)';
+      ctx.beginPath();
+      ctx.arc(Math.random() * w, Math.random() * h, 10 + Math.random() * 40, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  } else if (visual === 'earthlike') {
+    for (let i = 0; i < 26; i++) {
+      const cx = Math.random() * w;
+      const cy = h * (0.15 + Math.random() * 0.7);
+      ctx.fillStyle = 'rgba(220,220,220,0.85)'; // raised land
+      for (let b = 0; b < 10; b++) {
+        ctx.beginPath();
+        ctx.ellipse(cx + (Math.random() - 0.5) * 120, cy + (Math.random() - 0.5) * 90, 14 + Math.random() * 30, 10 + Math.random() * 22, Math.random() * Math.PI, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+  } else {
+    // rocky: craters (dark pit + bright rim) for strong relief.
+    for (let i = 0; i < 130; i++) {
+      const x = Math.random() * w;
+      const y = Math.random() * h;
+      const r = 4 + Math.random() * 20;
+      ctx.strokeStyle = 'rgba(255,255,255,0.5)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(0,0,0,0.4)';
+      ctx.beginPath();
+      ctx.arc(x, y, r * 0.7, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.needsUpdate = true;
+  return tex;
+}

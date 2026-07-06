@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import type { PlanetDef } from '../../config/planets';
 import {
   makePlanetTexture,
+  makePlanetBump,
   makeGlowSprite,
   makeTextSprite,
   makeCloudTexture,
@@ -28,11 +29,14 @@ export class Planet {
   constructor(def: PlanetDef) {
     this.def = def;
 
-    const geo = new THREE.SphereGeometry(def.radius, 48, 48);
+    const geo = new THREE.SphereGeometry(def.radius, 64, 64);
     const mat = new THREE.MeshStandardMaterial({
       map: makePlanetTexture(def.color, def.accent, def.visual),
-      roughness: def.visual === 'earthlike' ? 0.7 : 0.95,
-      metalness: 0.0,
+      bumpMap: makePlanetBump(def.visual),
+      bumpScale: def.visual === 'gas' || def.visual === 'ice' ? 0.015 : 0.04,
+      roughness: def.visual === 'earthlike' ? 0.6 : 0.95,
+      metalness: def.visual === 'earthlike' ? 0.1 : 0.0,
+      envMapIntensity: def.visual === 'earthlike' ? 0.5 : 0.25,
     });
     this.mesh = new THREE.Mesh(geo, mat);
     this.mesh.userData.planetId = def.id;

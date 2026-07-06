@@ -22,9 +22,9 @@ export class PostFX {
 
     this.bloom = new UnrealBloomPass(
       new THREE.Vector2(size.width, size.height),
-      0.9, // strength
-      0.6, // radius
-      0.85 // threshold (only bright things bloom)
+      1.15, // strength — dreamier, more radiant glow
+      0.75, // radius — softer falloff
+      0.8 // threshold (only bright things bloom)
     );
     this.composer.addPass(this.bloom);
   }

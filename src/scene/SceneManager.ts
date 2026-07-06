@@ -1,9 +1,10 @@
 import * as THREE from 'three';
-import { COLORS, RENDER } from '../config/constants';
+import { RENDER } from '../config/constants';
 import { createStarfield } from './Skybox';
 import { createLighting } from './Lighting';
 import { PostFX } from './PostFX';
 import { ShootingStars } from './ShootingStars';
+import { makeNebulaTexture } from './textures';
 
 // Owns the renderer, scene, camera, and post-processing. It persists across
 // game states so the 3D world stays alive while DOM panels overlay it. Provides
@@ -30,10 +31,16 @@ export class SceneManager {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, RENDER.maxPixelRatio));
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.1;
+    this.renderer.toneMappingExposure = 1.25;
 
-    this.scene.background = new THREE.Color(COLORS.bg);
-    this.scene.fog = new THREE.FogExp2(COLORS.bg, 0.0009);
+    // Painterly nebula sky, used both as the backdrop and (via PMREM) as the
+    // environment map so metals reflect soft colored light.
+    const nebula = makeNebulaTexture();
+    this.scene.background = nebula;
+    const pmrem = new THREE.PMREMGenerator(this.renderer);
+    this.scene.environment = pmrem.fromEquirectangular(nebula).texture;
+    pmrem.dispose();
+    this.scene.fog = new THREE.FogExp2(0x0a0820, 0.0006);
 
     this.camera = new THREE.PerspectiveCamera(
       55,
