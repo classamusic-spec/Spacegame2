@@ -57,14 +57,41 @@ export class Planet {
       this.mesh.add(this.clouds);
     }
 
-    // Soft atmospheric rim glow (a slightly larger back-facing additive shell).
+    // View-dependent Fresnel atmosphere: glows brightest at the limb and fades
+    // toward the center, like real air scattering light — far richer than a flat
+    // additive shell.
     if (def.atmosphere !== undefined) {
+      const atmoColor = new THREE.Color(def.atmosphere);
       this.atmosphere = new THREE.Mesh(
-        new THREE.SphereGeometry(def.radius * 1.18, 32, 32),
-        new THREE.MeshBasicMaterial({
-          color: def.atmosphere,
+        new THREE.SphereGeometry(def.radius * 1.22, 48, 48),
+        new THREE.ShaderMaterial({
+          uniforms: {
+            uColor: { value: atmoColor },
+            uPower: { value: 3.2 },
+            uIntensity: { value: 0.9 },
+          },
+          vertexShader: /* glsl */ `
+            varying vec3 vNormal;
+            varying vec3 vView;
+            void main() {
+              vNormal = normalize(normalMatrix * normal);
+              vec4 mv = modelViewMatrix * vec4(position, 1.0);
+              vView = normalize(-mv.xyz);
+              gl_Position = projectionMatrix * mv;
+            }
+          `,
+          fragmentShader: /* glsl */ `
+            varying vec3 vNormal;
+            varying vec3 vView;
+            uniform vec3 uColor;
+            uniform float uPower;
+            uniform float uIntensity;
+            void main() {
+              float fres = pow(1.0 - max(dot(vNormal, vView), 0.0), uPower);
+              gl_FragColor = vec4(uColor, fres * uIntensity);
+            }
+          `,
           transparent: true,
-          opacity: 0.28,
           side: THREE.BackSide,
           blending: THREE.AdditiveBlending,
           depthWrite: false,

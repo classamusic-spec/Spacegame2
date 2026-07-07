@@ -89,7 +89,7 @@ export class SceneManager {
     this.starfield.rotation.y += dt * 0.005;
     this.shootingStars.update(dt, this.camera);
     this.adaptQuality(dt);
-    this.postFX.render();
+    this.postFX.render(dt);
   }
 
   // Disable bloom if we sustain poor frame times, to keep tablets smooth.

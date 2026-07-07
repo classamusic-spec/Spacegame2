@@ -1391,14 +1391,4 @@ body {
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.5), inset 0 5px 10px rgba(0, 0, 0, 0.35);
 }
 
-/* Cinematic vignette + subtle color grade over the 3D scene (below the UI). */
-#space-vignette {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  background:
-    radial-gradient(ellipse 78% 78% at 50% 44%, rgba(0, 0, 0, 0) 55%, rgba(4, 2, 14, 0.55) 100%),
-    radial-gradient(ellipse 120% 90% at 50% 0%, rgba(90, 120, 255, 0.06), rgba(0, 0, 0, 0) 60%);
-  mix-blend-mode: multiply;
-}
+/* (Cinematic vignette is now rendered in the WebGL post-processing pipeline.) */
